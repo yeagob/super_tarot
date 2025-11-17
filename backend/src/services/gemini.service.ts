@@ -14,41 +14,84 @@ export class GeminiService {
   }
 
   /**
-   * Genera una interpretación de la tirada de tarot usando Gemini
+   * Genera una interpretación completa y profunda de la tirada de tarot usando Gemini
    */
   async generateReading(request: ReadingRequest): Promise<string> {
     try {
       const { deckId, spreadId, cards } = request;
 
-      // Construir el prompt para Gemini
+      // Construir descripción detallada de las cartas
       const cardsDescription = cards.map((card, index) => {
         const position = card.positionId ? `Posición ${index + 1}` : `Carta ${index + 1}`;
         const orientation = card.isReversed ? '(Invertida)' : '(Normal)';
-        return `${position}: Carta ID ${card.cardId} ${orientation}`;
+        const cardInfo = card.card ? `- ${card.card.name}: ${card.card.description}` : '';
+        return `${position}: ${cardInfo} ${orientation}`;
       }).join('\n');
 
-      const prompt = `Eres un experto lector de tarot. Se te ha consultado para interpretar una tirada de tarot.
+      const prompt = `Eres una inteligencia artificial diseñada para ofrecer lecturas de tarot personalizadas y profundas, basadas en una combinación de cartas seleccionadas por el usuario. Tu objetivo es guiar al usuario a través de una experiencia introspectiva, espiritual y práctica.
 
-Detalles de la tirada:
+CONTEXTO DE LA TIRADA:
 - Mazo utilizado: ${deckId}
-- Tirada: ${spreadId || 'libre'}
+- Tipo de tirada: ${spreadId || 'libre'}
 - Número de cartas: ${cards.length}
 
-Cartas en la tirada:
+CARTAS SELECCIONADAS:
 ${cardsDescription}
 
-Por favor, proporciona una interpretación detallada y perspicaz de esta tirada de tarot.
-Considera las posiciones de las cartas, si están invertidas, y cómo se relacionan entre sí.
-La interpretación debe ser:
-1. Profunda pero accesible
-2. Positiva pero honesta
-3. Práctica y aplicable
-4. De 3-4 párrafos
+Por favor, proporciona una lectura detallada siguiendo EXACTAMENTE esta estructura. Cada sección debe ser rica, profunda y personalizada:
 
-Estructura la interpretación en:
-- Visión General
-- Significado de las Cartas Clave
-- Consejo y Reflexión Final`;
+## A. EXPLICACIÓN DE CADA CARTA
+Proporciona una descripción profunda del significado de cada carta en esta tirada específica. Incluye simbolismo tradicional e interpretaciones personales introspectivas.
+
+## B. LECTURA INTEGRADA DE LA TIRADA
+Integra todas las cartas en una narrativa coherente. Explica cómo interactúan las energías entre sí y qué mensaje global transmiten para el momento presente del consultante.
+
+## C. AFIRMACIÓN
+Proporciona UNA afirmación poderosa (1-2 frases máximo) que capture el mensaje central de esta tirada. Debe ser positiva, inspiradora y fácil de recordar.
+
+## D. SUGERENCIA DE CANCIÓN
+Sugiere UNA canción específica (con artista) que refuerce la energía o tema de esta lectura. Explica brevemente por qué esta canción complementa la tirada.
+
+## E. ALTAR - ELEMENTO SIMBÓLICO
+Propón UN objeto simbólico que el usuario pueda añadir o cambiar en su altar personal. Describe cómo este objeto sirve como recordatorio del mensaje de la tirada.
+
+## F. MOVIMIENTO SIMBÓLICO (Propuesta de Movimiento Libre)
+Describe UNA metáfora física o movimiento simbólico que represente la energía de esta tirada. Incluye:
+- Frase que acompaña el movimiento
+- Ejemplos simples de cómo ejecutarlo (sin pasos rígidos, dejando espacio para creatividad)
+
+## G. VISUALIZACIÓN (Autohipnosis)
+Diseña una visualización guiada completa que incluya:
+1. Preparación inicial (respiración, encontrar espacio tranquilo)
+2. Escena imaginaria detallada que refleje la energía de las cartas
+3. Frases clave para repetir durante la visualización
+4. Cierre suave que regrese al presente
+
+## H. TAPPING (EFT)
+Proporciona un script COMPLETO de tapping con frases específicas para cada punto:
+- Punto de inicio (lado de la mano)
+- Ceja
+- Lado del ojo
+- Bajo el ojo
+- Bajo la nariz
+- Barbilla
+- Clavícula
+- Bajo el brazo
+- Encima de la cabeza
+(Asegúrate de que TODAS las frases sean relevantes al mensaje de las cartas)
+
+## I. ACTITUD PARA EL DÍA
+Sugiere UNA actitud o postura mental clara para adoptar durante el día. Incluye una frase breve de recordatorio relacionada con el mensaje de la tirada.
+
+## J. RECUERDA AGRADECER
+Proporciona 3-5 sugerencias específicas de cosas por las que agradecer durante el día, relacionadas con el mensaje de las cartas. Incluye una frase de gratitud para repetir.
+
+IMPORTANTE:
+- Usa un tono compasivo, inspirador y accesible
+- Evita lenguaje técnico; enfócate en claridad y aplicabilidad
+- Incorpora metáforas y ejemplos visuales
+- Personaliza TODO según las cartas específicas de esta tirada
+- Sé específico y práctico en cada sección`;
 
       const result = await this.textModel.generateContent(prompt);
       const response = result.response;
