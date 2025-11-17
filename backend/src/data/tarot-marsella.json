@@ -1,0 +1,227 @@
+{
+  "id": "marsella",
+  "name": "Tarot de Marsella",
+  "description": "El Tarot de Marsella es uno de los mazos más antiguos y tradicionales, con raíces en el siglo XV.",
+  "cards": [
+    {
+      "id": "marsella-0",
+      "name": "El Loco",
+      "description": "Representa el inicio del viaje, la inocencia y la espontaneidad.",
+      "keywords": ["libertad", "inocencia", "nuevos comienzos", "espontaneidad"],
+      "uprightMeaning": "Nuevos comienzos, aventura, inocencia, libertad de espíritu. Es momento de dar un salto de fe.",
+      "reversedMeaning": "Imprudencia, riesgo innecesario, falta de dirección, decisiones precipitadas.",
+      "arcana": "major",
+      "number": 0
+    },
+    {
+      "id": "marsella-1",
+      "name": "El Mago",
+      "description": "Simboliza el poder de la manifestación y la habilidad de convertir ideas en realidad.",
+      "keywords": ["manifestación", "poder", "habilidad", "recursos"],
+      "uprightMeaning": "Habilidad, concentración, poder de manifestación. Tienes todas las herramientas que necesitas.",
+      "reversedMeaning": "Manipulación, falta de energía, mal uso de habilidades, engaño.",
+      "arcana": "major",
+      "number": 1
+    },
+    {
+      "id": "marsella-2",
+      "name": "La Sacerdotisa",
+      "description": "Representa la intuición, el misterio y la sabiduría oculta.",
+      "keywords": ["intuición", "misterio", "subconsciente", "sabiduría"],
+      "uprightMeaning": "Intuición, sabiduría interior, misterio. Escucha tu voz interior.",
+      "reversedMeaning": "Secretos, información oculta, desconexión de la intuición.",
+      "arcana": "major",
+      "number": 2
+    },
+    {
+      "id": "marsella-3",
+      "name": "La Emperatriz",
+      "description": "Simboliza la fertilidad, la abundancia y la naturaleza maternal.",
+      "keywords": ["fertilidad", "abundancia", "naturaleza", "creatividad"],
+      "uprightMeaning": "Abundancia, fertilidad, creatividad, belleza natural, crecimiento.",
+      "reversedMeaning": "Dependencia, creatividad bloqueada, descuido personal.",
+      "arcana": "major",
+      "number": 3
+    },
+    {
+      "id": "marsella-4",
+      "name": "El Emperador",
+      "description": "Representa la autoridad, la estructura y el control.",
+      "keywords": ["autoridad", "estructura", "control", "estabilidad"],
+      "uprightMeaning": "Autoridad, estructura, control, liderazgo firme, estabilidad.",
+      "reversedMeaning": "Rigidez, dominación excesiva, falta de disciplina.",
+      "arcana": "major",
+      "number": 4
+    },
+    {
+      "id": "marsella-5",
+      "name": "El Sumo Sacerdote",
+      "description": "Simboliza la tradición, la educación y las creencias espirituales.",
+      "keywords": ["tradición", "educación", "espiritualidad", "conformidad"],
+      "uprightMeaning": "Tradición, educación espiritual, conformidad, búsqueda de consejo.",
+      "reversedMeaning": "Rebelión, subversión, nuevos enfoques, desafío a la tradición.",
+      "arcana": "major",
+      "number": 5
+    },
+    {
+      "id": "marsella-6",
+      "name": "Los Enamorados",
+      "description": "Representa las relaciones, las elecciones y la armonía.",
+      "keywords": ["amor", "armonía", "elecciones", "relaciones"],
+      "uprightMeaning": "Amor, armonía, relaciones, elecciones importantes, valores alineados.",
+      "reversedMeaning": "Desarmonía, desequilibrio, valores en conflicto, malas decisiones.",
+      "arcana": "major",
+      "number": 6
+    },
+    {
+      "id": "marsella-7",
+      "name": "El Carro",
+      "description": "Simboliza el triunfo, la determinación y el control.",
+      "keywords": ["victoria", "determinación", "control", "voluntad"],
+      "uprightMeaning": "Victoria, determinación, control, fuerza de voluntad, éxito.",
+      "reversedMeaning": "Falta de control, agresión, falta de dirección.",
+      "arcana": "major",
+      "number": 7
+    },
+    {
+      "id": "marsella-8",
+      "name": "La Justicia",
+      "description": "Representa el equilibrio, la verdad y la ley.",
+      "keywords": ["equilibrio", "verdad", "justicia", "karma"],
+      "uprightMeaning": "Justicia, equidad, verdad, causa y efecto, ley.",
+      "reversedMeaning": "Injusticia, falta de responsabilidad, deshonestidad.",
+      "arcana": "major",
+      "number": 8
+    },
+    {
+      "id": "marsella-9",
+      "name": "El Ermitaño",
+      "description": "Simboliza la introspección, la búsqueda interior y la sabiduría.",
+      "keywords": ["soledad", "introspección", "sabiduría", "búsqueda"],
+      "uprightMeaning": "Introspección, búsqueda interior, soledad contemplativa, guía interior.",
+      "reversedMeaning": "Aislamiento, soledad no deseada, rechazo a la ayuda.",
+      "arcana": "major",
+      "number": 9
+    },
+    {
+      "id": "marsella-10",
+      "name": "La Rueda de la Fortuna",
+      "description": "Representa los ciclos, el destino y los cambios.",
+      "keywords": ["destino", "ciclos", "cambio", "fortuna"],
+      "uprightMeaning": "Cambio, ciclos, destino inevitable, buena suerte, giro positivo.",
+      "reversedMeaning": "Mala suerte, resistencia al cambio, ciclos negativos.",
+      "arcana": "major",
+      "number": 10
+    },
+    {
+      "id": "marsella-11",
+      "name": "La Fuerza",
+      "description": "Simboliza el coraje, la paciencia y el autocontrol.",
+      "keywords": ["coraje", "paciencia", "autocontrol", "compasión"],
+      "uprightMeaning": "Fuerza interior, coraje, paciencia, autocontrol, compasión.",
+      "reversedMeaning": "Inseguridad, falta de confianza, impaciencia, debilidad.",
+      "arcana": "major",
+      "number": 11
+    },
+    {
+      "id": "marsella-12",
+      "name": "El Colgado",
+      "description": "Representa la suspensión, la rendición y una nueva perspectiva.",
+      "keywords": ["suspensión", "rendición", "perspectiva", "sacrificio"],
+      "uprightMeaning": "Nueva perspectiva, suspensión, rendirse al momento, sacrificio.",
+      "reversedMeaning": "Estancamiento, resistencia, martirio innecesario.",
+      "arcana": "major",
+      "number": 12
+    },
+    {
+      "id": "marsella-13",
+      "name": "La Muerte",
+      "description": "Simboliza la transformación, los finales y los nuevos comienzos.",
+      "keywords": ["transformación", "finales", "renacimiento", "cambio"],
+      "uprightMeaning": "Transformación, finales necesarios, cambio radical, renacimiento.",
+      "reversedMeaning": "Resistencia al cambio, estancamiento, miedo a lo desconocido.",
+      "arcana": "major",
+      "number": 13
+    },
+    {
+      "id": "marsella-14",
+      "name": "La Templanza",
+      "description": "Representa el equilibrio, la moderación y la paciencia.",
+      "keywords": ["equilibrio", "moderación", "paciencia", "armonía"],
+      "uprightMeaning": "Equilibrio, moderación, paciencia, propósito, armonía.",
+      "reversedMeaning": "Desequilibrio, exceso, falta de propósito, impaciencia.",
+      "arcana": "major",
+      "number": 14
+    },
+    {
+      "id": "marsella-15",
+      "name": "El Diablo",
+      "description": "Simboliza las ataduras, las adicciones y el materialismo.",
+      "keywords": ["ataduras", "tentación", "materialismo", "dependencia"],
+      "uprightMeaning": "Ataduras, adicción, materialismo, dependencia, tentación.",
+      "reversedMeaning": "Liberación, ruptura de cadenas, recuperación de poder.",
+      "arcana": "major",
+      "number": 15
+    },
+    {
+      "id": "marsella-16",
+      "name": "La Torre",
+      "description": "Representa el cambio repentino, la revelación y la destrucción.",
+      "keywords": ["cambio repentino", "revelación", "destrucción", "liberación"],
+      "uprightMeaning": "Cambio repentino, revelación, destrucción de ilusiones, liberación.",
+      "reversedMeaning": "Evitar el desastre, miedo al cambio, retrasar lo inevitable.",
+      "arcana": "major",
+      "number": 16
+    },
+    {
+      "id": "marsella-17",
+      "name": "La Estrella",
+      "description": "Simboliza la esperanza, la fe y la renovación.",
+      "keywords": ["esperanza", "fe", "renovación", "inspiración"],
+      "uprightMeaning": "Esperanza, fe, renovación, serenidad, inspiración divina.",
+      "reversedMeaning": "Desesperanza, falta de fe, desilusión, pesimismo.",
+      "arcana": "major",
+      "number": 17
+    },
+    {
+      "id": "marsella-18",
+      "name": "La Luna",
+      "description": "Representa la ilusión, el miedo y el subconsciente.",
+      "keywords": ["ilusión", "intuición", "subconsciente", "miedo"],
+      "uprightMeaning": "Ilusión, miedo, ansiedad, subconsciente, intuición confusa.",
+      "reversedMeaning": "Liberación del miedo, claridad, verdad revelada.",
+      "arcana": "major",
+      "number": 18
+    },
+    {
+      "id": "marsella-19",
+      "name": "El Sol",
+      "description": "Simboliza el éxito, la vitalidad y la alegría.",
+      "keywords": ["éxito", "vitalidad", "alegría", "positividad"],
+      "uprightMeaning": "Éxito, vitalidad, alegría, positividad, logros.",
+      "reversedMeaning": "Pesimismo, depresión, falta de éxito, negatividad.",
+      "arcana": "major",
+      "number": 19
+    },
+    {
+      "id": "marsella-20",
+      "name": "El Juicio",
+      "description": "Representa el renacimiento, la absolución y el juicio final.",
+      "keywords": ["renacimiento", "absolución", "juicio", "llamado"],
+      "uprightMeaning": "Renacimiento, juicio, absolución, llamado interior, reflexión.",
+      "reversedMeaning": "Autocrítica excesiva, dudas, falta de autoevaluación.",
+      "arcana": "major",
+      "number": 20
+    },
+    {
+      "id": "marsella-21",
+      "name": "El Mundo",
+      "description": "Simboliza la completitud, el logro y la realización.",
+      "keywords": ["completitud", "logro", "realización", "éxito"],
+      "uprightMeaning": "Completitud, logro, viaje completado, realización, éxito.",
+      "reversedMeaning": "Falta de cierre, objetivos incompletos, retrasos.",
+      "arcana": "major",
+      "number": 21
+    }
+  ]
+}

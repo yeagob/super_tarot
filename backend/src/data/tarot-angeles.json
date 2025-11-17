@@ -1,0 +1,115 @@
+{
+  "id": "angeles",
+  "name": "Tarot de los Ángeles",
+  "description": "Un mazo que conecta con la energía angelical y la guía divina.",
+  "cards": [
+    {
+      "id": "angeles-1",
+      "name": "Ángel de la Esperanza",
+      "description": "Trae luz en momentos oscuros y renovación espiritual.",
+      "keywords": ["esperanza", "luz", "renovación", "fe"],
+      "uprightMeaning": "Esperanza renovada, fe en el futuro, luz en la oscuridad, guía divina.",
+      "reversedMeaning": "Pérdida de esperanza, desesperación, oscuridad temporal.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-2",
+      "name": "Ángel del Amor",
+      "description": "Representa el amor incondicional y la compasión.",
+      "keywords": ["amor", "compasión", "ternura", "relaciones"],
+      "uprightMeaning": "Amor verdadero, compasión, relaciones armoniosas, apertura del corazón.",
+      "reversedMeaning": "Amor condicionado, cierres emocionales, miedo a amar.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-3",
+      "name": "Ángel de la Sabiduría",
+      "description": "Guía hacia el conocimiento superior y la comprensión.",
+      "keywords": ["sabiduría", "conocimiento", "comprensión", "claridad"],
+      "uprightMeaning": "Sabiduría divina, comprensión profunda, claridad mental, guía espiritual.",
+      "reversedMeaning": "Confusión, falta de claridad, ignorancia temporal.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-4",
+      "name": "Ángel de la Sanación",
+      "description": "Trae curación física, emocional y espiritual.",
+      "keywords": ["sanación", "recuperación", "bienestar", "salud"],
+      "uprightMeaning": "Sanación en proceso, recuperación, bienestar integral, energía curativa.",
+      "reversedMeaning": "Resistencia a sanar, bloqueos energéticos, necesidad de cuidado.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-5",
+      "name": "Ángel de la Protección",
+      "description": "Ofrece protección divina y seguridad.",
+      "keywords": ["protección", "seguridad", "refugio", "guardián"],
+      "uprightMeaning": "Protección divina, seguridad, ángeles guardianes cerca, refugio seguro.",
+      "reversedMeaning": "Vulnerabilidad temporal, necesidad de protección adicional.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-6",
+      "name": "Ángel de la Abundancia",
+      "description": "Atrae prosperidad y bendiciones materiales.",
+      "keywords": ["abundancia", "prosperidad", "bendiciones", "riqueza"],
+      "uprightMeaning": "Abundancia en camino, prosperidad, bendiciones divinas, gratitud.",
+      "reversedMeaning": "Escasez temporal, bloqueos de abundancia, necesidad de gratitud.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-7",
+      "name": "Ángel de la Transformación",
+      "description": "Facilita cambios profundos y transformación personal.",
+      "keywords": ["transformación", "cambio", "renacimiento", "evolución"],
+      "uprightMeaning": "Transformación profunda, cambio positivo, renacimiento espiritual.",
+      "reversedMeaning": "Resistencia al cambio, miedo a la transformación.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-8",
+      "name": "Ángel de la Paz",
+      "description": "Trae serenidad y armonía interior.",
+      "keywords": ["paz", "serenidad", "armonía", "calma"],
+      "uprightMeaning": "Paz interior, serenidad, armonía, calma en la tormenta.",
+      "reversedMeaning": "Conflicto interno, inquietud, necesidad de paz.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-9",
+      "name": "Ángel de la Creatividad",
+      "description": "Inspira la expresión creativa y la innovación.",
+      "keywords": ["creatividad", "inspiración", "arte", "expresión"],
+      "uprightMeaning": "Inspiración divina, creatividad floreciente, expresión artística.",
+      "reversedMeaning": "Bloqueo creativo, falta de inspiración, autocensura.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-10",
+      "name": "Ángel de la Liberación",
+      "description": "Ayuda a liberarse de ataduras y limitaciones.",
+      "keywords": ["liberación", "libertad", "soltar", "desapego"],
+      "uprightMeaning": "Liberación de ataduras, libertad espiritual, soltar el pasado.",
+      "reversedMeaning": "Apegos persistentes, dificultad para soltar, ataduras.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-11",
+      "name": "Ángel de la Gratitud",
+      "description": "Enseña a apreciar las bendiciones de la vida.",
+      "keywords": ["gratitud", "apreciación", "bendiciones", "reconocimiento"],
+      "uprightMeaning": "Gratitud profunda, apreciación, reconocimiento de bendiciones.",
+      "reversedMeaning": "Ingratitud, queja constante, ceguera ante bendiciones.",
+      "arcana": "major"
+    },
+    {
+      "id": "angeles-12",
+      "name": "Ángel de la Iluminación",
+      "description": "Guía hacia el despertar espiritual y la iluminación.",
+      "keywords": ["iluminación", "despertar", "conciencia", "ascensión"],
+      "uprightMeaning": "Despertar espiritual, iluminación, conciencia expandida.",
+      "reversedMeaning": "Confusión espiritual, camino poco claro, oscuridad.",
+      "arcana": "major"
+    }
+  ]
+}

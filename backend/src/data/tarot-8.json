@@ -1,0 +1,79 @@
+{
+  "id": "tarot-8",
+  "name": "Tarot de 8",
+  "description": "Un mazo simplificado de 8 cartas para lecturas rápidas y directas.",
+  "cards": [
+    {
+      "id": "8-1",
+      "name": "El Inicio",
+      "description": "Representa nuevos comienzos y oportunidades frescas.",
+      "keywords": ["comienzo", "oportunidad", "potencial", "semilla"],
+      "uprightMeaning": "Nuevo comienzo, oportunidad fresca, potencial sin explotar, inicio de un ciclo.",
+      "reversedMeaning": "Falso comienzo, oportunidad perdida, retraso en el inicio.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-2",
+      "name": "El Camino",
+      "description": "Simboliza el viaje y el proceso de desarrollo.",
+      "keywords": ["viaje", "proceso", "desarrollo", "camino"],
+      "uprightMeaning": "El viaje es tan importante como el destino, proceso de desarrollo, camino claro.",
+      "reversedMeaning": "Camino confuso, pérdida de dirección, desvío.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-3",
+      "name": "El Desafío",
+      "description": "Representa los obstáculos y las pruebas.",
+      "keywords": ["desafío", "obstáculo", "prueba", "resistencia"],
+      "uprightMeaning": "Desafío constructivo, prueba de fortaleza, obstáculo superable.",
+      "reversedMeaning": "Obstáculo insuperable, resistencia innecesaria, derrota.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-4",
+      "name": "La Elección",
+      "description": "Simboliza las decisiones importantes y los puntos de inflexión.",
+      "keywords": ["elección", "decisión", "bifurcación", "libre albedrío"],
+      "uprightMeaning": "Momento de decisión importante, elección clara, uso del libre albedrío.",
+      "reversedMeaning": "Indecisión, elección difícil, consecuencias imprevistas.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-5",
+      "name": "La Transformación",
+      "description": "Representa el cambio profundo y la metamorfosis.",
+      "keywords": ["cambio", "transformación", "metamorfosis", "evolución"],
+      "uprightMeaning": "Transformación profunda, cambio necesario, evolución personal.",
+      "reversedMeaning": "Resistencia al cambio, estancamiento, negación de la transformación.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-6",
+      "name": "El Logro",
+      "description": "Simboliza el éxito y la realización de objetivos.",
+      "keywords": ["éxito", "logro", "realización", "victoria"],
+      "uprightMeaning": "Éxito merecido, logro de objetivos, realización, victoria.",
+      "reversedMeaning": "Fracaso temporal, objetivos no alcanzados, necesidad de reevaluar.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-7",
+      "name": "La Reflexión",
+      "description": "Representa la introspección y el aprendizaje.",
+      "keywords": ["reflexión", "introspección", "aprendizaje", "sabiduría"],
+      "uprightMeaning": "Momento de reflexión, introspección necesaria, aprendizaje de experiencias.",
+      "reversedMeaning": "Evitar la reflexión, negación, repetición de errores.",
+      "arcana": "major"
+    },
+    {
+      "id": "8-8",
+      "name": "La Completitud",
+      "description": "Simboliza la finalización de ciclos y la integración.",
+      "keywords": ["completitud", "finalización", "integración", "cierre"],
+      "uprightMeaning": "Ciclo completado, integración de lecciones, cierre satisfactorio.",
+      "reversedMeaning": "Ciclo incompleto, falta de cierre, necesidad de integración.",
+      "arcana": "major"
+    }
+  ]
+}

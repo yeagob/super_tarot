@@ -1,0 +1,100 @@
+[
+  {
+    "id": "spread-4",
+    "name": "Tirada de 4 Cartas",
+    "description": "Tirada básica para situaciones cotidianas",
+    "positions": [
+      {
+        "id": "pos-1",
+        "name": "Situación Presente",
+        "meaning": "Tu situación actual",
+        "x": 200,
+        "y": 300
+      },
+      {
+        "id": "pos-2",
+        "name": "Obstáculo/Desafío",
+        "meaning": "Lo que te desafía o bloquea",
+        "x": 350,
+        "y": 300
+      },
+      {
+        "id": "pos-3",
+        "name": "Consejo/Acción",
+        "meaning": "Qué hacer o considerar",
+        "x": 500,
+        "y": 300
+      },
+      {
+        "id": "pos-4",
+        "name": "Resultado Probable",
+        "meaning": "Hacia dónde te diriges",
+        "x": 650,
+        "y": 300
+      }
+    ]
+  },
+  {
+    "id": "spread-8",
+    "name": "Tirada de 8 Cartas",
+    "description": "Tirada completa para análisis profundo",
+    "positions": [
+      {
+        "id": "pos-1",
+        "name": "El Pasado",
+        "meaning": "Influencias del pasado",
+        "x": 200,
+        "y": 200
+      },
+      {
+        "id": "pos-2",
+        "name": "El Presente",
+        "meaning": "Tu situación actual",
+        "x": 350,
+        "y": 200
+      },
+      {
+        "id": "pos-3",
+        "name": "El Futuro",
+        "meaning": "Lo que se aproxima",
+        "x": 500,
+        "y": 200
+      },
+      {
+        "id": "pos-4",
+        "name": "Base/Fundamento",
+        "meaning": "La raíz de la situación",
+        "x": 650,
+        "y": 200
+      },
+      {
+        "id": "pos-5",
+        "name": "Desafíos",
+        "meaning": "Obstáculos a superar",
+        "x": 200,
+        "y": 400
+      },
+      {
+        "id": "pos-6",
+        "name": "Fortalezas",
+        "meaning": "Tus recursos y habilidades",
+        "x": 350,
+        "y": 400
+      },
+      {
+        "id": "pos-7",
+        "name": "Consejo",
+        "meaning": "Guía espiritual",
+        "x": 500,
+        "y": 400
+      },
+      {
+        "id": "pos-8",
+        "name": "Resultado",
+        "meaning": "Desenlace probable",
+        "x": 650,
+        "y": 400
+      }
+    ]
+  }
+]

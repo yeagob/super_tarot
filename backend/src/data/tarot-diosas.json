@@ -1,0 +1,115 @@
+{
+  "id": "diosas",
+  "name": "Tarot de las Diosas",
+  "description": "Un mazo que honra el poder femenino divino a través de las diosas de diferentes culturas.",
+  "cards": [
+    {
+      "id": "diosas-1",
+      "name": "Isis - La Maga",
+      "description": "Diosa egipcia de la magia y la sabiduría.",
+      "keywords": ["magia", "sabiduría", "poder femenino", "misterio"],
+      "uprightMeaning": "Poder mágico, sabiduría ancestral, habilidad para manifestar, conexión divina.",
+      "reversedMeaning": "Mal uso del poder, manipulación, desconexión de la sabiduría.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-2",
+      "name": "Artemisa - La Cazadora",
+      "description": "Diosa griega de la caza y la independencia.",
+      "keywords": ["independencia", "libertad", "enfoque", "naturaleza"],
+      "uprightMeaning": "Independencia, enfoque en objetivos, libertad personal, conexión con la naturaleza.",
+      "reversedMeaning": "Aislamiento excesivo, rechazo a la ayuda, desconexión.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-3",
+      "name": "Afrodita - El Amor",
+      "description": "Diosa griega del amor y la belleza.",
+      "keywords": ["amor", "belleza", "sensualidad", "placer"],
+      "uprightMeaning": "Amor verdadero, belleza interior y exterior, placer, sensualidad sana.",
+      "reversedMeaning": "Vanidad, amor superficial, obsesión con la apariencia.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-4",
+      "name": "Lakshmi - La Abundancia",
+      "description": "Diosa hindú de la prosperidad y la fortuna.",
+      "keywords": ["prosperidad", "abundancia", "riqueza", "fortuna"],
+      "uprightMeaning": "Abundancia material y espiritual, prosperidad, fortuna, generosidad.",
+      "reversedMeaning": "Escasez, avaricia, apego material, bloqueos de prosperidad.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-5",
+      "name": "Kali - La Transformadora",
+      "description": "Diosa hindú de la destrucción y la transformación.",
+      "keywords": ["transformación", "destrucción", "renacimiento", "poder"],
+      "uprightMeaning": "Transformación radical, destrucción necesaria, poder femenino feroz, renacimiento.",
+      "reversedMeaning": "Miedo al cambio, destrucción innecesaria, caos.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-6",
+      "name": "Gaia - La Madre Tierra",
+      "description": "Diosa griega de la tierra y la fertilidad.",
+      "keywords": ["tierra", "fertilidad", "nutrición", "crecimiento"],
+      "uprightMeaning": "Conexión con la tierra, fertilidad, nutrición, crecimiento natural.",
+      "reversedMeaning": "Desconexión de la naturaleza, infertilidad, falta de arraigo.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-7",
+      "name": "Atenea - La Sabia",
+      "description": "Diosa griega de la sabiduría y la estrategia.",
+      "keywords": ["sabiduría", "estrategia", "justicia", "inteligencia"],
+      "uprightMeaning": "Sabiduría estratégica, inteligencia, justicia, claridad mental.",
+      "reversedMeaning": "Sobre-análisis, frialdad emocional, rigidez mental.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-8",
+      "name": "Selene - La Luna",
+      "description": "Diosa griega de la luna y los ciclos.",
+      "keywords": ["ciclos", "intuición", "misterio", "feminidad"],
+      "uprightMeaning": "Ciclos naturales, intuición profunda, misterio, poder lunar.",
+      "reversedMeaning": "Desequilibrio emocional, ignorar la intuición, resistencia a los ciclos.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-9",
+      "name": "Brigid - La Llama",
+      "description": "Diosa celta del fuego, la poesía y la sanación.",
+      "keywords": ["fuego", "inspiración", "sanación", "creatividad"],
+      "uprightMeaning": "Inspiración creativa, fuego sagrado, sanación, pasión.",
+      "reversedMeaning": "Fuego destructivo, falta de inspiración, burnout.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-10",
+      "name": "Oshun - La Alegría",
+      "description": "Diosa yoruba del amor, la belleza y los ríos.",
+      "keywords": ["alegría", "amor", "belleza", "fluir"],
+      "uprightMeaning": "Alegría profunda, amor dulce, belleza, fluir con la vida.",
+      "reversedMeaning": "Tristeza, estancamiento emocional, rigidez.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-11",
+      "name": "Frigg - La Vidente",
+      "description": "Diosa nórdica de la sabiduría y la precognición.",
+      "keywords": ["visión", "sabiduría", "destino", "conocimiento"],
+      "uprightMeaning": "Visión del futuro, sabiduría profunda, comprensión del destino.",
+      "reversedMeaning": "Ceguera ante el futuro, negación, ignorancia.",
+      "arcana": "major"
+    },
+    {
+      "id": "diosas-12",
+      "name": "Quan Yin - La Compasión",
+      "description": "Diosa budista de la compasión y la misericordia.",
+      "keywords": ["compasión", "misericordia", "bondad", "perdón"],
+      "uprightMeaning": "Compasión infinita, misericordia, perdón, bondad amorosa.",
+      "reversedMeaning": "Dureza de corazón, falta de compasión, resentimiento.",
+      "arcana": "major"
+    }
+  ]
+}
