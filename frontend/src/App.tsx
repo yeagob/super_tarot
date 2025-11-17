@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DeckSelector } from './components/DeckSelector';
@@ -10,6 +10,8 @@ import { Controls } from './components/Controls';
 import { useTarotReading } from './hooks/useTarotReading';
 
 function App() {
+  const tableRef = useRef<HTMLDivElement>(null);
+
   const {
     selectedDeck,
     setSelectedDeck,
@@ -75,6 +77,7 @@ function App() {
             <div className="col-span-12 lg:col-span-6">
               {selectedDeck ? (
                 <Table
+                  ref={tableRef}
                   placedCards={placedCards}
                   spread={selectedSpread}
                   onCardDrop={addCard}
@@ -104,6 +107,7 @@ function App() {
                     isLoading={isLoadingReading}
                     onGenerate={generateReading}
                     canGenerate={placedCards.length > 0 && placedCards.some(c => c.isRevealed)}
+                    tableRef={tableRef}
                   />
                 </>
               )}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import { useDrop } from 'react-dnd';
 import { PlacedCard, DragItem, Spread, TarotCard } from '../types';
 import { Card } from './Card';
@@ -14,7 +14,7 @@ interface TableProps {
   onRemove: (cardId: string) => void;
 }
 
-export const Table: React.FC<TableProps> = ({
+export const Table = forwardRef<HTMLDivElement, TableProps>(({
   placedCards,
   spread,
   onCardDrop,
@@ -22,9 +22,12 @@ export const Table: React.FC<TableProps> = ({
   onReveal,
   onFlip,
   onRemove
-}) => {
+}, ref) => {
   const tableRef = useRef<HTMLDivElement>(null);
   const [draggedCardId, setDraggedCardId] = useState<string | null>(null);
+
+  // Exponer el ref interno al ref externo
+  useImperativeHandle(ref, () => tableRef.current as HTMLDivElement);
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'CARD',
