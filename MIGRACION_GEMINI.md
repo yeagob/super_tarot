@@ -10,17 +10,33 @@ La librería anterior `@google/generative-ai` está **deprecated** (descontinuad
 - ✅ Soporte activo y actualizaciones continuas
 - ✅ **Rutas de API correctas y actualizadas**
 
-## 🚨 PROBLEMA SOLUCIONADO
+## 🚨 PROBLEMAS SOLUCIONADOS
 
-**ERROR ANTERIOR:**
+### **ERROR 1: Rutas de API Obsoletas**
 ```
 Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
 ```
 
-Este error ocurría porque:
+**Causas:**
 1. La librería antigua usaba rutas obsoletas
 2. El modelo `gemini-1.5-flash` ya no es la versión más reciente
 3. Faltaba el archivo `.env` con la API key
+
+### **ERROR 2: Módulo No Encontrado**
+```
+Error: Cannot find module '@google/generative-ai'
+Require stack:
+- backend/src/services/suno.service.ts
+```
+
+**Causa:** `suno.service.ts` todavía importaba la librería antigua.
+
+### **ERROR 3: Variables de Entorno No Cargadas**
+```
+❌ ERROR: GEMINI_API_KEY no está configurada en .env
+```
+
+**Causa:** `dotenv.config()` se ejecutaba DESPUÉS de importar los servicios, por lo que `process.env.GEMINI_API_KEY` era `undefined` durante la inicialización.
 
 ## ✅ CAMBIOS REALIZADOS
 
@@ -30,7 +46,9 @@ Este error ocurría porque:
 + "@google/genai": "^1.0.0"
 ```
 
-### 2. **Migración del Servicio** (`backend/src/services/gemini.service.ts`)
+### 2. **Migración de Servicios**
+
+#### `backend/src/services/gemini.service.ts`
 
 **ANTES:**
 ```typescript
@@ -53,7 +71,52 @@ const response = await ai.models.generateContent({
 return response.text; // Acceso directo a .text (no .response.text())
 ```
 
-### 3. **Archivo .env Creado**
+#### `backend/src/services/suno.service.ts`
+
+**ANTES:**
+```typescript
+import { GoogleGenerativeAI } from '@google/generative-ai';
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+this.textModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+```
+
+**DESPUÉS:**
+```typescript
+import { GoogleGenAI } from '@google/genai';
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
+this.model = 'gemini-2.5-flash'; // Modelo estable
+```
+
+### 3. **Carga Correcta de Variables de Entorno** (`backend/src/index.ts`)
+
+**ANTES (❌ INCORRECTO):**
+```typescript
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import tarotRoutes from './routes/tarot.routes';  // ❌ Servicios se inicializan aquí
+import geminiRoutes from './routes/gemini.routes'; // ❌ Pero .env aún no se cargó
+import musicRoutes from './routes/music.routes';   // ❌ process.env.GEMINI_API_KEY = undefined
+
+dotenv.config(); // ❌ Demasiado tarde!
+```
+
+**DESPUÉS (✅ CORRECTO):**
+```typescript
+// ✅ dotenv.config() PRIMERO antes de cualquier otro import
+import dotenv from 'dotenv';
+dotenv.config();
+
+import express from 'express';
+import cors from 'cors';
+import tarotRoutes from './routes/tarot.routes';  // ✅ Ahora .env ya está cargado
+import geminiRoutes from './routes/gemini.routes'; // ✅ process.env.GEMINI_API_KEY disponible
+import musicRoutes from './routes/music.routes';   // ✅ Los servicios se inicializan correctamente
+```
+
+**Importancia:** Los servicios Gemini y Suno leen `process.env.GEMINI_API_KEY` durante su inicialización (en el import). Si `dotenv.config()` no se ejecuta primero, la variable será `undefined`.
+
+### 4. **Archivo .env Creado**
 Se creó el archivo `backend/.env` con la estructura correcta.
 
 ## 🔧 CONFIGURACIÓN NECESARIA
