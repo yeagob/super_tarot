@@ -190,7 +190,7 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
       </div>
     </div>
   );
-};
+});
 
 interface PlacedCardWrapperProps {
   placedCard: PlacedCard;
