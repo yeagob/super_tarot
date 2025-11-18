@@ -21,7 +21,7 @@ export class TarotController {
       'tarot-marsella.json',
       'tarot-angeles.json',
       'tarot-diosas.json',
-      'tarot-8.json'
+      'tarot-osho.json'
     ];
 
     deckFiles.forEach(file => {
