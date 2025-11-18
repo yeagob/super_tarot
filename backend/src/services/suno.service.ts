@@ -1,24 +1,26 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { SongGenerationRequest, SongLyricsResponse, SongGenerationResponse, MusicStyle } from '../types';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Inicializar Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+// Inicializar Gemini AI con la nueva SDK
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export class SunoService {
-  private textModel;
+  private model: string;
   private musicStyles: MusicStyle[] = [];
   private sunoApiEnabled: boolean;
   private sunoApiKey: string;
   private sunoApiUrl: string;
 
   constructor() {
-    this.textModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    // Usar modelo estable gemini-2.5-flash
+    this.model = 'gemini-2.5-flash';
     this.sunoApiEnabled = process.env.SUNO_API_ENABLED === 'true';
     this.sunoApiKey = process.env.SUNO_API_KEY || '';
     this.sunoApiUrl = process.env.SUNO_API_URL || 'https://api.sunoapi.com/api/v1';
     this.loadMusicStyles();
+    console.log(`✅ SunoService inicializado con modelo: ${this.model}`);
   }
 
   /**
@@ -139,9 +141,11 @@ RECUERDA: Esta letra será grabada por cantantes profesionales y debe sonar NATU
 
 ¡Crea una obra maestra!`;
 
-      const result = await this.textModel.generateContent(prompt);
-      const response = result.response;
-      const lyrics = response.text();
+      const response = await ai.models.generateContent({
+        model: this.model,
+        contents: prompt
+      });
+      const lyrics = response.text;
 
       return {
         lyrics,

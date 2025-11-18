@@ -1,11 +1,13 @@
+// IMPORTANTE: dotenv.config() debe estar PRIMERO antes de cualquier otro import
+// para que las variables de entorno estén disponibles cuando se inicialicen los servicios
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import tarotRoutes from './routes/tarot.routes';
 import geminiRoutes from './routes/gemini.routes';
 import musicRoutes from './routes/music.routes';
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
