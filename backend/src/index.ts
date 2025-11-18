@@ -8,6 +8,7 @@ import cors from 'cors';
 import tarotRoutes from './routes/tarot.routes';
 import geminiRoutes from './routes/gemini.routes';
 import musicRoutes from './routes/music.routes';
+import editorRoutes from './routes/editor.routes';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/api/tarot', tarotRoutes);
 app.use('/api/gemini', geminiRoutes);
 app.use('/api/music', musicRoutes);
+app.use('/api/editor', editorRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
