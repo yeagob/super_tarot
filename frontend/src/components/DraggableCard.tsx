@@ -6,9 +6,10 @@ import { TarotCard, DragItem } from '../types';
 interface DraggableCardProps {
   card: TarotCard;
   deckId: string;
+  showDeckName?: boolean;
 }
 
-export const DraggableCard: React.FC<DraggableCardProps> = ({ card, deckId }) => {
+export const DraggableCard: React.FC<DraggableCardProps> = ({ card, deckId, showDeckName = false }) => {
   const [{ isDragging }, drag] = useDrag<DragItem, unknown, { isDragging: boolean }>(() => ({
     type: 'CARD',
     item: { type: 'CARD', card, deckId },
@@ -26,6 +27,7 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({ card, deckId }) =>
         isReversed={false}
         isDragging={isDragging}
         showTooltip={false}
+        showDeckName={showDeckName}
       />
     </div>
   );

@@ -1,0 +1,214 @@
+{
+  "id": "tarot-osho",
+  "name": "Tarot Zen de Osho",
+  "description": "El Tarot Zen de Osho es una herramienta trascendental de meditación que refleja el momento presente. Basado en las enseñanzas del místico Osho, cada carta representa un estado de consciencia y una oportunidad para la auto-observación profunda. Este tarot no predice el futuro, sino que ilumina el presente.",
+  "cards": [
+    {
+      "id": "osho-0",
+      "name": "El Loco (Inocencia)",
+      "description": "Una figura danza al borde del precipicio con absoluta alegría y despreocupación, sosteniendo una rosa blanca. No tiene miedo porque vive totalmente en el presente. El sol brilla detrás, iluminando su camino. El loco es pura inocencia, viviendo cada momento como si fuera el primero y el último simultáneamente.",
+      "keywords": ["inocencia divina", "vivir el presente", "confianza absoluta", "espontaneidad", "libertad total", "nuevo comienzo"],
+      "uprightMeaning": "Momento de inocencia absoluta y confianza total en la existencia. Libertad de vivir espontáneamente sin el peso del pasado o preocupación por el futuro. Apertura completa a nuevas experiencias sin juicio previo. El coraje de ser vulnerable y auténtico. Salto cuántico hacia lo desconocido con alegría en el corazón. La vida te invita a danzar.",
+      "reversedMeaning": "Imprudencia inconsciente que puede traer consecuencias dolorosas. Negación de la realidad práctica necesaria. Necesidad de equilibrar espontaneidad con responsabilidad. Inocencia que se confunde con ingenuidad peligrosa.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-1",
+      "name": "Existencia",
+      "description": "Una figura luminosa flota en el cosmos infinito, rodeada de estrellas brillantes y galaxias en espiral. Es parte de todo y todo es parte de ella. No hay separación entre el observador y lo observado, solo existe la danza cósmica de la existencia misma manifestándose en forma.",
+      "keywords": ["unidad cósmica", "totalidad", "conexión universal", "ser existencial", "consciencia pura", "no-separación"],
+      "uprightMeaning": "Reconocimiento profundo de tu unidad con toda la existencia. Disolución de las fronteras del ego que crean separación artificial. Experiencia directa de formar parte del todo cósmico. Consciencia de que eres expresión única de la totalidad. Momento de gracia donde sientes la interconexión de todo lo que es.",
+      "reversedMeaning": "Sensación de separación dolorosa y aislamiento existencial. Ego que insiste en su individualidad aislada. Desconexión de la fuente universal. Necesidad de recordar que nunca estás solo, eres parte del todo.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-2",
+      "name": "Voz Interior",
+      "description": "Una sacerdotisa serena se sienta en profunda meditación bajo la luna plateada. Sus ojos cerrados miran hacia adentro. Escucha la voz silenciosa de su ser interior, la sabiduría que trasciende la mente racional. En el silencio absoluto, la verdad se revela sin palabras.",
+      "keywords": ["intuición profunda", "sabiduría interior", "guía interna", "silencio meditativo", "conocimiento intuitivo", "voz del alma"],
+      "uprightMeaning": "Momento de escuchar profundamente tu voz interior que siempre sabe. Intuición clara que te guía más allá de la lógica mental. Sabiduría innata que emerge desde el silencio. Confianza absoluta en tu conocimiento interior. La verdad habla suavemente cuando la mente se aquieta. Medita y escucha.",
+      "reversedMeaning": "Mente ruidosa que ahoga la voz sutil del corazón. Desconfianza en tu intuición natural. Búsqueda externa de respuestas que solo pueden encontrarse dentro. Necesidad de crear silencio interior para escuchar tu verdad.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-3",
+      "name": "Creatividad",
+      "description": "Una artista cósmica pinta arcoíris en el cielo con movimientos fluidos y gozosos. De sus manos brotan colores vibrantes que toman forma espontáneamente. La creatividad no es esfuerzo, es desbordamiento natural del ser. Cuando estás lleno de vida, la creatividad fluye como un río.",
+      "keywords": ["expresión creativa", "flujo natural", "desbordamiento vital", "arte de vivir", "manifestación espontánea", "fertilidad"],
+      "uprightMeaning": "Momento de creatividad desbordante y expresión auténtica. Energía vital que busca manifestarse en forma hermosa. Flujo natural donde el hacer sucede sin esfuerzo. Permiso para crear desde el corazón sin preocuparte por el resultado. Tu vida misma es tu obra de arte. Deja que la creatividad te use.",
+      "reversedMeaning": "Bloqueo creativo por exceso de auto-crítica paralizante. Miedo a expresar tu originalidad única. Creatividad reprimida que necesita liberación. Necesidad de soltar el control y permitir que el flujo suceda naturalmente.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-4",
+      "name": "El Rebelde",
+      "description": "Una figura audaz rompe cadenas invisibles que la sociedad había impuesto. Se alza libre contra las normas que oprimen el espíritu. El rebelde no sigue el rebaño ciegamente, sino que escucha su propia verdad interior. La verdadera rebelión es ser auténtico en un mundo de imitadores.",
+      "keywords": ["autenticidad radical", "romper condicionamientos", "libertad interior", "coraje de ser diferente", "rebelión consciente", "individualidad"],
+      "uprightMeaning": "Momento de romper con condicionamientos limitantes del pasado. Coraje para ser auténtico aunque otros no comprendan. Libertad de vivir según tu verdad interior, no según expectativas ajenas. Rebelión consciente contra patrones que te aprisionan. Atrevimiento a ser diferente y único. Tu individualidad es tu regalo.",
+      "reversedMeaning": "Rebelión inconsciente que es solo otra forma de conformismo. Necesidad de distinguir entre libertad real y mera oposición reactiva. Rebeldía por rebeldía que no lleva a la verdadera liberación.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-5",
+      "name": "Sin Nadie (No-Cosa)",
+      "description": "El vacío luminoso del espacio infinito. No hay forma, no hay nombre, no hay identidad. Solo existe la pura posibilidad, el potencial sin límites. En la nada está todo. La vacuidad es plenitud absoluta. Cuando te disuelves, te vuelves todo.",
+      "keywords": ["vacuidad consciente", "disolución del ego", "espacio infinito", "libertad absoluta", "ningún-yo", "potencial puro"],
+      "uprightMeaning": "Momento profundo de disolución del ego y sus identificaciones rígidas. Libertad absoluta que viene cuando sueltas quien creías ser. Vacío luminoso donde todo es posible porque nada está fijo. Experiencia de tu naturaleza sin forma. En el no-ser encuentras tu ser verdadero. La nada te libera de todo.",
+      "reversedMeaning": "Miedo existencial al vacío y la disolución. Aferramiento desesperado a identidades falsas. Necesidad de soltar gradualmente, respetando tu proceso. El vacío no es enemigo, es liberación.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-6",
+      "name": "Los Amantes",
+      "description": "Dos seres se encuentran en profunda intimidad, no solo de cuerpos sino de almas. Se ven completamente sin máscaras. El amor verdadero no es posesión, es libertad compartida. Dos individualidades que danzan juntas manteniendo su esencia única.",
+      "keywords": ["amor consciente", "intimidad profunda", "vulnerabilidad compartida", "unión de almas", "aceptación total", "elección del corazón"],
+      "uprightMeaning": "Momento de conexión profunda y auténtica con otro ser. Amor que respeta la libertad y celebra la individualidad. Intimidad vulnerable donde te atreves a ser visto completamente. Elección consciente del corazón sobre conveniencia social. Relación que te ayuda a crecer, no que te limita. El amor verdadero libera.",
+      "reversedMeaning": "Amor posesivo que sofoca en lugar de liberar. Dependencia emocional disfrazada de amor. Necesidad de aprender a amarte primero completamente. Relación que te aleja de ti mismo en lugar de acercarte.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-7",
+      "name": "Consciencia",
+      "description": "Un ojo cósmico observa todo sin juicio, sin preferencia. La consciencia pura que simplemente ve lo que es. No hay bueno ni malo, solo el testigo silencioso que permanece imperturbable. La llama de la atención que ilumina todo sin ser tocada por nada.",
+      "keywords": ["testigo silencioso", "atención plena", "presencia consciente", "observación sin juicio", "claridad mental", "meditación viva"],
+      "uprightMeaning": "Momento de claridad absoluta y consciencia despierta. Capacidad de observar tus pensamientos y emociones sin identificarte con ellos. Presencia plena en cada momento sin perderte en historias mentales. El testigo interior que ve todo con ecuanimidad. Meditación que permea tu vida diaria. Estar aquí, ahora, completamente.",
+      "reversedMeaning": "Identificación inconsciente con pensamientos y emociones pasajeras. Mente dormida que reacciona mecánicamente. Necesidad de cultivar el observador interior que trae perspectiva y libertad.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-8",
+      "name": "Coraje",
+      "description": "Un guerrero espiritual enfrenta al dragón del miedo con el corazón abierto. No huye ni ataca, simplemente permanece presente. El verdadero coraje no es ausencia de miedo, es atravesarlo conscientemente. La valentía de sentir completamente sin ser poseído por el sentimiento.",
+      "keywords": ["valentía auténtica", "enfrentar miedos", "coraje del corazón", "fortaleza interior", "atravesar la oscuridad", "intrepidez"],
+      "uprightMeaning": "Momento de gran coraje para enfrentar tus miedos más profundos. Valentía de atravesar situaciones difíciles sin huir ni reprimir. Fortaleza interior que emerge cuando confías en ti mismo. No es no tener miedo, es no dejar que el miedo te detenga. Tu corazón es más fuerte que tus miedos. Atrévete.",
+      "reversedMeaning": "Miedo paralizante que te mantiene en zona de confort limitante. Evitación de lo que necesitas enfrentar. Necesidad de encontrar tu valentía enterrada. El coraje se construye dando pequeños pasos hacia el miedo.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-9",
+      "name": "Soledad (Estar Solo Completamente)",
+      "description": "Una figura medita en la cima de una montaña nevada, completamente sola pero totalmente plena. No hay soledad, hay plenitud en estar consigo mismo. La capacidad de disfrutar tu propia compañía sin necesitar nada externo. La soledad es diferente a la solitudine - es estar completo en tu ser.",
+      "keywords": ["plenitud interior", "estar solo conscientemente", "autosuficiencia emocional", "solitud", "reencuentro contigo", "independencia interior"],
+      "uprightMeaning": "Momento sagrado de estar solo y completo en ti mismo. Capacidad de disfrutar tu propia compañía sin sentir vacío. Solitud que regenera y nutre tu espíritu. Independencia emocional que no necesita llenar el vacío con presencias ajenas. En tu soledad encuentras tu totalidad. Aprende a estar contigo.",
+      "reversedMeaning": "Soledad dolorosa que se siente como abandono. Incapacidad de estar solo sin distracciones. Necesidad de aprender a ser tu mejor compañía. La plenitud interna hace que el estar solo sea gozoso.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-10",
+      "name": "Cambio (La Rueda de la Fortuna)",
+      "description": "Una rueda cósmica gira eternamente, llevando todo en su movimiento. Lo que sube inevitablemente baja, lo que baja eventualmente sube. El cambio es la única constante en la existencia. Resistir el cambio es sufrir, fluir con él es danzar con la vida.",
+      "keywords": ["flujo constante", "impermanencia", "ciclos naturales", "adaptabilidad", "transformación continua", "movimiento vital"],
+      "uprightMeaning": "Momento de cambios significativos e inevitables en tu vida. Flujo natural de la existencia que no puede detenerse. Necesidad de soltar control y fluir con las transformaciones. Los cambios traen nuevas oportunidades disfrazadas. La vida es movimiento constante, no estancamiento. Danza con el cambio.",
+      "reversedMeaning": "Resistencia rígida al cambio natural que causa sufrimiento. Aferramiento a situaciones que ya terminaron su ciclo. Necesidad de aceptar que todo fluye y nada permanece igual. El cambio es amigo, no enemigo.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-11",
+      "name": "Avance (Breakthrough)",
+      "description": "Una figura rompe barreras invisibles con explosión de luz radiante. El momento del despertar súbito, cuando de repente ves lo que siempre estuvo ahí. El salto cuántico de consciencia que no puede deshacerse. Has atravesado el velo de la ignorancia.",
+      "keywords": ["despertar súbito", "comprensión repentina", "salto de consciencia", "iluminación momentánea", "ver lo obvio", "revelación"],
+      "uprightMeaning": "Momento extraordinario de comprensión profunda que cambia todo. Avance súbito en consciencia que no puede revertirse. Despertar repentino a una verdad que estaba oculta ante tus ojos. Salto cuántico en tu evolución personal. La luz de la comprensión disipa la oscuridad de la confusión. Un antes y después.",
+      "reversedMeaning": "Resistencia al insight que quiere emerger. Negación de la verdad evidente porque desafía tus creencias. Necesidad de permitir que la comprensión llegue a su tiempo. No puedes forzar el despertar.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-12",
+      "name": "Nueva Visión (El Colgado)",
+      "description": "Una figura cuelga boca abajo viendo el mundo desde ángulo completamente invertido. Lo que antes parecía arriba ahora es abajo. Perspectiva radicalmente diferente que revela verdades ocultas. Suspensión de juicios antiguos para ver con ojos frescos.",
+      "keywords": ["perspectiva nueva", "ver diferente", "suspensión de juicios", "mirada fresca", "cambio de paradigma", "soltar lo conocido"],
+      "uprightMeaning": "Momento de ver la situación desde perspectiva completamente nueva y liberadora. Inversión de entendimiento que abre posibilidades inimaginables. Capacidad de soltar viejas formas de percibir la realidad. Lo que parecía problema se revela como oportunidad. Necesidad de suspender tus juicios habituales. Mira con ojos nuevos.",
+      "reversedMeaning": "Rigidez mental que se aferra a perspectivas obsoletas. Negativa a considerar otros puntos de vista válidos. Necesidad de flexibilidad mental y apertura. A veces hay que ponerse de cabeza para ver correctamente.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-13",
+      "name": "Transformación (La Muerte)",
+      "description": "El fénix arde en llamas doradas, muriendo para renacer de sus cenizas. La muerte no es fin, es transformación radical. Lo viejo debe morir completamente para que lo nuevo pueda nacer. Dejar ir es doloroso pero absolutamente necesario para la renovación.",
+      "keywords": ["muerte del ego", "renacimiento", "dejar ir", "finalización necesaria", "transformación profunda", "renovación total"],
+      "uprightMeaning": "Momento de muerte simbólica de viejas formas de ser que ya no sirven. Transformación profunda que requiere soltar completamente lo conocido. Final necesario que abre espacio para nuevo comienzo. No temas la muerte de quien fuiste, es nacimiento de quien eres. Lo viejo muere, lo nuevo renace. Entrégate al proceso.",
+      "reversedMeaning": "Resistencia desesperada a soltar lo que ya murió. Aferramiento a relaciones, trabajos o identidades que terminaron. Necesidad de permitir que la muerte natural ocurra. Solo soltando lo muerto puedes vivir plenamente.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-14",
+      "name": "Integración (Templanza)",
+      "description": "Dos fuerzas opuestas se encuentran y fusionan en armonía perfecta. Fuego y agua, masculino y femenino, cielo y tierra danzan juntos en equilibrio dinámico. La integración de polaridades crea totalidad. Los opuestos no pelean, se complementan.",
+      "keywords": ["equilibrio dinámico", "armonía de opuestos", "integración total", "balance perfecto", "síntesis", "completitud"],
+      "uprightMeaning": "Momento de integración armoniosa de aspectos aparentemente opuestos. Equilibrio perfecto entre dar y recibir, actuar y descansar. Síntesis de cualidades complementarias en tu ser. Reconciliación de polaridades internas en paz profunda. No es elegir un extremo, es abrazar ambos. La totalidad incluye todo.",
+      "reversedMeaning": "Desequilibrio extremo que causa tensión interna. Polarización rígida que niega aspectos de ti mismo. Necesidad de reconocer que contiene todo el espectro. Los extremos te fragmentan, la integración te completa.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-15",
+      "name": "Condicionamiento (El Diablo)",
+      "description": "Cadenas invisibles atan a figuras que no ven que las ataduras son ilusorias. Los condicionamientos de la sociedad, familia y cultura crean prisión mental. El diablo no es externo, es la prisión interna de creencias limitantes. Las cadenas son falsas pero el sufrimiento es real.",
+      "keywords": ["prisión mental", "creencias limitantes", "condicionamientos sociales", "adicciones sutiles", "esclavitud inconsciente", "ilusión de limitación"],
+      "uprightMeaning": "Reconocimiento de condicionamientos que te limitan inconscientemente. Consciencia de patrones adictivos y comportamientos compulsivos. Visión clara de cómo creencias falsas crean tu prisión. Las cadenas son ilusorias pero solo tú puedes soltarlas. Primer paso: ver la prisión. Segundo paso: reconocer que la puerta siempre estuvo abierta.",
+      "reversedMeaning": "Negación de tus propios condicionamientos y adicciones. Culpar a otros por tu prisión auto-creada. Necesidad de asumir responsabilidad por tu liberación. Nadie puede liberarte excepto tú mismo.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-16",
+      "name": "Rayo (La Torre)",
+      "description": "Un rayo cósmico destruye la torre de creencias falsas construida laboriosamente. El despertar doloroso pero necesario. Las estructuras mentales rígidas se derrumban en un instante. Shock que sacude hasta los cimientos. Destrucción que limpia el terreno para nueva construcción auténtica.",
+      "keywords": ["destrucción repentina", "despertar abrupto", "derrumbe de ilusiones", "shock transformador", "colapso necesario", "limpieza radical"],
+      "uprightMeaning": "Momento de destrucción súbita de estructuras mentales falsas. Shock doloroso pero absolutamente necesario para tu crecimiento. Derrumbe de torres construidas sobre cimientos falsos. Crisis que es oportunidad disfrazada. Las ilusiones se rompen violentamente para revelar la verdad. Permite que lo falso se desmorone.",
+      "reversedMeaning": "Resistencia al colapso inevitable de lo falso. Intento desesperado de sostener estructuras que ya están cayendo. Necesidad de soltar control y permitir que lo viejo se derrumbe. Construirás algo más auténtico en su lugar.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-17",
+      "name": "Silencio (La Estrella)",
+      "description": "La noche estrellada cósmica. Un silencio profundo que no es ausencia de sonido sino presencia de paz absoluta. En el silencio interno nace la esperanza verdadera. Las estrellas brillan en quietud perfecta. Del silencio emerge toda música, de la vacuidad toda creación.",
+      "keywords": ["paz profunda", "silencio interior", "esperanza genuina", "quietud cósmica", "serenidad", "confianza renovada"],
+      "uprightMeaning": "Momento de silencio profundo y paz que restaura tu espíritu. Esperanza renovada que emerge desde tu centro sereno. Confianza tranquila en que todo está bien tal como es. Silencio no vacío sino lleno de presencia. En la quietud encuentras respuestas que la mente ruidosa no puede dar. Descansa en paz.",
+      "reversedMeaning": "Mente ruidosa que no permite momento de paz. Desesperanza que nubla tu visión. Necesidad de crear espacios de silencio para reconectar contigo. La paz está disponible cuando te detienes.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-18",
+      "name": "Vidas Pasadas (La Luna)",
+      "description": "La luna llena ilumina sombras y reflejos distorsionados. Memorias antiguas emergen de profundidades inconscientes. Patrones de vidas pasadas o infancia temprana que aún influencian el presente. Lo reprimido busca luz. El inconsciente habla en símbolos y sueños.",
+      "keywords": ["memoria inconsciente", "patrones antiguos", "sombras internas", "mundo onírico", "raíces profundas", "influencias ocultas"],
+      "uprightMeaning": "Momento de conexión con memorias profundas del inconsciente. Patrones antiguos que emergen para ser sanados y liberados. Influencias sutiles de experiencias pasadas en tu presente. Mundo interno de sueños y símbolos pide atención. Necesidad de iluminar las sombras para integrarlas. Lo oculto quiere revelarse.",
+      "reversedMeaning": "Miedo a explorar las profundidades del inconsciente. Negación de influencias sutiles que moldean tu vida. Necesidad de valentía para mirar las sombras internas. La luz de la consciencia disuelve los monstruos imaginarios.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-19",
+      "name": "Inocencia (El Sol)",
+      "description": "El sol radiante brilla gloriosamente iluminando todo sin esfuerzo. Un niño juega con alegría pura, totalmente presente. Inocencia que ha atravesado la experiencia y regresado más sabia pero no cínica. La alegría simple de estar vivo. Celebración espontánea de la existencia.",
+      "keywords": ["alegría pura", "celebración vital", "inocencia recuperada", "luz radiante", "vitalidad", "simplicidad dichosa"],
+      "uprightMeaning": "Momento de alegría absoluta y celebración de estar vivo. Inocencia que no es ignorancia sino simplicidad consciente. Capacidad de maravillarte como niño pero con sabiduría de adulto. Luz que ilumina todo sin sombras de duda. Vitalidad radiante que contagia a tu alrededor. Ríe, juega, celebra. La vida es hermosa.",
+      "reversedMeaning": "Pesimismo que apaga tu luz natural. Cinismo que destruye la capacidad de asombro. Necesidad de reconectar con la alegría simple de existir. Tu niño interior espera jugar contigo.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-20",
+      "name": "Más Allá de la Ilusión (El Juicio)",
+      "description": "El velo de Maya se levanta revelando la realidad detrás de las apariencias. Despertar masivo de consciencia. Ver claramente la diferencia entre lo real y lo ilusorio. Trascender el sueño colectivo. El llamado a despertar ya no puede ignorarse. La verdad te libera.",
+      "keywords": ["despertar total", "ver la realidad", "trascender ilusión", "llamado del alma", "liberación final", "verdad revelada"],
+      "uprightMeaning": "Momento extraordinario de ver más allá del velo de ilusiones. Despertar profundo a la verdadera naturaleza de la realidad. Llamado irresistible de tu alma a vivir auténticamente. Trascendencia de todas las falsedades que te mantenían dormido. Claridad absoluta que no puede ignorarse. Has despertado del sueño.",
+      "reversedMeaning": "Negación del despertar que está ocurriendo. Resistencia a soltar ilusiones cómodas. Miedo a la responsabilidad que trae la consciencia expandida. Necesidad de valentía para vivir despierto.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-21",
+      "name": "Completitud (El Mundo)",
+      "description": "Una danzarina cósmica gira en el centro del universo, rodeada por un círculo perfecto. Todo está completo, integrado, en su lugar correcto. El viaje circular se cierra en totalidad satisfactoria. Celebración del ciclo completo. El fin es también un nuevo comienzo.",
+      "keywords": ["totalidad alcanzada", "ciclo completo", "integración final", "realización plena", "danza cósmica", "perfección del momento"],
+      "uprightMeaning": "Momento glorioso de completitud y totalidad alcanzada. Integración perfecta de todas las experiencias en sabiduría. Ciclo que se cierra satisfactoriamente permitiendo nuevo comienzo. Celebración de logros y aprendizajes del viaje completo. Sensación de estar exactamente donde debes estar. Todo está bien.",
+      "reversedMeaning": "Sensación frustrante de incompletitud persistente. Ciclos que no terminan limpiamente. Necesidad de cerrar capítulos pendientes antes de avanzar. La completitud llegará cuando sueltes la necesidad de controlarla.",
+      "arcana": "major"
+    },
+    {
+      "id": "osho-22",
+      "name": "El Maestro (Más Allá del Ego)",
+      "description": "Una presencia luminosa sin forma definida irradia compasión y sabiduría infinitas. El maestro verdadero no enseña, simplemente ES. Ha trascendido completamente el ego y vive desde la totalidad. No hay alguien que maestree, solo hay maestría pura manifestándose.",
+      "keywords": ["maestría absoluta", "trascendencia del ego", "sabiduría encarnada", "compasión infinita", "ser sin esfuerzo", "presencia total"],
+      "uprightMeaning": "Momento de tocar tu maestría interior más allá del ego. Acceso a sabiduría profunda que no viene del aprendizaje sino del ser. Capacidad de responder a la vida desde totalidad, no desde fragmentación. Compasión natural que fluye cuando el ego se disuelve. No eres maestro, eres maestría manifestándose. Simplemente sé.",
+      "reversedMeaning": "Ego espiritual que se cree iluminado. Falsa maestría construida sobre conocimiento intelectual. Necesidad de humildad genuina en el camino. La verdadera maestría no proclama, simplemente es.",
+      "arcana": "major"
+    }
+  ]
+}

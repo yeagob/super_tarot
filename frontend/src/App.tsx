@@ -100,7 +100,10 @@ function App() {
             <aside className="lg:col-span-3 space-y-4 sm:space-y-6">
               {selectedDeck && (
                 <>
-                  <DeckDisplay deck={selectedDeck} />
+                  <DeckDisplay
+                    deck={selectedDeck}
+                    placedCardIds={placedCards.map(c => c.card?.id || c.cardId)}
+                  />
 
                   <ReadingDisplay
                     reading={reading}
