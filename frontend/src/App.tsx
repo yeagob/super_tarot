@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DeckSelector } from './components/DeckSelector';
@@ -39,9 +40,21 @@ function App() {
         {/* Header */}
         <header className="border-b border-tarot-gold/20 bg-tarot-navy/40 backdrop-blur-md sticky top-0 z-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-tarot-gold mb-1 sm:mb-2">
-              🌙 Super Tarot
-            </h1>
+            <div className="flex justify-between items-center mb-2">
+              <div className="flex-1"></div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-tarot-gold">
+                🌙 Super Tarot
+              </h1>
+              <div className="flex-1 flex justify-end">
+                <Link
+                  to="/editor"
+                  className="px-3 sm:px-4 py-2 bg-tarot-accent/80 hover:bg-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 text-xs sm:text-sm flex items-center gap-2"
+                >
+                  <span>🛠️</span>
+                  <span className="hidden sm:inline">Editor</span>
+                </Link>
+              </div>
+            </div>
             <p className="text-center text-tarot-silver/80 text-sm sm:text-base">
               Lecturas Místicas con Inteligencia Artificial
             </p>
