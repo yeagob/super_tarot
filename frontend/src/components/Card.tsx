@@ -24,7 +24,7 @@ const deckNames: { [key: string]: string } = {
   'tarot-osho': 'Osho Zen'
 };
 
-export const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps> = React.memo(({
   card,
   deckId,
   isRevealed,
@@ -41,21 +41,37 @@ export const Card: React.FC<CardProps> = ({
   const [showDetails, setShowDetails] = useState(false);
   const [isLoadingImage, setIsLoadingImage] = useState(false);
 
-  // Generar imagen inmediatamente al crear la carta
+  // Generar imagen inmediatamente al crear la carta (solo una vez)
   useEffect(() => {
-    if (!imageUrl && !isLoadingImage) {
+    let isMounted = true;
+
+    const loadImage = async () => {
+      if (isLoadingImage) return; // Prevenir llamadas múltiples
+
       setIsLoadingImage(true);
-      api.getCardPlaceholder(deckId, card.id)
-        .then(data => {
+      try {
+        const data = await api.getCardPlaceholder(deckId, card.id);
+        if (isMounted) {
           setImageUrl(data.imageUrl);
+        }
+      } catch (err) {
+        console.error('Error loading card image:', err);
+      } finally {
+        if (isMounted) {
           setIsLoadingImage(false);
-        })
-        .catch(err => {
-          console.error('Error loading card image:', err);
-          setIsLoadingImage(false);
-        });
+        }
+      }
+    };
+
+    if (!imageUrl) {
+      loadImage();
     }
-  }, [card.id, deckId, imageUrl, isLoadingImage]);
+
+    return () => {
+      isMounted = false;
+    };
+    // Solo card.id y deckId como dependencias - NO imageUrl ni isLoadingImage
+  }, [card.id, deckId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const cardStyle: React.CSSProperties = {
     width: '120px',
@@ -157,4 +173,4 @@ export const Card: React.FC<CardProps> = ({
       )}
     </div>
   );
-};
+});

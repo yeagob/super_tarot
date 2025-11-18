@@ -6,8 +6,8 @@ import { api } from '../services/api';
 interface DeckDisplayProps {
   deck: TarotDeck;
   placedCardIds: string[]; // IDs de cartas ya colocadas
-  drawnCardIds: string[]; // IDs de cartas ya sacadas (no pueden volver a salir)
-  onMarkCardAsDrawn: (cardId: string) => void;
+  drawnCardIds: { [deckId: string]: string[] }; // IDs de cartas ya sacadas por mazo
+  onMarkCardAsDrawn: (deckId: string, cardId: string) => void;
 }
 
 // Interfaz para cartas con ID único
@@ -27,8 +27,8 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
   const [isDrawing, setIsDrawing] = useState(false);
   const [nextId, setNextId] = useState(0);
 
-  // Calcular cartas restantes
-  const remainingCardsCount = deck.cards.length - drawnCardIds.length;
+  // Calcular cartas restantes de este mazo específico
+  const remainingCardsCount = deck.cards.length - (drawnCardIds[deck.id]?.length || 0);
 
   // Generar imagen inmediatamente al sacar carta
   useEffect(() => {
@@ -54,8 +54,9 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
 
     setIsDrawing(true);
     try {
-      // Enviar las cartas ya sacadas para excluirlas
-      const cards = await api.shuffleDeck(deck.id, 1, drawnCardIds);
+      // Enviar las cartas ya sacadas de ESTE mazo específico
+      const excludedCards = drawnCardIds[deck.id] || [];
+      const cards = await api.shuffleDeck(deck.id, 1, excludedCards);
 
       if (cards.length === 0) {
         alert('No quedan más cartas en este mazo.');
@@ -64,8 +65,8 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
       }
 
       const newCards: DrawnCardWithId[] = cards.map(card => {
-        // Marcar carta como sacada
-        onMarkCardAsDrawn(card.id);
+        // Marcar carta como sacada de este mazo
+        onMarkCardAsDrawn(deck.id, card.id);
 
         return {
           card,

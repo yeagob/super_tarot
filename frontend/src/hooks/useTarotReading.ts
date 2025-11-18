@@ -6,7 +6,8 @@ export const useTarotReading = () => {
   const [selectedDeck, setSelectedDeck] = useState<TarotDeck | null>(null);
   const [selectedSpread, setSelectedSpread] = useState<Spread | null>(null);
   const [placedCards, setPlacedCards] = useState<PlacedCard[]>([]);
-  const [drawnCardIds, setDrawnCardIds] = useState<string[]>([]); // Cartas ya sacadas
+  // Cartas ya sacadas, separadas por mazo: { 'tarot-osho': ['osho-0', 'osho-1'], 'tarot-marsella': ['marsella-1'] }
+  const [drawnCardIds, setDrawnCardIds] = useState<{ [deckId: string]: string[] }>({});
   const [allowReversed, setAllowReversed] = useState(true);
   const [reading, setReading] = useState<string | null>(null);
   const [isLoadingReading, setIsLoadingReading] = useState(false);
@@ -58,12 +59,15 @@ export const useTarotReading = () => {
 
   const clearTable = useCallback(() => {
     setPlacedCards([]);
-    setDrawnCardIds([]); // Resetear cartas sacadas
+    setDrawnCardIds({}); // Resetear cartas sacadas de todos los mazos
     setReading(null);
   }, []);
 
-  const markCardAsDrawn = useCallback((cardId: string) => {
-    setDrawnCardIds(prev => [...prev, cardId]);
+  const markCardAsDrawn = useCallback((deckId: string, cardId: string) => {
+    setDrawnCardIds(prev => ({
+      ...prev,
+      [deckId]: [...(prev[deckId] || []), cardId]
+    }));
   }, []);
 
   const generateReading = useCallback(async () => {

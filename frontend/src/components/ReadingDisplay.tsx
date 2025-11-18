@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
@@ -10,6 +10,13 @@ interface ReadingDisplayProps {
   tableRef?: React.RefObject<HTMLDivElement>;
 }
 
+interface Section {
+  title: string;
+  content: string;
+  icon: string;
+  gradient: string;
+}
+
 export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
   reading,
   isLoading,
@@ -18,47 +25,77 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
   tableRef
 }) => {
   const readingRef = useRef<HTMLDivElement>(null);
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['A']));
+
+  const toggleSection = (key: string) => {
+    setExpandedSections(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(key)) {
+        newSet.delete(key);
+      } else {
+        newSet.add(key);
+      }
+      return newSet;
+    });
+  };
+
+  const expandAll = () => {
+    setExpandedSections(new Set(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']));
+  };
+
+  const collapseAll = () => {
+    setExpandedSections(new Set());
+  };
 
   // Parsear la lectura en secciones
-  const parseReading = (text: string) => {
-    const sections: { [key: string]: string } = {};
-
-    const sectionMarkers = [
-      'A. EXPLICACIÓN DE CADA CARTA',
-      'B. LECTURA INTEGRADA DE LA TIRADA',
-      'C. AFIRMACIÓN',
-      'D. SUGERENCIA DE CANCIÓN',
-      'E. ALTAR - ELEMENTO SIMBÓLICO',
-      'F. MOVIMIENTO SIMBÓLICO',
-      'G. VISUALIZACIÓN',
-      'H. TAPPING',
-      'I. ACTITUD PARA EL DÍA',
-      'J. RECUERDA AGRADECER'
+  const parseReading = (text: string): Section[] => {
+    const sectionDefinitions = [
+      { key: 'A', marker: 'A. EXPLICACIÓN DE CADA CARTA', icon: '🎴', gradient: 'from-purple-600/20 to-indigo-600/20' },
+      { key: 'B', marker: 'B. LECTURA INTEGRADA DE LA TIRADA', icon: '📖', gradient: 'from-blue-600/20 to-cyan-600/20' },
+      { key: 'C', marker: 'C. AFIRMACIÓN', icon: '💫', gradient: 'from-amber-600/20 to-yellow-600/20' },
+      { key: 'D', marker: 'D. SUGERENCIA DE CANCIÓN', icon: '🎵', gradient: 'from-pink-600/20 to-rose-600/20' },
+      { key: 'E', marker: 'E. ALTAR - ELEMENTO SIMBÓLICO', icon: '🕯️', gradient: 'from-orange-600/20 to-red-600/20' },
+      { key: 'F', marker: 'F. MOVIMIENTO SIMBÓLICO', icon: '💃', gradient: 'from-teal-600/20 to-green-600/20' },
+      { key: 'G', marker: 'G. VISUALIZACIÓN', icon: '🧘', gradient: 'from-violet-600/20 to-purple-600/20' },
+      { key: 'H', marker: 'H. TAPPING', icon: '👆', gradient: 'from-sky-600/20 to-blue-600/20' },
+      { key: 'I', marker: 'I. ACTITUD PARA EL DÍA', icon: '🌅', gradient: 'from-rose-600/20 to-pink-600/20' },
+      { key: 'J', marker: 'J. RECUERDA AGRADECER', icon: '🙏', gradient: 'from-emerald-600/20 to-teal-600/20' }
     ];
 
-    let currentSection = '';
+    const sections: Section[] = [];
+    let currentIndex = -1;
     let currentContent = '';
 
     const lines = text.split('\n');
 
     for (const line of lines) {
-      const matchedSection = sectionMarkers.find(marker =>
-        line.includes(marker) || line.includes(marker.replace('##', '').trim())
+      const matchedDef = sectionDefinitions.find(def =>
+        line.includes(def.marker) || line.includes(def.marker.replace('##', '').trim())
       );
 
-      if (matchedSection) {
-        if (currentSection) {
-          sections[currentSection] = currentContent.trim();
+      if (matchedDef) {
+        if (currentIndex >= 0) {
+          sections.push({
+            title: sectionDefinitions[currentIndex].marker.replace(/^[A-J]\.\s*/, '').trim(),
+            content: currentContent.trim(),
+            icon: sectionDefinitions[currentIndex].icon,
+            gradient: sectionDefinitions[currentIndex].gradient
+          });
         }
-        currentSection = matchedSection;
+        currentIndex = sectionDefinitions.indexOf(matchedDef);
         currentContent = '';
       } else {
         currentContent += line + '\n';
       }
     }
 
-    if (currentSection) {
-      sections[currentSection] = currentContent.trim();
+    if (currentIndex >= 0) {
+      sections.push({
+        title: sectionDefinitions[currentIndex].marker.replace(/^[A-J]\.\s*/, '').trim(),
+        content: currentContent.trim(),
+        icon: sectionDefinitions[currentIndex].icon,
+        gradient: sectionDefinitions[currentIndex].gradient
+      });
     }
 
     return sections;
@@ -93,11 +130,16 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
       pdf.text(fecha, pageWidth / 2, yPosition, { align: 'center' });
       yPosition += 15;
 
-      // Capturar imagen de la tirada si existe
+      // Capturar imagen de la tirada si existe (esperar a que cargue)
       if (tableRef?.current) {
+        // Esperar 500ms para que las imágenes se carguen
+        await new Promise(resolve => setTimeout(resolve, 500));
+
         const tableCanvas = await html2canvas(tableRef.current, {
           backgroundColor: '#1a0033',
-          scale: 2
+          scale: 2,
+          useCORS: true,
+          allowTaint: true
         });
         const tableImgData = tableCanvas.toDataURL('image/png');
         const imgWidth = pageWidth - 20;
@@ -120,7 +162,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
       const margin = 15;
       const maxWidth = pageWidth - (margin * 2);
 
-      for (const [title, content] of Object.entries(sections)) {
+      for (const section of sections) {
         // Título de sección
         if (yPosition > pageHeight - 30) {
           pdf.addPage();
@@ -130,8 +172,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
         pdf.setFont('helvetica', 'bold');
         pdf.setFontSize(12);
         pdf.setTextColor(74, 20, 140);
-        const titleText = title.replace(/^[A-J]\.\s*/, '').replace('##', '').trim();
-        pdf.text(titleText, margin, yPosition);
+        pdf.text(`${section.icon} ${section.title}`, margin, yPosition);
         yPosition += 8;
 
         // Contenido de sección
@@ -139,7 +180,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
         pdf.setFontSize(10);
         pdf.setTextColor(60, 60, 60);
 
-        const lines = pdf.splitTextToSize(content, maxWidth);
+        const lines = pdf.splitTextToSize(section.content, maxWidth);
         for (const line of lines) {
           if (yPosition > pageHeight - 20) {
             pdf.addPage();
@@ -187,10 +228,10 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
     }
   };
 
-  const sections = reading ? parseReading(reading) : {};
+  const sections = reading ? parseReading(reading) : [];
 
   return (
-    <div className="reading-display">
+    <div className="reading-display w-full">
       <div className="mb-3 sm:mb-4">
         <button
           onClick={onGenerate}
@@ -201,7 +242,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
         </button>
       </div>
 
-      {!canGenerate && (
+      {!canGenerate && !reading && (
         <div className="p-3 sm:p-4 bg-tarot-gold/10 border border-tarot-gold/30 rounded-xl">
           <p className="text-tarot-gold/90 text-xs sm:text-sm">
             ⚠️ Coloca al menos una carta en el tapete y revélala para generar una lectura.
@@ -210,90 +251,160 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
       )}
 
       {reading && (
-        <div ref={readingRef} className="mt-3 sm:mt-4 animate-fade-in">
-          {/* Botones de exportación */}
-          <div className="mb-3 sm:mb-4 grid grid-cols-2 sm:flex gap-2">
+        <div ref={readingRef} className="mt-6 sm:mt-8 animate-fade-in">
+          {/* Título místico */}
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-block">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-tarot-gold via-tarot-accent to-tarot-gold mb-2 animate-pulse-slow">
+                ✨ Tu Lectura de Tarot ✨
+              </h2>
+              <div className="h-1 bg-gradient-to-r from-transparent via-tarot-gold to-transparent rounded-full"></div>
+            </div>
+            <p className="mt-3 text-sm sm:text-base text-tarot-silver/80 italic">
+              {new Date().toLocaleDateString('es-ES', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })}
+            </p>
+          </div>
+
+          {/* Botones de acción */}
+          <div className="mb-6 flex flex-wrap gap-2 justify-center">
             <button
-              onClick={handleExportPDF}
-              className="px-3 py-2 bg-mystic-bronze/80 hover:bg-mystic-bronze text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
-              title="Descargar como PDF"
+              onClick={expandAll}
+              className="px-3 py-2 bg-tarot-accent/80 hover:bg-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 text-sm"
             >
-              <span>📄</span>
-              <span className="hidden sm:inline">PDF</span>
+              <span>📂</span>
+              <span>Expandir Todo</span>
             </button>
             <button
-              onClick={handleShareEmail}
-              className="px-3 py-2 bg-mystic-blue/80 hover:bg-mystic-blue text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
-              title="Compartir por Email"
+              onClick={collapseAll}
+              className="px-3 py-2 bg-tarot-purple/80 hover:bg-tarot-purple text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 text-sm"
             >
-              <span>📧</span>
-              <span className="hidden sm:inline">Email</span>
+              <span>📁</span>
+              <span>Contraer Todo</span>
+            </button>
+            <button
+              onClick={handleExportPDF}
+              className="px-3 py-2 bg-mystic-bronze/80 hover:bg-mystic-bronze text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 text-sm"
+            >
+              <span>📄</span>
+              <span>Descargar PDF</span>
             </button>
             <button
               onClick={handleShareWhatsApp}
-              className="px-3 py-2 bg-mystic-teal/80 hover:bg-mystic-teal text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
-              title="Compartir por WhatsApp"
+              className="px-3 py-2 bg-mystic-teal/80 hover:bg-mystic-teal text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 text-sm"
             >
               <span>💬</span>
-              <span className="hidden sm:inline">WhatsApp</span>
+              <span>WhatsApp</span>
             </button>
             <button
               onClick={handleCopyToClipboard}
-              className="px-3 py-2 bg-tarot-accent/80 hover:bg-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
-              title="Copiar al portapapeles"
+              className="px-3 py-2 bg-mystic-blue/80 hover:bg-mystic-blue text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 text-sm"
             >
               <span>📋</span>
-              <span className="hidden sm:inline">Copiar</span>
+              <span>Copiar</span>
             </button>
           </div>
 
-          {/* Contenido de la lectura */}
-          <div className="p-4 sm:p-6 bg-gradient-card border-2 border-tarot-gold/20 rounded-xl shadow-mystic-lg">
-            <h3 className="text-2xl sm:text-3xl font-bold text-tarot-gold mb-4 sm:mb-6 text-center flex items-center justify-center gap-2 sm:gap-3">
-              <span>✨</span>
-              <span>Tu Lectura de Tarot</span>
-              <span>✨</span>
-            </h3>
+          {/* Secciones colapsables */}
+          <div className="space-y-3 sm:space-y-4">
+            {sections.map((section, index) => {
+              const sectionKey = String.fromCharCode(65 + index); // A, B, C...
+              const isExpanded = expandedSections.has(sectionKey);
 
-            <div className="space-y-6">
-              {Object.entries(sections).map(([title, content], index) => {
-                const cleanTitle = title.replace(/^[A-J]\.\s*/, '').replace('##', '').trim();
-                const icon = ['🎴', '📖', '💫', '🎵', '🕯️', '💃', '🧘', '👆', '🌅', '🙏'][index] || '✨';
+              return (
+                <div
+                  key={sectionKey}
+                  className={`group bg-gradient-to-br ${section.gradient} backdrop-blur-sm border-2 border-tarot-gold/30 rounded-xl overflow-hidden transition-all duration-500 ${
+                    isExpanded ? 'shadow-mystic-lg' : 'shadow-mystic hover:shadow-mystic-lg'
+                  }`}
+                >
+                  {/* Header (siempre visible) */}
+                  <button
+                    onClick={() => toggleSection(sectionKey)}
+                    className="w-full px-4 sm:px-6 py-4 flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+                  >
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300">
+                        {section.icon}
+                      </div>
+                      <div className="text-left">
+                        <div className="text-xs sm:text-sm text-tarot-silver/60 font-semibold">
+                          Sección {sectionKey}
+                        </div>
+                        <h3 className="text-base sm:text-lg lg:text-xl font-bold text-tarot-gold group-hover:text-tarot-accent transition-colors duration-300">
+                          {section.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="text-2xl sm:text-3xl text-tarot-gold/80 transform transition-transform duration-300">
+                      {isExpanded ? '▲' : '▼'}
+                    </div>
+                  </button>
 
-                return (
-                  <div key={title} className="bg-black/20 rounded-lg p-4 border border-tarot-gold/20">
-                    <h4 className="text-xl font-bold text-tarot-gold mb-3 flex items-center gap-2">
-                      <span>{icon}</span>
-                      <span>{cleanTitle}</span>
-                    </h4>
-                    <div className="prose prose-invert max-w-none">
-                      {content.split('\n').map((paragraph, pIndex) => (
-                        paragraph.trim() && (
-                          <p key={pIndex} className="text-gray-200 mb-2 leading-relaxed">
-                            {paragraph}
-                          </p>
-                        )
-                      ))}
+                  {/* Contenido colapsable */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${
+                      isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-4 sm:px-6 pb-5 sm:pb-6">
+                      <div className="h-px bg-gradient-to-r from-transparent via-tarot-gold/30 to-transparent mb-4"></div>
+                      <div className="prose prose-invert max-w-none">
+                        {section.content.split('\n').map((paragraph, pIndex) => {
+                          const trimmed = paragraph.trim();
+                          if (!trimmed) return null;
+
+                          // Detectar bullets/listas
+                          if (trimmed.startsWith('-') || trimmed.startsWith('•') || trimmed.startsWith('*')) {
+                            return (
+                              <div key={pIndex} className="flex gap-3 mb-3 text-gray-200">
+                                <span className="text-tarot-gold mt-1">✧</span>
+                                <p className="leading-relaxed">{trimmed.substring(1).trim()}</p>
+                              </div>
+                            );
+                          }
+
+                          // Detectar headers (con **)
+                          if (trimmed.includes('**')) {
+                            const text = trimmed.replace(/\*\*/g, '');
+                            return (
+                              <h4 key={pIndex} className="text-tarot-accent font-bold text-lg mb-2 mt-4">
+                                {text}
+                              </h4>
+                            );
+                          }
+
+                          return (
+                            <p key={pIndex} className="text-gray-200 mb-3 leading-relaxed text-sm sm:text-base">
+                              {trimmed}
+                            </p>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
+          </div>
 
-            <div className="mt-6 pt-4 border-t border-tarot-gold/30 text-center">
-              <p className="text-sm text-gray-400 italic">
-                Generado con amor por IA • {new Date().toLocaleDateString('es-ES', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
-              </p>
-              <p className="text-xs text-gray-500 mt-2">
-                Super Tarot - Conectando con tu sabiduría interior
-              </p>
-            </div>
+          {/* Footer místico */}
+          <div className="mt-8 sm:mt-10 p-6 bg-gradient-to-r from-tarot-dark/50 via-tarot-navy/50 to-tarot-dark/50 rounded-xl border border-tarot-gold/20 text-center">
+            <p className="text-tarot-gold font-semibold mb-2 text-sm sm:text-base">
+              🌙 Que la sabiduría del Tarot te guíe 🌙
+            </p>
+            <p className="text-xs sm:text-sm text-gray-400 italic">
+              Generado con amor por IA • Super Tarot
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              Conectando con tu sabiduría interior
+            </p>
           </div>
         </div>
       )}

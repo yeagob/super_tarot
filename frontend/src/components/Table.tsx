@@ -85,9 +85,15 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
     if (!tableRef.current) return;
 
     try {
+      // Esperar 1 segundo para que todas las imágenes se carguen completamente
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       const canvas = await html2canvas(tableRef.current, {
         backgroundColor: '#1a0033',
-        scale: 2
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        logging: false
       });
 
       const link = document.createElement('a');
@@ -96,7 +102,7 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
       link.click();
     } catch (error) {
       console.error('Error exporting image:', error);
-      alert('Error al exportar la imagen');
+      alert('Error al exportar la imagen. Asegúrate de que todas las cartas estén reveladas.');
     }
   };
 

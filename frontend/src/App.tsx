@@ -75,8 +75,9 @@ function App() {
               )}
             </aside>
 
-            {/* Center - Table */}
-            <div className="lg:col-span-6 order-first lg:order-none">
+            {/* Center - Table y Lectura */}
+            <div className="lg:col-span-6 order-first lg:order-none space-y-6 sm:space-y-8">
+              {/* Tapete */}
               {selectedDeck ? (
                 <Table
                   ref={tableRef}
@@ -96,27 +97,28 @@ function App() {
                   </div>
                 </div>
               )}
+
+              {/* Lectura (debajo del tapete) */}
+              {selectedDeck && (
+                <ReadingDisplay
+                  reading={reading}
+                  isLoading={isLoadingReading}
+                  onGenerate={generateReading}
+                  canGenerate={placedCards.length > 0 && placedCards.some(c => c.isRevealed)}
+                  tableRef={tableRef}
+                />
+              )}
             </div>
 
             {/* Right Sidebar */}
             <aside className="lg:col-span-3 space-y-4 sm:space-y-6">
               {selectedDeck && (
-                <>
-                  <DeckDisplay
-                    deck={selectedDeck}
-                    placedCardIds={placedCards.map(c => c.card?.id || c.cardId)}
-                    drawnCardIds={drawnCardIds}
-                    onMarkCardAsDrawn={markCardAsDrawn}
-                  />
-
-                  <ReadingDisplay
-                    reading={reading}
-                    isLoading={isLoadingReading}
-                    onGenerate={generateReading}
-                    canGenerate={placedCards.length > 0 && placedCards.some(c => c.isRevealed)}
-                    tableRef={tableRef}
-                  />
-                </>
+                <DeckDisplay
+                  deck={selectedDeck}
+                  placedCardIds={placedCards.map(c => c.card?.id || c.cardId)}
+                  drawnCardIds={drawnCardIds}
+                  onMarkCardAsDrawn={markCardAsDrawn}
+                />
               )}
             </aside>
           </div>

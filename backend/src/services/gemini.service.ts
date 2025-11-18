@@ -41,8 +41,9 @@ CONTEXTO DE LA TIRADA:
 - Mazo utilizado: ${deckId}
 - Tipo de tirada: ${spreadId || 'libre'}
 - Número de cartas: ${cards.length}
+- IMPORTANTE: Las cartas se presentan en ORDEN DE LECTURA: de izquierda a derecha, de arriba hacia abajo. La primera carta listada es la posición superior izquierda, y así sucesivamente.
 
-CARTAS SELECCIONADAS:
+CARTAS SELECCIONADAS (en orden de lectura):
 ${cardsDescription}
 
 Por favor, proporciona una lectura detallada siguiendo EXACTAMENTE esta estructura. Cada sección debe ser rica, profunda y personalizada:
