@@ -147,20 +147,30 @@ export class TarotController {
 
   /**
    * Baraja y obtiene cartas aleatorias de un mazo
+   * Excluye cartas ya sacadas para evitar repeticiones
    */
   shuffleAndDraw = (req: Request, res: Response) => {
     try {
       const { deckId } = req.params;
-      const { count = 1 } = req.body;
+      const { count = 1, excludedCardIds = [] } = req.body;
       const deck = this.decks.get(deckId);
 
       if (!deck) {
         return res.status(404).json({ error: 'Deck not found' });
       }
 
-      // Crear una copia del array de cartas y barajar
-      const shuffled = [...deck.cards].sort(() => Math.random() - 0.5);
-      const drawn = shuffled.slice(0, Math.min(count, deck.cards.length));
+      // Filtrar cartas excluidas
+      const availableCards = deck.cards.filter(card => !excludedCardIds.includes(card.id));
+
+      if (availableCards.length === 0) {
+        return res.json([]); // No hay cartas disponibles
+      }
+
+      // Crear una copia del array de cartas disponibles y barajar
+      const shuffled = [...availableCards].sort(() => Math.random() - 0.5);
+      const drawn = shuffled.slice(0, Math.min(count, availableCards.length));
+
+      console.log(`🎴 Drew ${drawn.length} cards from ${deckId} (${availableCards.length} available)`);
 
       res.json(drawn);
     } catch (error) {

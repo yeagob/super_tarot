@@ -6,6 +6,7 @@ export const useTarotReading = () => {
   const [selectedDeck, setSelectedDeck] = useState<TarotDeck | null>(null);
   const [selectedSpread, setSelectedSpread] = useState<Spread | null>(null);
   const [placedCards, setPlacedCards] = useState<PlacedCard[]>([]);
+  const [drawnCardIds, setDrawnCardIds] = useState<string[]>([]); // Cartas ya sacadas
   const [allowReversed, setAllowReversed] = useState(true);
   const [reading, setReading] = useState<string | null>(null);
   const [isLoadingReading, setIsLoadingReading] = useState(false);
@@ -57,7 +58,12 @@ export const useTarotReading = () => {
 
   const clearTable = useCallback(() => {
     setPlacedCards([]);
+    setDrawnCardIds([]); // Resetear cartas sacadas
     setReading(null);
+  }, []);
+
+  const markCardAsDrawn = useCallback((cardId: string) => {
+    setDrawnCardIds(prev => [...prev, cardId]);
   }, []);
 
   const generateReading = useCallback(async () => {
@@ -85,6 +91,8 @@ export const useTarotReading = () => {
     selectedSpread,
     setSelectedSpread,
     placedCards,
+    drawnCardIds,
+    markCardAsDrawn,
     allowReversed,
     setAllowReversed,
     reading,

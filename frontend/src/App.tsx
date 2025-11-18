@@ -18,6 +18,8 @@ function App() {
     selectedSpread,
     setSelectedSpread,
     placedCards,
+    drawnCardIds,
+    markCardAsDrawn,
     allowReversed,
     setAllowReversed,
     reading,
@@ -103,6 +105,8 @@ function App() {
                   <DeckDisplay
                     deck={selectedDeck}
                     placedCardIds={placedCards.map(c => c.card?.id || c.cardId)}
+                    drawnCardIds={drawnCardIds}
+                    onMarkCardAsDrawn={markCardAsDrawn}
                   />
 
                   <ReadingDisplay

@@ -258,6 +258,7 @@ const PlacedCardWrapper: React.FC<PlacedCardWrapperProps> = ({
         onFlip={onFlip}
         onRemove={onRemove}
         onDownload={onDownload}
+        showDeckName={!placedCard.isRevealed}
       />
     </div>
   );

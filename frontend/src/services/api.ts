@@ -16,11 +16,11 @@ export const api = {
     return response.json();
   },
 
-  async shuffleDeck(deckId: string, count: number = 1): Promise<TarotCard[]> {
+  async shuffleDeck(deckId: string, count: number = 1, excludedCardIds: string[] = []): Promise<TarotCard[]> {
     const response = await fetch(`${API_BASE_URL}/tarot/decks/${deckId}/shuffle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ count })
+      body: JSON.stringify({ count, excludedCardIds })
     });
     if (!response.ok) throw new Error('Failed to shuffle deck');
     return response.json();

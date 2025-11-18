@@ -1,6 +1,12 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { ReadingRequest, ImageGenerationRequest } from '../types';
 
+// Verificar que existe la API Key
+if (!process.env.GEMINI_API_KEY) {
+  console.error('❌ ERROR: GEMINI_API_KEY no está configurada en .env');
+  console.error('📝 Por favor crea el archivo backend/.env con: GEMINI_API_KEY=tu_clave_aqui');
+}
+
 // Inicializar Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -9,8 +15,9 @@ export class GeminiService {
   private imageModel;
 
   constructor() {
-    this.textModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
-    this.imageModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    // Usar modelo estable en lugar de experimental
+    this.textModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    this.imageModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
   }
 
   /**
@@ -139,39 +146,124 @@ La descripción debe ser lo suficientemente detallada como para que un artista p
   }
 
   /**
-   * Genera una URL de placeholder para la imagen de una carta
-   * En producción, esto se reemplazaría con generación real de imágenes
+   * Genera una URL de imagen real para una carta usando IA
+   * Usa Pollinations.AI para generar imágenes gratis sin API key
    */
   async getCardImagePlaceholder(deckId: string, cardId: string): Promise<string> {
-    // Generar un color basado en el hash del cardId
-    const hash = cardId.split('').reduce((acc, char) => {
-      return char.charCodeAt(0) + ((acc << 5) - acc);
-    }, 0);
+    try {
+      // Obtener información de la carta para generar un prompt descriptivo
+      const cardInfo = await this.getCardInfo(deckId, cardId);
 
-    const hue = Math.abs(hash % 360);
-    const saturation = 60 + (Math.abs(hash) % 20);
-    const lightness = 40 + (Math.abs(hash >> 8) % 20);
+      if (!cardInfo) {
+        return this.generateSVGPlaceholder(cardId);
+      }
 
-    // Crear una imagen placeholder con gradiente
+      // Crear prompt detallado para generación de imagen
+      const imagePrompt = this.createImagePrompt(deckId, cardInfo);
+
+      // Usar Pollinations.AI para generar imagen (GRATIS, sin API key)
+      const encodedPrompt = encodeURIComponent(imagePrompt);
+      const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=400&height=600&seed=${this.hashCode(cardId)}&nologo=true`;
+
+      console.log(`🎨 Generating image for ${cardInfo.name}: ${imageUrl.substring(0, 100)}...`);
+
+      return imageUrl;
+    } catch (error) {
+      console.error('Error generating card image:', error);
+      return this.generateSVGPlaceholder(cardId);
+    }
+  }
+
+  /**
+   * Obtiene información de una carta específica
+   */
+  private async getCardInfo(deckId: string, cardId: string): Promise<any> {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+
+      const deckFiles: { [key: string]: string } = {
+        'tarot-marsella': 'tarot-marsella.json',
+        'tarot-angeles': 'tarot-angeles.json',
+        'tarot-diosas': 'tarot-diosas.json',
+        'tarot-osho': 'tarot-osho.json'
+      };
+
+      const fileName = deckFiles[deckId];
+      if (!fileName) return null;
+
+      const filePath = path.join(__dirname, '../data', fileName);
+      const data = fs.readFileSync(filePath, 'utf-8');
+      const deck = JSON.parse(data);
+
+      return deck.cards.find((c: any) => c.id === cardId);
+    } catch (error) {
+      console.error('Error reading card info:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Crea un prompt optimizado para generación de imagen de tarot
+   */
+  private createImagePrompt(deckId: string, cardInfo: any): string {
+    const deckStyles: { [key: string]: string } = {
+      'tarot-marsella': 'traditional Marseille tarot card style, medieval art, vintage engraving',
+      'tarot-angeles': 'ethereal angel tarot card, soft glowing light, celestial atmosphere, wings and halos',
+      'tarot-diosas': 'goddess tarot card, divine feminine energy, mystical feminine power, sacred symbols',
+      'tarot-osho': 'Zen Osho tarot card, meditative spiritual art, consciousness and awareness, modern mystical'
+    };
+
+    const styleGuide = deckStyles[deckId] || 'mystical tarot card art';
+
+    // Crear prompt conciso pero descriptivo
+    const prompt = `${cardInfo.name} tarot card, ${styleGuide}, ${cardInfo.keywords.slice(0, 3).join(', ')}, ornate border, symbolic imagery, professional tarot card design, high quality illustration`;
+
+    return prompt;
+  }
+
+  /**
+   * Genera hash numérico estable desde string
+   */
+  private hashCode(str: string): number {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return Math.abs(hash);
+  }
+
+  /**
+   * Genera SVG placeholder como fallback
+   */
+  private generateSVGPlaceholder(cardId: string): string {
+    const hash = this.hashCode(cardId);
+    const hue = hash % 360;
+    const saturation = 60 + (hash % 20);
+    const lightness = 40 + ((hash >> 8) % 20);
+
     const color1 = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
     const color2 = `hsl(${(hue + 30) % 360}, ${saturation}%, ${lightness + 10}%)`;
 
-    // Retornar SVG como data URL
     const svg = `
       <svg width="200" height="350" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="grad${cardId}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="grad-${cardId}" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style="stop-color:${color1};stop-opacity:1" />
             <stop offset="100%" style="stop-color:${color2};stop-opacity:1" />
           </linearGradient>
         </defs>
-        <rect width="200" height="350" fill="url(#grad${cardId})" rx="10"/>
-        <rect x="10" y="10" width="180" height="330" fill="none" stroke="gold" stroke-width="2" rx="5"/>
-        <text x="100" y="180" font-family="serif" font-size="16" fill="white" text-anchor="middle">
+        <rect width="200" height="350" fill="url(#grad-${cardId})" rx="10"/>
+        <text x="100" y="175" font-size="24" fill="white" text-anchor="middle" font-family="serif">
+          🌙
+        </text>
+        <text x="100" y="210" font-size="12" fill="white" text-anchor="middle" font-family="serif" opacity="0.8">
           ${cardId}
         </text>
       </svg>
-    `.trim();
+    `;
 
     return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
   }
