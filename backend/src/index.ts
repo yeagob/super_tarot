@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import tarotRoutes from './routes/tarot.routes';
 import geminiRoutes from './routes/gemini.routes';
+import musicRoutes from './routes/music.routes';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Routes
 app.use('/api/tarot', tarotRoutes);
 app.use('/api/gemini', geminiRoutes);
+app.use('/api/music', musicRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

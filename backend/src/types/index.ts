@@ -59,3 +59,34 @@ export interface ImageGenerationRequest {
   cardName: string;
   description: string;
 }
+
+// Music Generation Types
+export interface MusicStyle {
+  id: string;
+  name: string;
+  prompt: string;
+}
+
+export interface SongGenerationRequest {
+  readingSummary: string;
+  styleId: string;
+  customPrompt?: string;
+}
+
+export interface SongLyricsResponse {
+  lyrics: string;
+  style: string;
+  stylePrompt: string;
+}
+
+export interface SongGenerationResponse {
+  id: string;
+  title: string;
+  lyrics: string;
+  audioUrl?: string;
+  videoUrl?: string;
+  imageUrl?: string;
+  style: string;
+  status: 'pending' | 'generating' | 'completed' | 'failed';
+  createdAt: string;
+}
