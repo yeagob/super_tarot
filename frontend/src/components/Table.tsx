@@ -1,5 +1,5 @@
 import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react';
-import { useDrop } from 'react-dnd';
+import { useDrop, useDrag } from 'react-dnd';
 import { PlacedCard, DragItem, Spread, TarotCard } from '../types';
 import { Card } from './Card';
 import html2canvas from 'html2canvas';
@@ -123,10 +123,10 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
 
   return (
     <div className="relative">
-      <div className="mb-4 flex justify-end">
+      <div className="mb-3 sm:mb-4 flex justify-end">
         <button
           onClick={handleExportImage}
-          className="px-4 py-2 bg-tarot-gold text-tarot-dark font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
+          className="px-3 sm:px-4 py-2 bg-tarot-gold/90 text-tarot-dark font-semibold rounded-lg hover:bg-tarot-gold shadow-mystic hover:shadow-mystic-lg transition-all duration-300 text-sm sm:text-base"
         >
           📸 Exportar Tirada
         </button>
@@ -137,9 +137,9 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
           tableRef.current = node;
           drop(node);
         }}
-        className={`relative w-full h-[600px] bg-gradient-to-br from-green-900/20 to-green-800/20 rounded-lg border-4 ${
-          isOver ? 'border-tarot-gold glow' : 'border-tarot-gold/30'
-        } overflow-hidden`}
+        className={`relative w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-gradient-to-br from-mystic-blue/30 to-mystic-teal/20 rounded-xl border-2 ${
+          isOver ? 'border-tarot-gold shadow-glow-gold' : 'border-tarot-gold/20'
+        } overflow-hidden transition-all duration-300 backdrop-blur-sm`}
       >
         {/* Spread positions */}
         {spread && spread.positions.map(position => {
@@ -147,17 +147,17 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
           return (
             <div
               key={position.id}
-              className={`absolute w-[120px] h-[200px] border-2 border-dashed rounded-lg transition-all ${
+              className={`absolute w-[100px] sm:w-[120px] h-[166px] sm:h-[200px] border-2 border-dashed rounded-lg transition-all duration-300 ${
                 isOccupied
-                  ? 'border-green-500/30'
-                  : 'border-yellow-400/50 hover:border-yellow-400'
+                  ? 'border-tarot-accent/30'
+                  : 'border-tarot-gold/40 hover:border-tarot-gold/70'
               }`}
               style={{
-                left: position.x - 60,
-                top: position.y - 100
+                left: position.x - (window.innerWidth < 640 ? 50 : 60),
+                top: position.y - (window.innerWidth < 640 ? 83 : 100)
               }}
             >
-              <div className="absolute -top-6 left-0 right-0 text-center text-xs text-tarot-gold font-semibold">
+              <div className="absolute -top-5 sm:-top-6 left-0 right-0 text-center text-xs text-tarot-gold/90 font-medium">
                 {position.name}
               </div>
             </div>
@@ -180,10 +180,10 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
         ))}
 
         {placedCards.length === 0 && (
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-lg">
-            <div className="text-center">
-              <div className="text-6xl mb-4">🃏</div>
-              <p>Arrastra cartas aquí para comenzar tu tirada</p>
+          <div className="absolute inset-0 flex items-center justify-center text-tarot-silver/50 text-base sm:text-lg">
+            <div className="text-center px-4">
+              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">🃏</div>
+              <p className="text-sm sm:text-base">Arrastra cartas aquí para comenzar tu tirada</p>
             </div>
           </div>
         )}

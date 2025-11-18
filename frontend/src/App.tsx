@@ -33,24 +33,24 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="min-h-screen bg-gradient-to-br from-tarot-dark via-purple-900 to-tarot-dark text-white">
+      <div className="min-h-screen bg-gradient-mystic text-white">
         {/* Header */}
-        <header className="border-b border-tarot-gold/30 bg-black/20 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-6">
-            <h1 className="text-4xl font-bold text-center text-tarot-gold mb-2">
-              🌙 Super Tarot 🌙
+        <header className="border-b border-tarot-gold/20 bg-tarot-navy/40 backdrop-blur-md sticky top-0 z-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-tarot-gold mb-1 sm:mb-2">
+              🌙 Super Tarot
             </h1>
-            <p className="text-center text-gray-300">
-              Lectura de Tarot con Inteligencia Artificial
+            <p className="text-center text-tarot-silver/80 text-sm sm:text-base">
+              Lecturas Místicas con Inteligencia Artificial
             </p>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-12 gap-6">
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
             {/* Left Sidebar */}
-            <aside className="col-span-12 lg:col-span-3 space-y-6">
+            <aside className="lg:col-span-3 space-y-4 sm:space-y-6">
               <DeckSelector
                 selectedDeck={selectedDeck}
                 onSelectDeck={setSelectedDeck}
@@ -74,7 +74,7 @@ function App() {
             </aside>
 
             {/* Center - Table */}
-            <div className="col-span-12 lg:col-span-6">
+            <div className="lg:col-span-6 order-first lg:order-none">
               {selectedDeck ? (
                 <Table
                   ref={tableRef}
@@ -87,17 +87,17 @@ function App() {
                   onRemove={removeCard}
                 />
               ) : (
-                <div className="h-[600px] flex items-center justify-center bg-purple-900/20 rounded-lg border-2 border-dashed border-purple-400/30">
-                  <div className="text-center text-gray-400">
-                    <div className="text-6xl mb-4">🔮</div>
-                    <p className="text-xl">Selecciona un mazo para comenzar</p>
+                <div className="h-[400px] sm:h-[600px] flex items-center justify-center bg-tarot-navy/30 rounded-xl border-2 border-dashed border-tarot-gold/20">
+                  <div className="text-center text-tarot-silver/60">
+                    <div className="text-5xl sm:text-6xl mb-4">🔮</div>
+                    <p className="text-lg sm:text-xl">Selecciona un mazo para comenzar</p>
                   </div>
                 </div>
               )}
             </div>
 
             {/* Right Sidebar */}
-            <aside className="col-span-12 lg:col-span-3 space-y-6">
+            <aside className="lg:col-span-3 space-y-4 sm:space-y-6">
               {selectedDeck && (
                 <>
                   <DeckDisplay deck={selectedDeck} />
@@ -116,8 +116,8 @@ function App() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-tarot-gold/30 bg-black/20 backdrop-blur-sm mt-12">
-          <div className="container mx-auto px-4 py-6 text-center text-gray-400 text-sm">
+        <footer className="border-t border-tarot-gold/10 bg-tarot-navy/30 backdrop-blur-md mt-8 sm:mt-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-tarot-silver/60 text-xs sm:text-sm">
             <p>Super Tarot © 2024 • Powered by Gemini AI</p>
             <p className="mt-2">
               Las lecturas de tarot son para entretenimiento y reflexión personal.

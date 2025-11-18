@@ -35,26 +35,26 @@ export const DeckSelector: React.FC<DeckSelectorProps> = ({ onSelectDeck, select
   };
 
   if (isLoading) {
-    return <div className="text-tarot-gold">Cargando mazos...</div>;
+    return <div className="text-tarot-gold/80 text-sm">Cargando mazos...</div>;
   }
 
   return (
     <div className="deck-selector">
-      <h2 className="text-2xl font-bold text-tarot-gold mb-4">Selecciona un Mazo</h2>
-      <div className="grid grid-cols-2 gap-4">
+      <h2 className="text-xl sm:text-2xl font-bold text-tarot-gold mb-3 sm:mb-4">Selecciona un Mazo</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {decks.map(deck => (
           <button
             key={deck.id}
             onClick={() => handleDeckClick(deck.id)}
-            className={`p-4 rounded-lg border-2 transition-all ${
+            className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 ${
               selectedDeck?.id === deck.id
-                ? 'border-tarot-gold bg-tarot-purple/50 glow'
-                : 'border-purple-400/30 bg-purple-900/20 hover:border-tarot-gold/50'
+                ? 'border-tarot-gold bg-gradient-card shadow-mystic-lg'
+                : 'border-tarot-gold/20 bg-tarot-navy/40 hover:border-tarot-gold/50 hover:shadow-mystic'
             }`}
           >
-            <h3 className="text-lg font-semibold text-white mb-2">{deck.name}</h3>
-            <p className="text-sm text-gray-300">{deck.description}</p>
-            <p className="text-xs text-tarot-gold mt-2">{deck.cardCount} cartas</p>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">{deck.name}</h3>
+            <p className="text-xs sm:text-sm text-tarot-silver/70 line-clamp-2">{deck.description}</p>
+            <p className="text-xs text-tarot-gold/80 mt-2">{deck.cardCount} cartas</p>
           </button>
         ))}
       </div>

@@ -76,7 +76,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
 
       // Título
       pdf.setFontSize(20);
-      pdf.setTextColor(74, 20, 140); // Tarot purple
+      pdf.setTextColor(201, 169, 110); // Tarot gold elegante
       pdf.text('🌙 Lectura de Tarot 🌙', pageWidth / 2, yPosition, { align: 'center' });
       yPosition += 15;
 
@@ -191,31 +191,31 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
 
   return (
     <div className="reading-display">
-      <div className="mb-4">
+      <div className="mb-3 sm:mb-4">
         <button
           onClick={onGenerate}
           disabled={!canGenerate || isLoading}
-          className="w-full px-6 py-4 bg-gradient-to-r from-tarot-gold to-yellow-500 hover:from-yellow-500 hover:to-tarot-gold text-tarot-dark font-bold text-lg rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed glow-hover"
+          className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-tarot-gold to-mystic-bronze hover:from-mystic-bronze hover:to-tarot-gold text-tarot-dark font-bold text-base sm:text-lg rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-mystic hover:shadow-mystic-lg"
         >
           {isLoading ? '🔮 Interpretando...' : '🔮 Leer la Tirada'}
         </button>
       </div>
 
       {!canGenerate && (
-        <div className="p-4 bg-yellow-900/20 border border-yellow-600/30 rounded-lg">
-          <p className="text-yellow-300 text-sm">
+        <div className="p-3 sm:p-4 bg-tarot-gold/10 border border-tarot-gold/30 rounded-xl">
+          <p className="text-tarot-gold/90 text-xs sm:text-sm">
             ⚠️ Coloca al menos una carta en el tapete y revélala para generar una lectura.
           </p>
         </div>
       )}
 
       {reading && (
-        <div ref={readingRef} className="mt-4 animate-fade-in">
+        <div ref={readingRef} className="mt-3 sm:mt-4 animate-fade-in">
           {/* Botones de exportación */}
-          <div className="mb-4 flex flex-wrap gap-2">
+          <div className="mb-3 sm:mb-4 grid grid-cols-2 sm:flex gap-2">
             <button
               onClick={handleExportPDF}
-              className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="px-3 py-2 bg-mystic-bronze/80 hover:bg-mystic-bronze text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
               title="Descargar como PDF"
             >
               <span>📄</span>
@@ -223,7 +223,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
             </button>
             <button
               onClick={handleShareEmail}
-              className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="px-3 py-2 bg-mystic-blue/80 hover:bg-mystic-blue text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
               title="Compartir por Email"
             >
               <span>📧</span>
@@ -231,7 +231,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
             </button>
             <button
               onClick={handleShareWhatsApp}
-              className="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="px-3 py-2 bg-mystic-teal/80 hover:bg-mystic-teal text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
               title="Compartir por WhatsApp"
             >
               <span>💬</span>
@@ -239,7 +239,7 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
             </button>
             <button
               onClick={handleCopyToClipboard}
-              className="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="px-3 py-2 bg-tarot-accent/80 hover:bg-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
               title="Copiar al portapapeles"
             >
               <span>📋</span>
@@ -248,8 +248,8 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
           </div>
 
           {/* Contenido de la lectura */}
-          <div className="p-6 bg-gradient-to-br from-purple-900/40 to-indigo-900/40 border-2 border-tarot-gold rounded-lg">
-            <h3 className="text-3xl font-bold text-tarot-gold mb-6 text-center flex items-center justify-center gap-3">
+          <div className="p-4 sm:p-6 bg-gradient-card border-2 border-tarot-gold/20 rounded-xl shadow-mystic-lg">
+            <h3 className="text-2xl sm:text-3xl font-bold text-tarot-gold mb-4 sm:mb-6 text-center flex items-center justify-center gap-2 sm:gap-3">
               <span>✨</span>
               <span>Tu Lectura de Tarot</span>
               <span>✨</span>
