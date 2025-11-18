@@ -1,23 +1,23 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { ReadingRequest, ImageGenerationRequest } from '../types';
 
 // Verificar que existe la API Key
 if (!process.env.GEMINI_API_KEY) {
   console.error('❌ ERROR: GEMINI_API_KEY no está configurada en .env');
   console.error('📝 Por favor crea el archivo backend/.env con: GEMINI_API_KEY=tu_clave_aqui');
+  console.error('🌐 Obtén tu API key gratis en: https://makersuite.google.com/app/apikey');
 }
 
-// Inicializar Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+// Inicializar Gemini AI con la nueva SDK
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export class GeminiService {
-  private textModel;
-  private imageModel;
+  private model: string;
 
   constructor() {
-    // Usar modelo estable en lugar de experimental
-    this.textModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-    this.imageModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    // Usar modelo estable gemini-2.5-flash (nueva generación)
+    this.model = 'gemini-2.5-flash';
+    console.log(`✅ GeminiService inicializado con modelo: ${this.model}`);
   }
 
   /**
@@ -100,9 +100,11 @@ IMPORTANTE:
 - Personaliza TODO según las cartas específicas de esta tirada
 - Sé específico y práctico en cada sección`;
 
-      const result = await this.textModel.generateContent(prompt);
-      const response = result.response;
-      return response.text();
+      const response = await ai.models.generateContent({
+        model: this.model,
+        contents: prompt
+      });
+      return response.text;
     } catch (error) {
       console.error('Error generating reading:', error);
       throw new Error('Failed to generate tarot reading');
@@ -133,12 +135,14 @@ Proporciona una descripción visual detallada que incluya:
 
 La descripción debe ser lo suficientemente detallada como para que un artista pueda crear la imagen.`;
 
-      const result = await this.textModel.generateContent(prompt);
-      const response = result.response;
+      const response = await ai.models.generateContent({
+        model: this.model,
+        contents: prompt
+      });
 
       // En un escenario real, aquí se llamaría a un servicio de generación de imágenes
       // Por ahora, retornamos la descripción como placeholder
-      return response.text();
+      return response.text;
     } catch (error) {
       console.error('Error generating card image description:', error);
       throw new Error('Failed to generate card image description');
