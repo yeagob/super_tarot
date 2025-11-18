@@ -20,9 +20,24 @@ Una aplicación web completa de lectura de Tarot con **drag & drop**, **interpre
 - **Revelar Cartas**: Haz clic en una carta para revelarla
 - **Voltear Cartas**: Cambia la orientación de una carta revelada
 - **Tooltips Informativos**: Información detallada al pasar el mouse sobre las cartas
-- **Lectura con IA**: Interpretación de la tirada usando Gemini AI
+- **Lectura con IA**: Interpretación profunda de la tirada usando Gemini AI con 10 secciones estructuradas
+- **Generación de Canciones**: Crea canciones personalizadas basadas en tu lectura de tarot
+- **Exportar Lectura**: Descarga tu lectura en PDF, envíala por Email o compártela por WhatsApp
 - **Exportar Tirada**: Descarga una imagen de tu tirada completa
 - **Descargar Cartas**: Descarga cartas individuales
+
+### 🎵 Sistema de Generación de Canciones
+- **Letras con IA**: Genera letras profesionales con Gemini AI basadas en tu lectura
+- **6 Estilos Musicales**:
+  - Balada Pop Cinematográfica
+  - Pop Latino Moderno
+  - Americana/Alt-Country
+  - Lo-Fi Bedroom Pop
+  - Canción de Antorcha de Piano
+  - Gospel-Soul
+- **Integración Suno AI** (opcional): Genera audio/video completo de la canción
+- **Letras Estructuradas**: Verso 1, Coro, Verso 2, Puente, Coro Final
+- **Producción Profesional**: Prompts detallados con especificaciones de BPM, tonalidad, instrumentación
 
 ### 🎨 Diseño
 - Interfaz oscura con temática mística
@@ -37,9 +52,23 @@ Una aplicación web completa de lectura de Tarot con **drag & drop**, **interpre
 backend/
 ├── src/
 │   ├── controllers/     # Lógica de negocio
-│   ├── data/           # Archivos JSON con datos de mazos
+│   │   ├── tarot.controller.ts
+│   │   ├── gemini.controller.ts
+│   │   └── music.controller.ts
+│   ├── data/           # Archivos JSON con datos
+│   │   ├── tarot-marsella.json
+│   │   ├── tarot-angeles.json
+│   │   ├── tarot-diosas.json
+│   │   ├── tarot-8.json
+│   │   ├── spreads.json
+│   │   └── music-styles.json
 │   ├── routes/         # Definición de rutas de la API
-│   ├── services/       # Servicios (Gemini AI)
+│   │   ├── tarot.routes.ts
+│   │   ├── gemini.routes.ts
+│   │   └── music.routes.ts
+│   ├── services/       # Servicios de IA y externos
+│   │   ├── gemini.service.ts
+│   │   └── suno.service.ts
 │   ├── types/          # Tipos TypeScript
 │   └── index.ts        # Punto de entrada
 ```
@@ -82,7 +111,17 @@ PORT=3001
 GEMINI_API_KEY=tu_clave_api_de_gemini_aqui
 NODE_ENV=development
 CORS_ORIGIN=http://localhost:5173
+
+# Configuración de Suno API (Opcional - para generación de audio de canciones)
+SUNO_API_ENABLED=false
+SUNO_API_KEY=tu_clave_api_de_suno_aqui
+SUNO_API_URL=https://api.sunoapi.com/api/v1
 ```
+
+**Nota sobre Suno API:**
+- La generación de letras funciona sin Suno API (solo con Gemini)
+- Si deseas generar audio/video completo, configura `SUNO_API_ENABLED=true` y proporciona tu API key de Suno
+- Obtén una clave API de Suno en [suno.com](https://suno.com) o usa un servicio compatible
 
 ### 3. Configurar el Frontend
 
@@ -142,6 +181,14 @@ npm run preview
 - `POST /api/gemini/image-description` - Generar descripción de imagen de carta
 - `GET /api/gemini/card-placeholder/:deckId/:cardId` - Obtener placeholder de carta
 
+### Generación de Música
+- `GET /api/music/styles` - Obtener todos los estilos musicales disponibles
+- `GET /api/music/styles/:styleId` - Obtener un estilo musical específico
+- `POST /api/music/generate-lyrics` - Generar letras de canción con Gemini AI
+- `POST /api/music/generate-song` - Generar canción completa (letras + audio si Suno está habilitado)
+- `GET /api/music/song/:songId` - Consultar estado de una canción en generación
+- `GET /api/music/suno-status` - Verificar si Suno API está habilitada y configurada
+
 ### Health Check
 - `GET /api/health` - Verificar estado del servidor
 
@@ -172,9 +219,29 @@ Haz clic en cada carta boca abajo para revelarla.
 - **Mover**: Arrastra una carta revelada a otra posición
 
 ### Paso 7: Genera la Lectura
-Haz clic en "🔮 Leer la Tirada" para obtener una interpretación con IA.
+Haz clic en "🔮 Leer la Tirada" para obtener una interpretación con IA que incluye:
+- Explicación de cada carta
+- Lectura integrada de la tirada
+- Afirmación personalizada
+- Sugerencia de canción
+- Elemento simbólico para altar
+- Movimiento simbólico
+- Visualización guiada
+- Técnica de Tapping (EFT)
+- Actitud para el día
+- Recordatorio de gratitud
 
-### Paso 8: Exporta tu Tirada (Opcional)
+### Paso 8: Genera una Canción (Opcional)
+Después de obtener tu lectura, puedes generar una canción personalizada:
+1. Selecciona un estilo musical de los 6 disponibles
+2. El sistema usará Gemini AI para crear letras profesionales basadas en tu lectura
+3. Si Suno API está habilitado, se generará audio/video completo
+4. Descarga o escucha tu canción personalizada
+
+### Paso 9: Exporta tu Lectura y Tirada (Opcional)
+- **Exportar Lectura en PDF**: Descarga tu lectura completa con imagen de la tirada
+- **Compartir por Email**: Envía tu lectura por correo electrónico
+- **Compartir por WhatsApp**: Comparte tu lectura en WhatsApp
 - **Exportar Tirada Completa**: Botón "📸 Exportar Tirada"
 - **Descargar Carta Individual**: Botón ⬇ en cada carta
 
@@ -184,15 +251,18 @@ Haz clic en "🔮 Leer la Tirada" para obtener una interpretación con IA.
 - **Node.js** - Entorno de ejecución
 - **Express** - Framework web
 - **TypeScript** - Tipado estático
-- **Google Generative AI** - Integración con Gemini
+- **Google Generative AI (Gemini)** - Generación de lecturas y letras de canciones
+- **Suno AI API** (opcional) - Generación de audio/video de canciones
 - **CORS** - Manejo de Cross-Origin Resource Sharing
+- **axios** - Cliente HTTP para llamadas a APIs externas
 
 ### Frontend
 - **React 18** - Biblioteca UI
 - **TypeScript** - Tipado estático
 - **Vite** - Build tool y dev server
 - **react-dnd** - Drag and drop
-- **html2canvas** - Captura de pantalla
+- **html2canvas** - Captura de pantalla para PDF
+- **jsPDF** - Generación de documentos PDF
 - **Tailwind CSS** - Estilos
 
 ## 📝 Estructura de Datos
@@ -232,6 +302,39 @@ interface Spread {
 }
 ```
 
+### Estilo Musical
+```typescript
+interface MusicStyle {
+  id: string;
+  name: string;
+  prompt: string; // Especificaciones técnicas (BPM, tonalidad, instrumentación)
+}
+```
+
+### Solicitud de Generación de Canción
+```typescript
+interface SongGenerationRequest {
+  readingSummary: string;  // Resumen de la lectura de tarot
+  styleId: string;         // ID del estilo musical
+  customPrompt?: string;   // Prompt personalizado opcional
+}
+```
+
+### Respuesta de Generación de Canción
+```typescript
+interface SongGenerationResponse {
+  id: string;
+  title: string;
+  lyrics: string;
+  audioUrl?: string;       // URL del audio (si Suno está habilitado)
+  videoUrl?: string;       // URL del video (si Suno está habilitado)
+  imageUrl?: string;       // URL de la imagen (si Suno está habilitado)
+  style: string;
+  status: 'pending' | 'generating' | 'completed' | 'failed';
+  createdAt: string;
+}
+```
+
 ## 🎨 Personalización
 
 ### Agregar un Nuevo Mazo
@@ -253,6 +356,27 @@ En `backend/src/services/gemini.service.ts`, cambia el modelo:
 this.textModel = genAI.getGenerativeModel({ model: 'otro-modelo' });
 ```
 
+### Agregar un Nuevo Estilo Musical
+
+1. Edita `backend/src/data/music-styles.json`
+2. Agrega un nuevo estilo con la estructura:
+```json
+{
+  "id": "mi-estilo-musical",
+  "name": "Nombre del Estilo",
+  "prompt": "Especificaciones técnicas: BPM, tonalidad, instrumentación, mood..."
+}
+```
+3. El sistema lo cargará automáticamente y estará disponible en la API
+
+### Personalizar el Prompt de Generación de Letras
+
+En `backend/src/services/suno.service.ts`, modifica el método `generateSongLyrics` para ajustar:
+- Estructura de las letras (versos, coros, puentes)
+- Tono y voz del narrador
+- Requisitos líricos específicos
+- Longitud y formato
+
 ## 🐛 Solución de Problemas
 
 ### El backend no inicia
@@ -270,6 +394,19 @@ this.textModel = genAI.getGenerativeModel({ model: 'otro-modelo' });
 ### Error al generar lectura
 - Verifica tu clave API de Gemini
 - Revisa que tengas cartas reveladas en el tapete
+
+### Error al generar canciones
+- **Solo letras (sin Suno)**: Verifica tu clave API de Gemini
+- **Con Suno habilitado**:
+  - Verifica que `SUNO_API_ENABLED=true` en `.env`
+  - Confirma que tu clave API de Suno es válida
+  - Revisa la URL de la API de Suno
+  - Consulta los logs del backend para más detalles
+
+### La generación de audio no funciona
+- Verifica que Suno API esté habilitada: `GET /api/music/suno-status`
+- Si solo necesitas letras, usa el endpoint `/api/music/generate-lyrics`
+- El endpoint `/api/music/generate-song` requiere Suno API para audio completo
 
 ## 📄 Licencia
 
@@ -290,9 +427,12 @@ Las contribuciones son bienvenidas. Por favor:
 
 ## 🙏 Agradecimientos
 
-- Google Gemini AI por la generación de interpretaciones
-- Comunidad de React y TypeScript
-- Diseño inspirado en la estética del Tarot tradicional
+- **Google Gemini AI** por la generación de interpretaciones de tarot y letras de canciones
+- **Suno AI** por la plataforma de generación de música con IA
+- Comunidad de **React** y **TypeScript**
+- **react-dnd** por la funcionalidad drag & drop
+- **jsPDF** y **html2canvas** por las capacidades de exportación
+- Diseño inspirado en la estética del Tarot tradicional y la espiritualidad moderna
 
 ---
 
