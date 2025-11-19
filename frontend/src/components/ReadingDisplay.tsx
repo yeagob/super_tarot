@@ -200,15 +200,6 @@ export const ReadingDisplay: React.FC<ReadingDisplayProps> = ({
     }
   };
 
-  // Compartir por Email
-  const handleShareEmail = () => {
-    const subject = encodeURIComponent('Mi Lectura de Tarot');
-    const body = encodeURIComponent(
-      `Lectura de Tarot - ${new Date().toLocaleDateString('es-ES')}\n\n${reading || ''}\n\nGenerado por Super Tarot`
-    );
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-  };
-
   // Compartir por WhatsApp
   const handleShareWhatsApp = () => {
     const text = encodeURIComponent(

@@ -145,7 +145,7 @@ RECUERDA: Esta letra será grabada por cantantes profesionales y debe sonar NATU
         model: this.model,
         contents: prompt
       });
-      const lyrics = response.text;
+      const lyrics = response.text || '';
 
       return {
         lyrics,
@@ -195,7 +195,7 @@ RECUERDA: Esta letra será grabada por cantantes profesionales y debe sonar NATU
         throw new Error(`Suno API error: ${response.status} - ${errorText}`);
       }
 
-      const data = await response.json();
+      const data = await response.json() as any;
 
       // El formato de respuesta varía según el proveedor
       // Esta es una estructura genérica que debe adaptarse

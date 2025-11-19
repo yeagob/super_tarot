@@ -19,8 +19,8 @@ export const CardEditor: React.FC<CardEditorProps> = ({ deckId, card, onBack, on
     keywords: card?.keywords || [],
     uprightMeaning: card?.uprightMeaning || '',
     reversedMeaning: card?.reversedMeaning || '',
-    arcana: card?.arcana || 'major' as 'major' | 'minor',
-    number: card?.number !== undefined ? card.number : null as number | null
+    arcana: (card?.arcana || 'major') as 'major' | 'minor',
+    number: card?.number !== undefined ? card.number : undefined as number | undefined
   });
 
   const [keywordInput, setKeywordInput] = useState('');
@@ -36,7 +36,7 @@ export const CardEditor: React.FC<CardEditorProps> = ({ deckId, card, onBack, on
         keywords: card.keywords,
         uprightMeaning: card.uprightMeaning,
         reversedMeaning: card.reversedMeaning,
-        arcana: card.arcana,
+        arcana: card.arcana || 'major',
         number: card.number
       });
     }
@@ -167,10 +167,10 @@ export const CardEditor: React.FC<CardEditorProps> = ({ deckId, card, onBack, on
               </label>
               <input
                 type="number"
-                value={formData.number !== null ? formData.number : ''}
+                value={formData.number !== undefined ? formData.number : ''}
                 onChange={(e) => setFormData({
                   ...formData,
-                  number: e.target.value ? parseInt(e.target.value) : null
+                  number: e.target.value ? parseInt(e.target.value) : undefined
                 })}
                 placeholder="0"
                 className="w-full px-4 py-2 bg-tarot-dark/50 border border-tarot-gold/30 rounded-lg text-white placeholder-tarot-silver/40 focus:border-tarot-gold focus:outline-none"

@@ -1,4 +1,4 @@
-import React, { useRef, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { useDrop, useDrag } from 'react-dnd';
 import { PlacedCard, DragItem, Spread, TarotCard } from '../types';
 import { Card } from './Card';
@@ -24,7 +24,6 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
   onRemove
 }, ref) => {
   const tableRef = useRef<HTMLDivElement>(null);
-  const [draggedCardId, setDraggedCardId] = useState<string | null>(null);
 
   // Exponer el ref interno al ref externo
   useImperativeHandle(ref, () => tableRef.current as HTMLDivElement);
@@ -119,14 +118,6 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
     }
   };
 
-  const handleCardDragStart = (cardId: string) => {
-    setDraggedCardId(cardId);
-  };
-
-  const handleCardDragEnd = () => {
-    setDraggedCardId(null);
-  };
-
   return (
     <div className="relative">
       <div className="mb-3 sm:mb-4 flex justify-end">
@@ -140,8 +131,10 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
 
       <div
         ref={(node) => {
-          tableRef.current = node;
-          drop(node);
+          if (node) {
+            (tableRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+            drop(node);
+          }
         }}
         className={`relative w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-gradient-to-br from-mystic-blue/30 to-mystic-teal/20 rounded-xl border-2 ${
           isOver ? 'border-tarot-gold shadow-glow-gold' : 'border-tarot-gold/20'
@@ -175,13 +168,10 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
           <PlacedCardWrapper
             key={placedCard.cardId}
             placedCard={placedCard}
-            onDragStart={handleCardDragStart}
-            onDragEnd={handleCardDragEnd}
             onReveal={() => onReveal(placedCard.cardId)}
             onFlip={() => onFlip(placedCard.cardId)}
             onRemove={() => onRemove(placedCard.cardId)}
             onDownload={() => handleDownloadCard(placedCard)}
-            isDragging={draggedCardId === placedCard.cardId}
           />
         ))}
 
@@ -200,24 +190,18 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(({
 
 interface PlacedCardWrapperProps {
   placedCard: PlacedCard;
-  onDragStart: (cardId: string) => void;
-  onDragEnd: () => void;
   onReveal: () => void;
   onFlip: () => void;
   onRemove: () => void;
   onDownload: () => void;
-  isDragging: boolean;
 }
 
 const PlacedCardWrapper: React.FC<PlacedCardWrapperProps> = ({
   placedCard,
-  onDragStart,
-  onDragEnd,
   onReveal,
   onFlip,
   onRemove,
-  onDownload,
-  isDragging
+  onDownload
 }) => {
   const [{ isDraggingThis }, drag] = useDrag<DragItem & { placedCardId: string }, unknown, { isDraggingThis: boolean }>(
     () => ({
@@ -234,14 +218,6 @@ const PlacedCardWrapper: React.FC<PlacedCardWrapperProps> = ({
     }),
     [placedCard]
   );
-
-  React.useEffect(() => {
-    if (isDraggingThis) {
-      onDragStart(placedCard.cardId);
-    } else {
-      onDragEnd();
-    }
-  }, [isDraggingThis, placedCard.cardId, onDragStart, onDragEnd]);
 
   if (!placedCard.card) return null;
 
