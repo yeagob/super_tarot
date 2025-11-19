@@ -90,3 +90,28 @@ export interface SongGenerationResponse {
   status: 'pending' | 'generating' | 'completed' | 'failed';
   createdAt: string;
 }
+
+// Photo Analysis Types
+export interface DetectedCard {
+  position: number;
+  name: string;
+  orientation: 'upright' | 'reversed';
+  confidence: 'high' | 'medium' | 'low';
+}
+
+export interface PhotoAnalysisRequest {
+  imageBase64: string;
+  availableDecks: Array<{
+    id: string;
+    name: string;
+    cards: Array<{ name: string }>;
+  }>;
+}
+
+export interface PhotoAnalysisResponse {
+  detectedDeck: string;
+  deckConfidence: 'high' | 'medium' | 'low';
+  cards: DetectedCard[];
+  reading: string;
+  timestamp: string;
+}

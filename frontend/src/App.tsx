@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -7,11 +7,14 @@ import { SpreadSelector } from './components/SpreadSelector';
 import { DeckDisplay } from './components/DeckDisplay';
 import { Table } from './components/Table';
 import { ReadingDisplay } from './components/ReadingDisplay';
+import { PhotoReadingUploader } from './components/PhotoReadingUploader';
+import { PhotoReadingDisplay } from './components/PhotoReadingDisplay';
 import { Controls } from './components/Controls';
 import { useTarotReading } from './hooks/useTarotReading';
 
 function App() {
   const tableRef = useRef<HTMLDivElement>(null);
+  const [photoAnalysisResult, setPhotoAnalysisResult] = useState<any>(null);
 
   const {
     selectedDeck,
@@ -71,6 +74,11 @@ function App() {
                 onSelectDeck={setSelectedDeck}
               />
 
+              {/* Analizador de Fotos */}
+              <PhotoReadingUploader
+                onAnalysisComplete={setPhotoAnalysisResult}
+              />
+
               {selectedDeck && (
                 <>
                   <SpreadSelector
@@ -119,6 +127,14 @@ function App() {
                   onGenerate={generateReading}
                   canGenerate={placedCards.length > 0 && placedCards.some(c => c.isRevealed)}
                   tableRef={tableRef}
+                />
+              )}
+
+              {/* Lectura desde Foto */}
+              {photoAnalysisResult && (
+                <PhotoReadingDisplay
+                  result={photoAnalysisResult}
+                  onClose={() => setPhotoAnalysisResult(null)}
                 />
               )}
             </div>

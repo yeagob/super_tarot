@@ -1,5 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
-import { ReadingRequest, ImageGenerationRequest } from '../types';
+import { ReadingRequest, ImageGenerationRequest, PhotoAnalysisRequest, PhotoAnalysisResponse } from '../types';
 
 // Verificar que existe la API Key
 if (!process.env.GEMINI_API_KEY) {
@@ -271,6 +271,108 @@ La descripción debe ser lo suficientemente detallada como para que un artista p
     `;
 
     return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
+  }
+
+  /**
+   * Analiza una foto de tirada de tarot usando Gemini Vision
+   * Detecta el mazo, las cartas y genera una lectura completa
+   */
+  async analyzePhotoReading(request: PhotoAnalysisRequest): Promise<PhotoAnalysisResponse> {
+    try {
+      const { imageBase64, availableDecks } = request;
+
+      // Construir lista de mazos y cartas disponibles
+      const decksInfo = availableDecks.map(deck => {
+        const cardNames = deck.cards.map(c => c.name).join(', ');
+        return `**${deck.name}** (ID: ${deck.id})\nCartas: ${cardNames}`;
+      }).join('\n\n');
+
+      const prompt = `Eres un experto en tarot con visión artificial. Analiza esta foto de una tirada de tarot y proporciona una respuesta ESTRUCTURADA en formato JSON.
+
+MAZOS DISPONIBLES:
+${decksInfo}
+
+INSTRUCCIONES:
+1. Identifica qué mazo de tarot se está usando (debe ser uno de los listados arriba)
+2. Detecta todas las cartas visibles en la imagen
+3. Identifica cada carta por su NOMBRE EXACTO (debe coincidir con los nombres listados arriba)
+4. Determina la posición de cada carta (numeradas de izquierda a derecha, arriba a abajo, empezando en 1)
+5. Detecta si cada carta está en posición normal (upright) o invertida (reversed)
+6. Asigna un nivel de confianza: "high" (muy seguro), "medium" (probable), "low" (incierto)
+7. Genera una lectura completa siguiendo la estructura de 10 secciones (A-J) que se usa normalmente
+
+RESPONDE ÚNICAMENTE CON UN JSON con esta estructura EXACTA:
+{
+  "detectedDeck": "tarot-osho",
+  "deckConfidence": "high",
+  "cards": [
+    {
+      "position": 1,
+      "name": "El Loco (Inocencia)",
+      "orientation": "upright",
+      "confidence": "high"
+    },
+    {
+      "position": 2,
+      "name": "La Luna",
+      "orientation": "reversed",
+      "confidence": "medium"
+    }
+  ],
+  "reading": "## A. EXPLICACIÓN DE CADA CARTA\\n[análisis detallado]\\n\\n## B. LECTURA INTEGRADA\\n[...]\\n\\n[continúa con las 10 secciones: A-J]"
+}
+
+IMPORTANTE:
+- El campo "reading" debe contener la lectura COMPLETA con las 10 secciones (A-J) siguiendo exactamente la misma estructura que se usa para lecturas normales
+- Usa SOLO nombres de cartas que aparecen en la lista de mazos disponibles
+- Si no estás seguro del mazo, usa "deckConfidence": "medium" o "low"
+- Si no puedes identificar una carta con certeza, usa "confidence": "low"
+- Responde SOLO con JSON válido, sin texto adicional antes o después`;
+
+      // Llamar a Gemini con visión multimodal
+      const response = await ai.models.generateContent({
+        model: this.model,
+        contents: [
+          {
+            role: 'user',
+            parts: [
+              {
+                text: prompt
+              },
+              {
+                inlineData: {
+                  mimeType: 'image/jpeg',
+                  data: imageBase64
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // Parsear respuesta JSON
+      let jsonText = response.text.trim();
+
+      // Limpiar markdown code blocks si existen
+      if (jsonText.startsWith('```json')) {
+        jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?/g, '');
+      } else if (jsonText.startsWith('```')) {
+        jsonText = jsonText.replace(/```\n?/g, '');
+      }
+
+      const analysisResult = JSON.parse(jsonText);
+
+      return {
+        detectedDeck: analysisResult.detectedDeck,
+        deckConfidence: analysisResult.deckConfidence,
+        cards: analysisResult.cards,
+        reading: analysisResult.reading,
+        timestamp: new Date().toISOString()
+      };
+    } catch (error) {
+      console.error('Error analyzing photo:', error);
+      throw new Error('Failed to analyze photo reading');
+    }
   }
 }
 

@@ -10,4 +10,7 @@ router.post('/reading', geminiController.generateReading);
 router.post('/image-description', geminiController.generateCardImageDescription);
 router.get('/card-placeholder/:deckId/:cardId', geminiController.getCardImagePlaceholder);
 
+// Photo analysis
+router.post('/analyze-photo', geminiController.analyzePhoto);
+
 export default router;

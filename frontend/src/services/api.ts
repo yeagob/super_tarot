@@ -64,5 +64,15 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/gemini/card-placeholder/${deckId}/${cardId}`);
     if (!response.ok) throw new Error('Failed to get card placeholder');
     return response.json();
+  },
+
+  async analyzePhoto(imageBase64: string): Promise<any> {
+    const response = await fetch(`${API_BASE_URL}/gemini/analyze-photo`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ imageBase64 })
+    });
+    if (!response.ok) throw new Error('Failed to analyze photo');
+    return response.json();
   }
 };
