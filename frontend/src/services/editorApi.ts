@@ -1,6 +1,7 @@
 import { TarotCard } from '../types';
+import { API_CONFIG } from '../config/api';
 
-const API_BASE_URL = 'http://localhost:3001/api/editor';
+const API_BASE_URL = API_CONFIG.EDITOR_URL;
 
 export interface DeckSummary {
   id: string;
