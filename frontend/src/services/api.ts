@@ -1,6 +1,7 @@
 import { TarotDeck, TarotCard, Spread, PlacedCard, ReadingResponse } from '../types';
+import { API_CONFIG } from '../config/api';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = API_CONFIG.BASE_URL;
 
 export const api = {
   // Decks

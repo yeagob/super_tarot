@@ -41,6 +41,7 @@ export interface PlacedCard {
   isRevealed: boolean;
   isReversed: boolean;
   imageUrl?: string;
+  card?: TarotCard;
 }
 
 export interface ReadingRequest {

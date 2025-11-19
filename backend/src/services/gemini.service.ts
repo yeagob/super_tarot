@@ -105,7 +105,7 @@ IMPORTANTE:
         model: this.model,
         contents: prompt
       });
-      return response.text;
+      return response.text || '';
     } catch (error) {
       console.error('Error generating reading:', error);
       throw new Error('Failed to generate tarot reading');
@@ -143,7 +143,7 @@ La descripción debe ser lo suficientemente detallada como para que un artista p
 
       // En un escenario real, aquí se llamaría a un servicio de generación de imágenes
       // Por ahora, retornamos la descripción como placeholder
-      return response.text;
+      return response.text || '';
     } catch (error) {
       console.error('Error generating card image description:', error);
       throw new Error('Failed to generate card image description');
@@ -351,7 +351,7 @@ IMPORTANTE:
       });
 
       // Parsear respuesta JSON
-      let jsonText = response.text.trim();
+      let jsonText = (response.text || '').trim();
 
       // Limpiar markdown code blocks si existen
       if (jsonText.startsWith('```json')) {
