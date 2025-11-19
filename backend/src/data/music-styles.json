@@ -1,0 +1,32 @@
+[
+  {
+    "id": "balada-pop-cinematografica",
+    "name": "Balada Pop Cinematográfica con Coro Ascendente",
+    "prompt": "Balada pop cinematográfica moderna, 78 BPM, Fa mayor. Verso íntimo → coro ascendente. Alto femenino, con un belt aireado pero potente en el coro. Letras sobre dejar ir y empezar de nuevo, imágenes del amanecer. Dirigido por piano, cuerdas en vivo (legato), guitarra acústica sutil, toms con reverberación profunda, bajo subgrave cálido. Estructura: Intro (piano/cuerdas), Verso (bajo), Pre (construcción), Coro (himno), Verso 2, Puente (caída al piano + voz), Coro final (más grande), Outro (oleada de cuerdas). Producción: voz limpia al frente, reverberación de placa, saturación de cinta suave."
+  },
+  {
+    "id": "pop-latino",
+    "name": "Pop Latino",
+    "prompt": "Pop latino, 102 BPM, La menor. Mezzo femenina con actitud juguetona; mezcla de español/inglés. Letras: baile nocturno de verano, ambiente de ciudad playera. Instrumentos: guitarra de nylon, congas, bongos, shaker, bajo, plucks de sintetizador brillantes. Estructura: Intro (percusión), Verso, Pre (riser), Coro (hooky), Verso, Puente estilo rap (hablado), Coro. Mezcla: low-end ajustado, agudos nítidos, percusión estéreo."
+  },
+  {
+    "id": "americana-alt-country",
+    "name": "Americana/Alt-Country",
+    "prompt": "Americana/alt-country, 96 BPM, Re mayor. Narrador barítono masculino; micrófono cercano. Letras: mecánico de pueblo pequeño persiguiendo la costa; imágenes vívidas. Instrumentos: guitarra acústica, pedal steel, kit con escobillas, contrabajo, fiddle suave. Estructura: Verso, Verso, Coro, Verso, Puente (línea hablada), Coro. Mezcla: cinta cálida, chirridos naturales, afinación mínima."
+  },
+  {
+    "id": "lofi-bedroom-pop",
+    "name": "Confesional de Lo-Fi Bedroom Pop",
+    "prompt": "Lo-fi bedroom pop, 86 BPM, Do# menor. Tono de susurro suave masculino; confesional íntimo. Letras: textos nocturnos, pequeñas ventanas de apartamentos. Instrumentos: sintetizador desafinado, loop de batería polvoriento, guitarra de coro, piano suave. Estructura: Intro corto, Verso, Coro (discreto), Verso, Puente (hablado/medio cantado), Coro. Mezcla: vinilo crepitante, ruido de la sala, voz mono cercana."
+  },
+  {
+    "id": "cancion-antorcha-piano",
+    "name": "Canción de Antorcha de Piano de Cantautor",
+    "prompt": "Balada de piano de cantautor, 74 BPM, La menor. Tenor masculino; frágil, íntimo. Letras: disculpa y aceptación. Instrumentos: piano con sordina, cuerdas suaves, contrabajo sutil. Estructura: Intro de piano, Verso, Coro (elevación), Verso, Puente (aparte hablado), Coro final (ad-libs susurradas). Mezcla: respiraciones de micrófono cercano, reverberación de placa, compresión mínima."
+  },
+  {
+    "id": "gospel-soul",
+    "name": "Gospel-Soul",
+    "prompt": "Gospel-soul, 92 BPM, Fa mayor. Lead femenina potente con un pequeño coro; llamada y respuesta. Letras: resiliencia, levantarse mutuamente. Instrumentos: piano, órgano B3, stabs de metal, batería en vivo, bajo. Estructura: Intro (tarareo del coro), Verso (lead), Pre (el coro construye), Coro (completo), Verso, Puente (modulación), Coro final con ad-libs. Mezcla: dinámica, handclaps, reverberación de la sala de la iglesia."
+  }
+]

@@ -1,0 +1,227 @@
+{
+  "id": "marsella",
+  "name": "Tarot de Marsella",
+  "description": "El Tarot de Marsella es el mazo más antiguo y tradicional, con raíces en el siglo XV. Sus 22 Arcanos Mayores representan el viaje del alma a través de la vida, desde el Loco hasta el Mundo, simbolizando las experiencias universales del ser humano.",
+  "cards": [
+    {
+      "id": "marsella-0",
+      "name": "El Loco",
+      "description": "El viajero eterno camina al borde del precipicio con total confianza. Lleva un morral con sus experiencias pasadas y un perro blanco lo acompaña, símbolo de su instinto protector. Representa el potencial infinito y la inocencia absoluta antes de comenzar cualquier empresa.",
+      "keywords": ["libertad absoluta", "inocencia", "nuevos comienzos", "espontaneidad", "riesgo", "fe"],
+      "uprightMeaning": "Nuevos comienzos llenos de infinitas posibilidades. Es el momento perfecto para dar un salto de fe y confiar en el universo. Representa la libertad del espíritu que no teme a lo desconocido. Aventura sin límites y potencial sin explotar esperando manifestarse. El camino se abre ante ti.",
+      "reversedMeaning": "Imprudencia peligrosa y riesgos innecesarios que podrían llevarte al desastre. Falta total de dirección y planificación. Decisiones precipitadas sin considerar las consecuencias. Necesidad urgente de ser más cuidadoso y consciente antes de actuar.",
+      "arcana": "major",
+      "number": 0
+    },
+    {
+      "id": "marsella-1",
+      "name": "El Mago",
+      "description": "El maestro alquimista tiene ante él los cuatro elementos sobre su mesa: una copa, una espada, un basto y un pentáculo. Con un brazo apunta al cielo y otro a la tierra, canalizando la energía divina hacia la manifestación material. Posee todas las herramientas necesarias para crear su realidad.",
+      "keywords": ["manifestación", "poder personal", "habilidad", "recursos divinos", "acción consciente", "maestría"],
+      "uprightMeaning": "Poder de manifestación ilimitado a tu disposición. Todas las herramientas y recursos que necesitas están disponibles en este momento. Concentración perfecta y habilidad para convertir ideas en realidad. El universo conspira a tu favor. Momento ideal para tomar acción decisiva y crear tu destino.",
+      "reversedMeaning": "Manipulación de otros para beneficio propio. Mal uso intencional de habilidades y talentos. Falta de energía vital para actuar. Potencial desperdiciado o utilizado para fines egoístas y destructivos. Engaño y charlatanería.",
+      "arcana": "major",
+      "number": 1
+    },
+    {
+      "id": "marsella-2",
+      "name": "La Sacerdotisa",
+      "description": "Sentada entre dos columnas - una blanca y una negra - que representan la dualidad del universo. Sostiene un libro sagrado de conocimiento oculto. El velo detrás de ella separa el mundo visible del invisible. Es la guardiana de los misterios profundos y la sabiduría intuitiva.",
+      "keywords": ["intuición profunda", "misterio sagrado", "sabiduría oculta", "subconsciente", "lo divino femenino", "secretos"],
+      "uprightMeaning": "Sabiduría intuitiva profunda que fluye desde tu interior. Acceso directo al conocimiento oculto del universo. Confía plenamente en tu voz interior y en los mensajes de tus sueños. Los misterios se revelarán en el momento divino perfecto. Conexión poderosa con lo sagrado femenino.",
+      "reversedMeaning": "Secretos que te atormentan y te mantienen en la oscuridad. Información deliberadamente ocultada que necesitas conocer. Desconexión peligrosa de tu intuición natural. Negación consciente de tu sabiduría interior. Superficialidad que te aleja de la verdad profunda.",
+      "arcana": "major",
+      "number": 2
+    },
+    {
+      "id": "marsella-3",
+      "name": "La Emperatriz",
+      "description": "Rodeada de naturaleza exuberante, sentada en su trono con un escudo que muestra el símbolo de Venus. Lleva una corona de doce estrellas representando los meses y ciclos naturales. Es la madre divina, la fuerza creativa de la naturaleza en su máxima expresión de abundancia y fertilidad.",
+      "keywords": ["fertilidad desbordante", "abundancia natural", "creatividad", "maternidad divina", "naturaleza", "crecimiento"],
+      "uprightMeaning": "Abundancia en todas sus formas fluyendo hacia ti. Fertilidad y crecimiento en todos los aspectos de la vida. Creatividad floreciente que se manifiesta bellamente. Conexión profunda y sanadora con la Madre Tierra. Momento perfecto para nutrir proyectos y crear vida nueva.",
+      "reversedMeaning": "Dependencia emocional destructiva hacia otros. Creatividad completamente bloqueada por el miedo. Descuido personal grave o abandono de responsabilidades. Problemas de fertilidad o dificultades para crear. Necesidad urgente de autocuidado y reconexión con la naturaleza.",
+      "arcana": "major",
+      "number": 3
+    },
+    {
+      "id": "marsella-4",
+      "name": "El Emperador",
+      "description": "Sentado firmemente en un trono de piedra, con cetro y orbe que simbolizan su autoridad sobre el mundo material. Su armadura representa la estructura y protección. Las montañas detrás de él muestran su capacidad de crear orden desde el caos. Es el padre arquetípico que gobierna con justicia.",
+      "keywords": ["autoridad justa", "estructura sólida", "control maestro", "estabilidad", "liderazgo sabio", "poder terrenal"],
+      "uprightMeaning": "Liderazgo firme y autoridad respetada por todos. Estructura sólida que proporciona seguridad y estabilidad. Control disciplinado y consciente sobre todas las circunstancias. Poder utilizado con sabiduría, justicia y compasión. Capacidad de crear orden del caos.",
+      "reversedMeaning": "Rigidez excesiva y autoritarismo tiránico. Dominación opresiva que aplasta el espíritu. Abuso cruel del poder o falta completa de disciplina. Padre ausente emocionalmente o autoritario en extremo. Control obsesivo que sofoca la creatividad.",
+      "arcana": "major",
+      "number": 4
+    },
+    {
+      "id": "marsella-5",
+      "name": "El Sumo Sacerdote",
+      "description": "Sentado entre dos pilares del templo sagrado, bendice con una mano mientras sostiene una cruz papal con la otra. Dos acólitos se arrodillan ante él, buscando sabiduría espiritual. Representa la tradición religiosa, la enseñanza sagrada y el puente entre lo divino y lo humano.",
+      "keywords": ["tradición sagrada", "educación espiritual", "conformidad consciente", "sabiduría institucional", "guía divina", "enseñanza"],
+      "uprightMeaning": "Educación espiritual profunda que transforma el alma. Conexión poderosa con la tradición sagrada y ancestral. Búsqueda exitosa de consejo sabio y guía espiritual. Conformidad consciente con valores elevados y principios universales. El maestro interior despierta.",
+      "reversedMeaning": "Rebelión necesaria contra tradiciones opresivas. Cuestionamiento profundo de instituciones corruptas. Dogmatismo ciego que ahoga el espíritu o rechazo total a toda enseñanza. Necesidad urgente de nuevos enfoques espirituales más auténticos.",
+      "arcana": "major",
+      "number": 5
+    },
+    {
+      "id": "marsella-6",
+      "name": "Los Enamorados",
+      "description": "Tres figuras bajo la bendición del ángel: un hombre debe elegir entre dos mujeres que representan diferentes caminos de vida. Esta es la carta de la elección consciente, el amor verdadero y la armonía que surge cuando seguimos el corazón alineado con valores superiores.",
+      "keywords": ["amor verdadero", "elección crucial", "armonía divina", "unión sagrada", "valores alineados", "decisión del corazón"],
+      "uprightMeaning": "Amor verdadero y profundo que trasciende lo físico. Elecciones importantes tomadas con el corazón despierto. Armonía perfecta en las relaciones y valores completamente alineados. Unión de opuestos que se complementan divinamente. Momento crucial de decisión con bendición celestial.",
+      "reversedMeaning": "Desarmonía profunda y dolorosa en las relaciones. Conflicto severo de valores fundamentales. Malas decisiones en el amor basadas en el ego. Desequilibrio destructivo entre parejas. Elecciones que traicionan tu verdadero corazón.",
+      "arcana": "major",
+      "number": 6
+    },
+    {
+      "id": "marsella-7",
+      "name": "El Carro",
+      "description": "Un guerrero victorioso conduce un carro tirado por dos esfinges - una blanca y una negra - que representan fuerzas opuestas. Con una corona de estrellas y armadura celestial, demuestra que la victoria se logra mediante el control maestro de las energías contrarias mediante la voluntad férrea.",
+      "keywords": ["victoria gloriosa", "determinación férrea", "control maestro", "voluntad inquebrantable", "triunfo", "avance"],
+      "uprightMeaning": "Victoria merecida ganada mediante voluntad férrea y determinación. Control magistral sobre todas las fuerzas opuestas. Determinación absolutamente inquebrantable que supera todos los obstáculos. Éxito rotundo en la batalla de la vida. Avance triunfal hacia tus metas.",
+      "reversedMeaning": "Pérdida total de control y dirección en la vida. Agresión completamente descontrolada o pasividad extrema. Fuerzas opuestas que te desgarran internamente. Derrota por falta de voluntad. Necesidad urgente de recuperar el timón de tu vida.",
+      "arcana": "major",
+      "number": 7
+    },
+    {
+      "id": "marsella-8",
+      "name": "La Justicia",
+      "description": "Sentada en su trono con la espada de la verdad en una mano y la balanza del equilibrio en la otra. Sus ojos ven todo con claridad perfecta. Representa la ley cósmica de causa y efecto, donde cada acción recibe su justa consecuencia en el tiempo perfecto.",
+      "keywords": ["equilibrio perfecto", "verdad absoluta", "justicia divina", "karma", "responsabilidad", "equidad"],
+      "uprightMeaning": "Justicia perfecta y equidad absoluta manifestándose. La verdad prevalece sobre todas las mentiras y engaños. Causa y efecto en perfecto balance universal. Responsabilidad aceptada con dignidad y honor. Karma positivo que retorna multiplicado.",
+      "reversedMeaning": "Injusticia flagrante que clama al cielo. Deshonestidad deliberada y corrupta. Evasión cobarde de responsabilidades necesarias. Desequilibrio severo en el trato recibido. Verdad distorsionada o completamente negada. Karma negativo manifestándose.",
+      "arcana": "major",
+      "number": 8
+    },
+    {
+      "id": "marsella-9",
+      "name": "El Ermitaño",
+      "description": "Un anciano sabio camina solo en la noche, iluminando su camino con una lámpara que contiene la estrella de seis puntas de la sabiduría. Su bastón representa la experiencia acumulada. Busca la verdad en las profundidades del silencio y la soledad contemplativa.",
+      "keywords": ["introspección profunda", "sabiduría ancestral", "soledad sagrada", "búsqueda interior", "guía luminosa", "contemplación"],
+      "uprightMeaning": "Búsqueda interior profunda que revela verdades universales. Sabiduría ganada mediante la contemplación solitaria. Guía interior clara que ilumina cada paso del camino. Momento sagrado de retiro necesario para el crecimiento espiritual profundo.",
+      "reversedMeaning": "Aislamiento doloroso y soledad no deseada que deprime. Rechazo obstinado a la ayuda externa ofrecida. Introspección obsesiva que paraliza la acción. Necesidad urgente de reconectar con la comunidad humana.",
+      "arcana": "major",
+      "number": 9
+    },
+    {
+      "id": "marsella-10",
+      "name": "La Rueda de la Fortuna",
+      "description": "La gran rueda cósmica gira eternamente, elevando a algunos mientras otros descienden. Criaturas míticas representan los ciclos de la vida. La esfinge en la cima simboliza el equilibrio y la comprensión del destino. Todo es temporal, todo está en movimiento perpetuo.",
+      "keywords": ["destino divino", "ciclos eternos", "cambio inevitable", "fortuna cambiante", "karma cósmico", "giros del destino"],
+      "uprightMeaning": "Giro positivo y favorable de la fortuna universal. Cambio inevitable hacia la mejora y el crecimiento. Los ciclos naturales traen bendiciones abundantes. Destino favorable manifestándose claramente. Momento de excelente suerte y oportunidades.",
+      "reversedMeaning": "Mala racha de suerte persistente y dolorosa. Resistencia completamente inútil al cambio necesario. Ciclos negativos que se repiten destructivamente. Necesidad de rendirse al flujo natural del destino.",
+      "arcana": "major",
+      "number": 10
+    },
+    {
+      "id": "marsella-11",
+      "name": "La Fuerza",
+      "description": "Una mujer con el símbolo del infinito sobre su cabeza cierra gentilmente la boca de un león. No usa fuerza bruta sino amor y compasión. Representa el triunfo del espíritu sobre la materia, del amor sobre el miedo, de la compasión sobre la agresión.",
+      "keywords": ["coraje interior", "fuerza del amor", "compasión infinita", "autocontrol gentil", "paciencia divina", "dominio espiritual"],
+      "uprightMeaning": "Fuerza interior infinita combinada con compasión profunda. Coraje extraordinario para enfrentar cualquier desafío. Autocontrol perfecto mediante el amor, nunca mediante el miedo. Dominio gentil y amoroso de los instintos más primitivos.",
+      "reversedMeaning": "Inseguridad paralizante y falta total de confianza. Impaciencia destructiva que arruina todo. Debilidad interior profunda o uso brutal de fuerza física. Necesidad urgente de fortalecer el espíritu y el corazón.",
+      "arcana": "major",
+      "number": 11
+    },
+    {
+      "id": "marsella-12",
+      "name": "El Colgado",
+      "description": "Suspendido por un pie de un árbol vivo, con las manos atadas a la espalda, sorprendentemente su rostro muestra paz y serenidad. Un halo dorado rodea su cabeza, indicando iluminación espiritual. La inversión voluntaria trae nueva perspectiva revolucionaria.",
+      "keywords": ["sacrificio sagrado", "nueva perspectiva", "rendición consciente", "suspensión iluminadora", "perspectiva invertida", "sabiduría paradójica"],
+      "uprightMeaning": "Nueva perspectiva completamente revolucionaria mediante la rendición consciente. Sacrificio voluntario que trae sabiduría profunda y trascendente. Suspensión del juicio que revela la verdad oculta. Iluminación espiritual a través de ver el mundo al revés.",
+      "reversedMeaning": "Resistencia terca al cambio de perspectiva necesario. Martirio completamente innecesario y autodestructivo. Estancamiento por negarse obstinadamente a ver diferente. Sacrificio sin sentido ni propósito verdadero.",
+      "arcana": "major",
+      "number": 12
+    },
+    {
+      "id": "marsella-13",
+      "name": "La Muerte",
+      "description": "Un esqueleto con armadura siega todo a su paso con una guadaña implacable. Pero de lo que corta brotan nuevas flores. No es un final sino una transformación absoluta. Lo viejo debe morir completamente para que lo nuevo pueda nacer con toda su fuerza.",
+      "keywords": ["transformación radical", "final necesario", "renacimiento total", "cambio inevitable", "liberación profunda", "muerte del ego"],
+      "uprightMeaning": "Transformación profunda, radical e inevitable en todos los niveles. Finales absolutamente necesarios que permiten nuevos comienzos gloriosos. Cambio radical que libera el espíritu aprisionado. Renacimiento espiritual después de la muerte simbólica del ego.",
+      "reversedMeaning": "Resistencia desesperada e inútil al cambio inevitable. Estancamiento doloroso por miedo paralizante a lo desconocido. Aferrarse patéticamente al pasado muerto. Negación obstinada de la necesidad de transformación profunda.",
+      "arcana": "major",
+      "number": 13
+    },
+    {
+      "id": "marsella-14",
+      "name": "La Templanza",
+      "description": "Un ángel con alas de fuego vierte agua de una copa a otra sin derramar ni una gota. Un pie en tierra y otro en agua, equilibra perfectamente los elementos opuestos. Representa la alquimia divina que transforma y balancea todas las energías en armonía perfecta.",
+      "keywords": ["equilibrio divino", "moderación perfecta", "paciencia infinita", "armonía universal", "alquimia sagrada", "sanación"],
+      "uprightMeaning": "Equilibrio absolutamente perfecto en todas las áreas de la vida. Moderación consciente y amorosa que trae paz profunda. Paciencia infinita con propósito claro y divino. Armonía alquímica perfecta de todos los opuestos. Sanación profunda mediante el balance.",
+      "reversedMeaning": "Desequilibrio destructivo y caótico en todo. Excesos dañinos en todas direcciones. Falta completa de propósito claro. Impaciencia que arruina el proceso de sanación. Mezcla discordante de elementos. Necesidad urgente de moderación.",
+      "arcana": "major",
+      "number": 14
+    },
+    {
+      "id": "marsella-15",
+      "name": "El Diablo",
+      "description": "Una figura demoníaca con alas de murciélago y cuernos domina la escena. Dos figuras humanas están encadenadas a su pedestal, pero las cadenas son flojas - podrían liberarse si quisieran. Representa las ataduras autoimpuestas, las adicciones y el materialismo que esclavizan el alma.",
+      "keywords": ["ataduras autoimpuestas", "adicción destructiva", "materialismo esclavizante", "tentación oscura", "sombra personal", "esclavitud"],
+      "uprightMeaning": "Conciencia dolorosa de las ataduras que tú mismo te has impuesto. Reconocimiento honesto de adicciones y dependencias destructivas. Enfrentamiento necesario con tu sombra personal. Tentación material que esclaviza el espíritu. Llamado urgente a la liberación.",
+      "reversedMeaning": "Liberación gloriosa de las cadenas que te ataban. Ruptura definitiva de adicciones profundamente arraigadas. Recuperación del poder personal robado. Victoria sobre la tentación oscura. Trascendencia del materialismo esclavizante.",
+      "arcana": "major",
+      "number": 15
+    },
+    {
+      "id": "marsella-16",
+      "name": "La Torre",
+      "description": "Un rayo divino golpea la cima de una torre orgullosa, derribando la corona y lanzando a las figuras al vacío. Las estructuras falsas se desmoronan. Es el despertar abrupto, la revelación súbita de la verdad que destruye ilusiones cuidadosamente construidas.",
+      "keywords": ["destrucción necesaria", "revelación súbita", "cambio drástico", "liberación abrupta", "verdad demoledora", "despertar"],
+      "uprightMeaning": "Cambio repentino, dramático y completamente inesperado. Revelación súbita y demoledora de verdades ocultas. Destrucción necesaria de estructuras completamente falsas. Liberación violenta pero necesaria a través del caos. Despertar abrupto a la realidad.",
+      "reversedMeaning": "Intento desesperado de evitar el desastre completamente inevitable. Miedo absolutamente paralizante al cambio necesario. Retraso del inevitable colapso que solo empeora la situación. Negación ciega de señales clarísimas de peligro.",
+      "arcana": "major",
+      "number": 16
+    },
+    {
+      "id": "marsella-17",
+      "name": "La Estrella",
+      "description": "Una mujer desnuda vierte dos jarras de agua - una en el río y otra en la tierra - bajo un cielo lleno de ocho estrellas radiantes. Un pájaro observa desde un árbol. Después de la destrucción de la Torre, viene la esperanza renovada, la fe restaurada y la inspiración divina.",
+      "keywords": ["esperanza eterna", "fe renovada", "inspiración divina", "guía estelar", "serenidad", "renovación espiritual"],
+      "uprightMeaning": "Esperanza radiante e inextinguible que brilla en la oscuridad. Fe completamente renovada en un futuro brillante y promisorio. Inspiración divina que fluye libremente desde el cosmos. Serenidad profunda y paz después de la tormenta devastadora. Guía de las estrellas.",
+      "reversedMeaning": "Desesperanza absoluta y oscuridad del alma. Pérdida completa de fe en el futuro. Desilusión profunda y amarga con la vida. Pesimismo que nubla toda visión. Desconexión dolorosa de la inspiración divina. Necesidad urgente de recuperar la esperanza.",
+      "arcana": "major",
+      "number": 17
+    },
+    {
+      "id": "marsella-18",
+      "name": "La Luna",
+      "description": "Una luna llena con rostro derrama gotas de luz. Dos torres flanquean un camino que se pierde en la distancia. Un cangrejo emerge de las aguas del subconsciente. Dos perros - uno salvaje, uno doméstico - aúllan a la luna. Reino de ilusiones, miedos nocturnos y sueños reveladores.",
+      "keywords": ["ilusión engañosa", "miedo subconsciente", "reino onírico", "intuición confusa", "misterio profundo", "subconsciente"],
+      "uprightMeaning": "Exploración profunda del subconsciente y sus misterios. Intuición potente pero confusa que requiere discernimiento. Ilusiones poderosas que necesitan ser comprendidas, no temidas. Miedos profundos que emergen para ser sanados. Conexión con el mundo de los sueños.",
+      "reversedMeaning": "Liberación bendita de miedos irracionales arraigados. Claridad emergente de la confusión oscura. Verdad finalmente revelada detrás de las ilusiones. Sanación profunda de heridas subconscientes antiguas. Luz de la conciencia en la oscuridad.",
+      "arcana": "major",
+      "number": 18
+    },
+    {
+      "id": "marsella-19",
+      "name": "El Sol",
+      "description": "Un sol radiante brilla intensamente en un cielo despejado. Un niño desnudo cabalga un caballo blanco, simbolizando la inocencia consciente y la alegría pura. Girasoles crecen detrás. Después de la oscuridad lunar, llega la luz solar de la conciencia plena, el éxito radiante y la vitalidad desbordante.",
+      "keywords": ["éxito radiante", "vitalidad desbordante", "alegría pura", "claridad total", "celebración", "iluminación"],
+      "uprightMeaning": "Éxito absolutamente radiante en todos los emprendimientos. Vitalidad desbordante y energía positiva ilimitada. Alegría pura y celebración exuberante de la vida. Claridad total que disipa todas las dudas y sombras. Iluminación solar que todo lo revela.",
+      "reversedMeaning": "Pesimismo que oscurece incluso el día más brillante. Depresión temporal o falta severa de vitalidad. Fracaso doloroso en alcanzar el éxito esperado. Negatividad que apaga la luz interior. Necesidad urgente de reconectar con la alegría innata.",
+      "arcana": "major",
+      "number": 19
+    },
+    {
+      "id": "marsella-20",
+      "name": "El Juicio",
+      "description": "Un ángel toca una trompeta dorada desde las nubes, despertando a los muertos de sus tumbas. Figuras se alzan con los brazos abiertos hacia el cielo. Es el llamado final, el momento de juicio honesto, la evaluación del pasado y el despertar espiritual hacia una vida completamente nueva.",
+      "keywords": ["renacimiento espiritual", "juicio final", "llamado divino", "despertar profundo", "redención", "segunda oportunidad"],
+      "uprightMeaning": "Renacimiento espiritual profundo y transformador. Juicio honesto y compasivo del pasado con absolución divina. Llamado claro y resonante hacia tu propósito superior. Despertar definitivo de la conciencia dormida. Redención bendita y segunda oportunidad gloriosa.",
+      "reversedMeaning": "Autocrítica absolutamente destructiva y despiadada. Juicio excesivo propio y ajeno. Dudas paralizantes sobre tu propósito de vida. Rechazo obstinado del llamado espiritual. Falta de autoevaluación honesta necesaria. Resistencia al renacimiento.",
+      "arcana": "major",
+      "number": 20
+    },
+    {
+      "id": "marsella-21",
+      "name": "El Mundo",
+      "description": "Una figura danzante dentro de una corona de laurel, rodeada por los cuatro evangelistas que representan los cuatro elementos dominados. El viaje del Loco ha culminado en maestría total. Representa la completitud absoluta, la integración perfecta y la celebración del logro supremo.",
+      "keywords": ["completitud absoluta", "logro supremo", "integración total", "éxito completo", "culminación gloriosa", "maestría"],
+      "uprightMeaning": "Completitud absoluta y satisfactoria en todos los niveles. Logro supremo del propósito de vida. Viaje del alma culminado exitosa y gloriosamente. Integración total y perfecta de todas las lecciones aprendidas. Éxito completo que trae paz. Celebración de la maestría alcanzada.",
+      "reversedMeaning": "Falta de cierre frustrante e insatisfactoria. Objetivos importantes quedando dolorosamente incompletos. Retrasos irritantes en la culminación tan esperada. Integración solo parcial de experiencias vitales. Necesidad de completar el ciclo antes de comenzar otro.",
+      "arcana": "major",
+      "number": 21
+    }
+  ]
+}

@@ -1,0 +1,797 @@
+{
+  "id": "tarot-osho",
+  "name": "Tarot Zen de Osho",
+  "description": "El Tarot Zen de Osho es una herramienta trascendental de meditación que refleja el momento presente. Basado en las enseñanzas del místico Osho, este mazo de 79 cartas incluye 23 Arcanos Mayores y 56 Arcanos Menores divididos en cuatro palos: Fuego (acción), Agua (emociones), Nubes (mente) y Arcoíris (físico/material).",
+  "cards": [
+    {
+      "id": "osho-0",
+      "name": "El Loco (Inocencia)",
+      "description": "Una figura danza al borde del precipicio con alegría absoluta, totalmente presente en el momento.",
+      "keywords": ["inocencia", "presente", "confianza", "espontaneidad", "libertad", "comienzo"],
+      "uprightMeaning": "Momento de inocencia total y confianza en la existencia. Libertad de vivir espontáneamente sin el peso del pasado. Apertura completa a nuevas experiencias sin juicio.",
+      "reversedMeaning": "Imprudencia inconsciente. Necesidad de equilibrar espontaneidad con responsabilidad.",
+      "arcana": "major",
+      "number": 0
+    },
+    {
+      "id": "osho-1",
+      "name": "Existencia",
+      "description": "Una figura luminosa flota en el cosmos infinito, parte del todo. Unidad con toda la existencia.",
+      "keywords": ["unidad", "totalidad", "conexión", "ser", "consciencia", "no-separación"],
+      "uprightMeaning": "Reconocimiento de tu unidad con la existencia. Disolución de fronteras del ego. Consciencia de ser expresión única de la totalidad.",
+      "reversedMeaning": "Sensación de separación y aislamiento. Ego que insiste en individualidad aislada.",
+      "arcana": "major",
+      "number": 1
+    },
+    {
+      "id": "osho-2",
+      "name": "Voz Interior",
+      "description": "Sacerdotisa en meditación profunda escuchando su sabiduría interior.",
+      "keywords": ["intuición", "sabiduría interior", "guía interna", "silencio", "conocimiento intuitivo"],
+      "uprightMeaning": "Momento de escuchar tu voz interior. Intuición clara más allá de la lógica. Sabiduría innata del silencio.",
+      "reversedMeaning": "Mente ruidosa que ahoga la voz del corazón. Desconfianza en intuición natural.",
+      "arcana": "major",
+      "number": 2
+    },
+    {
+      "id": "osho-3",
+      "name": "Creatividad",
+      "description": "Artista cósmica pinta arcoíris con desbordamiento vital espontáneo.",
+      "keywords": ["expresión creativa", "flujo", "desbordamiento", "arte", "manifestación", "fertilidad"],
+      "uprightMeaning": "Creatividad desbordante y expresión auténtica. Flujo natural sin esfuerzo. Tu vida es tu obra de arte.",
+      "reversedMeaning": "Bloqueo creativo por auto-crítica. Miedo a expresar originalidad. Creatividad reprimida.",
+      "arcana": "major",
+      "number": 3
+    },
+    {
+      "id": "osho-4",
+      "name": "El Rebelde",
+      "description": "Figura audaz rompe cadenas invisibles de condicionamientos sociales.",
+      "keywords": ["autenticidad", "libertad", "romper cadenas", "coraje", "rebelión", "individualidad"],
+      "uprightMeaning": "Romper condicionamientos limitantes. Coraje para ser auténtico. Libertad de vivir según tu verdad.",
+      "reversedMeaning": "Rebelión inconsciente como otra forma de conformismo. Rebeldía reactiva sin liberación real.",
+      "arcana": "major",
+      "number": 4
+    },
+    {
+      "id": "osho-5",
+      "name": "Sin Nadie (No-Cosa)",
+      "description": "Vacío luminoso del espacio infinito. La nada es plenitud absoluta.",
+      "keywords": ["vacuidad", "disolución del ego", "infinito", "libertad absoluta", "potencial puro"],
+      "uprightMeaning": "Disolución del ego y sus identificaciones. Libertad absoluta del no-ser. Vacío donde todo es posible.",
+      "reversedMeaning": "Miedo al vacío y disolución. Aferramiento a identidades falsas.",
+      "arcana": "major",
+      "number": 5
+    },
+    {
+      "id": "osho-6",
+      "name": "Los Amantes",
+      "description": "Dos seres en intimidad profunda de almas. Amor que libera.",
+      "keywords": ["amor consciente", "intimidad", "vulnerabilidad", "unión", "aceptación", "elección del corazón"],
+      "uprightMeaning": "Conexión auténtica con otro ser. Amor que respeta libertad. Intimidad vulnerable y real.",
+      "reversedMeaning": "Amor posesivo que sofoca. Dependencia disfrazada de amor.",
+      "arcana": "major",
+      "number": 6
+    },
+    {
+      "id": "osho-7",
+      "name": "Consciencia",
+      "description": "Ojo cósmico observa todo sin juicio. Testigo silencioso.",
+      "keywords": ["testigo", "atención plena", "presencia", "observación", "claridad", "meditación"],
+      "uprightMeaning": "Claridad absoluta y consciencia despierta. Observar sin identificarte. Presencia plena en cada momento.",
+      "reversedMeaning": "Identificación inconsciente con pensamientos. Mente dormida que reacciona mecánicamente.",
+      "arcana": "major",
+      "number": 7
+    },
+    {
+      "id": "osho-8",
+      "name": "Coraje",
+      "description": "Guerrero espiritual enfrenta al dragón del miedo con corazón abierto.",
+      "keywords": ["valentía", "enfrentar miedos", "coraje", "fortaleza", "atravesar oscuridad"],
+      "uprightMeaning": "Gran coraje para enfrentar tus miedos. Valentía de atravesar lo difícil sin huir.",
+      "reversedMeaning": "Miedo paralizante. Evitación de lo que necesitas enfrentar.",
+      "arcana": "major",
+      "number": 8
+    },
+    {
+      "id": "osho-9",
+      "name": "Soledad",
+      "description": "Figura medita en montaña, sola pero plena. Plenitud en estar consigo mismo.",
+      "keywords": ["plenitud interior", "solitud", "autosuficiencia", "independencia", "reencuentro"],
+      "uprightMeaning": "Estar solo y completo en ti mismo. Disfrutar tu propia compañía. Independencia emocional.",
+      "reversedMeaning": "Soledad dolorosa sentida como abandono. Incapacidad de estar solo.",
+      "arcana": "major",
+      "number": 9
+    },
+    {
+      "id": "osho-10",
+      "name": "Cambio",
+      "description": "Rueda cósmica gira eternamente. El cambio es la única constante.",
+      "keywords": ["flujo", "impermanencia", "ciclos", "adaptabilidad", "transformación", "movimiento"],
+      "uprightMeaning": "Cambios inevitables. Fluir con transformaciones. Los cambios traen nuevas oportunidades.",
+      "reversedMeaning": "Resistencia rígida al cambio. Aferramiento a lo que ya terminó.",
+      "arcana": "major",
+      "number": 10
+    },
+    {
+      "id": "osho-11",
+      "name": "Avance",
+      "description": "Figura rompe barreras con explosión de luz. Despertar súbito.",
+      "keywords": ["despertar", "comprensión", "salto consciencia", "iluminación", "revelación"],
+      "uprightMeaning": "Comprensión profunda que cambia todo. Avance súbito en consciencia. Despertar repentino.",
+      "reversedMeaning": "Resistencia al insight que emerge. Negación de verdad evidente.",
+      "arcana": "major",
+      "number": 11
+    },
+    {
+      "id": "osho-12",
+      "name": "Nueva Visión",
+      "description": "Figura cuelga boca abajo viendo el mundo desde ángulo invertido.",
+      "keywords": ["perspectiva nueva", "ver diferente", "suspensión juicios", "cambio paradigma"],
+      "uprightMeaning": "Ver situación desde perspectiva completamente nueva. Inversión liberadora del entendimiento.",
+      "reversedMeaning": "Rigidez mental aferrada a perspectivas obsoletas. Negativa a considerar otros puntos de vista.",
+      "arcana": "major",
+      "number": 12
+    },
+    {
+      "id": "osho-13",
+      "name": "Transformación",
+      "description": "Fénix arde en llamas, muriendo para renacer de sus cenizas.",
+      "keywords": ["muerte ego", "renacimiento", "dejar ir", "finalización", "transformación", "renovación"],
+      "uprightMeaning": "Muerte simbólica de viejas formas de ser. Transformación profunda. Final necesario para nuevo comienzo.",
+      "reversedMeaning": "Resistencia a soltar lo que ya murió. Aferramiento a lo terminado.",
+      "arcana": "major",
+      "number": 13
+    },
+    {
+      "id": "osho-14",
+      "name": "Integración",
+      "description": "Opuestos se fusionan en armonía perfecta. Equilibrio dinámico.",
+      "keywords": ["equilibrio", "armonía opuestos", "integración", "balance", "síntesis", "completitud"],
+      "uprightMeaning": "Integración armoniosa de opuestos. Equilibrio perfecto. Reconciliación de polaridades internas.",
+      "reversedMeaning": "Desequilibrio extremo. Polarización rígida. Fragmentación interna.",
+      "arcana": "major",
+      "number": 14
+    },
+    {
+      "id": "osho-15",
+      "name": "Condicionamiento",
+      "description": "Cadenas invisibles atan figuras en prisión mental de creencias limitantes.",
+      "keywords": ["prisión mental", "creencias limitantes", "condicionamientos", "adicciones", "esclavitud"],
+      "uprightMeaning": "Reconocimiento de condicionamientos que limitan. Consciencia de patrones adictivos. Las cadenas son ilusorias.",
+      "reversedMeaning": "Negación de condicionamientos. Culpar a otros por prisión auto-creada.",
+      "arcana": "major",
+      "number": 15
+    },
+    {
+      "id": "osho-16",
+      "name": "Rayo",
+      "description": "Rayo cósmico destruye torre de creencias falsas. Despertar doloroso pero necesario.",
+      "keywords": ["destrucción", "despertar abrupto", "derrumbe ilusiones", "shock", "limpieza"],
+      "uprightMeaning": "Destrucción súbita de estructuras falsas. Shock necesario. Derrumbe de torres sobre cimientos falsos.",
+      "reversedMeaning": "Resistencia al colapso inevitable. Intento de sostener lo que cae.",
+      "arcana": "major",
+      "number": 16
+    },
+    {
+      "id": "osho-17",
+      "name": "Silencio",
+      "description": "Noche estrellada. Silencio profundo que es presencia de paz absoluta.",
+      "keywords": ["paz", "silencio interior", "esperanza", "quietud", "serenidad", "confianza"],
+      "uprightMeaning": "Silencio profundo y paz restauradora. Esperanza renovada. Confianza tranquila en que todo está bien.",
+      "reversedMeaning": "Mente ruidosa sin paz. Desesperanza. Necesidad de crear espacios de silencio.",
+      "arcana": "major",
+      "number": 17
+    },
+    {
+      "id": "osho-18",
+      "name": "Vidas Pasadas",
+      "description": "Luna ilumina sombras y memorias antiguas del inconsciente.",
+      "keywords": ["inconsciente", "patrones antiguos", "sombras", "sueños", "raíces profundas"],
+      "uprightMeaning": "Conexión con memorias del inconsciente. Patrones antiguos para ser sanados. Lo oculto se revela.",
+      "reversedMeaning": "Miedo a explorar profundidades. Negación de influencias sutiles.",
+      "arcana": "major",
+      "number": 18
+    },
+    {
+      "id": "osho-19",
+      "name": "Inocencia (El Sol)",
+      "description": "Sol radiante brilla. Niño juega con alegría pura, totalmente presente.",
+      "keywords": ["alegría", "celebración", "inocencia", "luz", "vitalidad", "simplicidad"],
+      "uprightMeaning": "Alegría absoluta de estar vivo. Inocencia consciente. Capacidad de maravillarte. Luz radiante.",
+      "reversedMeaning": "Pesimismo que apaga luz natural. Cinismo que destruye asombro.",
+      "arcana": "major",
+      "number": 19
+    },
+    {
+      "id": "osho-20",
+      "name": "Más Allá de la Ilusión",
+      "description": "Velo de Maya se levanta revelando realidad detrás de apariencias.",
+      "keywords": ["despertar", "realidad", "trascender ilusión", "llamado", "liberación", "verdad"],
+      "uprightMeaning": "Ver más allá del velo de ilusiones. Despertar profundo a naturaleza real. Llamado irresistible del alma.",
+      "reversedMeaning": "Negación del despertar. Resistencia a soltar ilusiones cómodas.",
+      "arcana": "major",
+      "number": 20
+    },
+    {
+      "id": "osho-21",
+      "name": "Completitud",
+      "description": "Danzarina cósmica en centro del universo. Todo completo, integrado, en su lugar.",
+      "keywords": ["totalidad", "ciclo completo", "integración", "realización", "danza", "perfección"],
+      "uprightMeaning": "Completitud y totalidad alcanzada. Integración perfecta. Ciclo cierra satisfactoriamente. Todo está bien.",
+      "reversedMeaning": "Incompletitud frustrante. Ciclos que no terminan. Necesidad de cerrar capítulos.",
+      "arcana": "major",
+      "number": 21
+    },
+    {
+      "id": "osho-22",
+      "name": "El Maestro",
+      "description": "Presencia luminosa sin forma irradia compasión y sabiduría infinitas. Trascendencia del ego.",
+      "keywords": ["maestría", "trascendencia ego", "sabiduría", "compasión", "presencia total"],
+      "uprightMeaning": "Tocar maestría interior más allá del ego. Sabiduría profunda del ser. Compasión natural.",
+      "reversedMeaning": "Ego espiritual. Falsa maestría intelectual. Necesidad de humildad genuina.",
+      "arcana": "major",
+      "number": null
+    },
+    {
+      "id": "osho-fire-ace",
+      "name": "As de Fuego (La Fuente)",
+      "description": "Erupción de energía creativa pura. El origen del fuego vital.",
+      "keywords": ["energía pura", "fuente creativa", "iniciación", "potencial", "chispa divina"],
+      "uprightMeaning": "Nueva fuente de energía creativa. Potencial infinito para iniciar proyectos. Chispa de inspiración divina.",
+      "reversedMeaning": "Energía bloqueada. Falta de inspiración inicial.",
+      "arcana": "minor",
+      "number": 1
+    },
+    {
+      "id": "osho-fire-2",
+      "name": "2 de Fuego (Posibilidades)",
+      "description": "Dos caminos se abren ante ti. Múltiples posibilidades esperan.",
+      "keywords": ["opciones", "elecciones", "potencial", "caminos abiertos", "decisiones"],
+      "uprightMeaning": "Momento de posibilidades infinitas. Elecciones disponibles. Libertad de escoger tu camino.",
+      "reversedMeaning": "Parálisis por exceso de opciones. Indecisión que impide avanzar.",
+      "arcana": "minor",
+      "number": 2
+    },
+    {
+      "id": "osho-fire-3",
+      "name": "3 de Fuego (Experimentar)",
+      "description": "Experimenta la vida directamente sin intermediarios.",
+      "keywords": ["experiencia directa", "vivir plenamente", "exploración", "aventura", "sentir"],
+      "uprightMeaning": "Tiempo de experimentar la vida directamente. Vivir plenamente cada experiencia. Aprender haciendo.",
+      "reversedMeaning": "Vivir a través de otros. Miedo a experimentar directamente.",
+      "arcana": "minor",
+      "number": 3
+    },
+    {
+      "id": "osho-fire-4",
+      "name": "4 de Fuego (Participación)",
+      "description": "Participa activamente en la danza de la vida.",
+      "keywords": ["participación", "involucración", "compromiso", "acción", "contribución"],
+      "uprightMeaning": "Momento de participar activamente. Involucrarte plenamente. Contribuir tu energía.",
+      "reversedMeaning": "Espectador pasivo de tu vida. Falta de compromiso. Observar sin participar.",
+      "arcana": "minor",
+      "number": 4
+    },
+    {
+      "id": "osho-fire-5",
+      "name": "5 de Fuego (Totalidad)",
+      "description": "Entrega total. Vive cada momento al 100%.",
+      "keywords": ["totalidad", "entrega", "intensidad", "completitud", "100%"],
+      "uprightMeaning": "Vivir con totalidad absoluta. Entrega completa a cada momento. Intensidad plena.",
+      "reversedMeaning": "Medias tintas. Falta de compromiso total. Tibieza.",
+      "arcana": "minor",
+      "number": 5
+    },
+    {
+      "id": "osho-fire-6",
+      "name": "6 de Fuego (Éxito)",
+      "description": "Logro merecido. Victoria consciente.",
+      "keywords": ["éxito", "logro", "victoria", "reconocimiento", "recompensa"],
+      "uprightMeaning": "Éxito merecido por esfuerzo consciente. Victoria genuina. Reconocimiento de logros.",
+      "reversedMeaning": "Éxito vacío. Victoria hueca. Logros que no satisfacen.",
+      "arcana": "minor",
+      "number": 6
+    },
+    {
+      "id": "osho-fire-7",
+      "name": "7 de Fuego (Estrés)",
+      "description": "Tensión acumulada. Necesidad de equilibrio.",
+      "keywords": ["estrés", "tensión", "presión", "sobrecarga", "necesidad descanso"],
+      "uprightMeaning": "Reconocimiento de estrés acumulado. Necesidad de equilibrar actividad con descanso. Señal de ralentizar.",
+      "reversedMeaning": "Negación del estrés. Empujar más allá de límites saludables.",
+      "arcana": "minor",
+      "number": 7
+    },
+    {
+      "id": "osho-fire-8",
+      "name": "8 de Fuego (Viajar)",
+      "description": "Movimiento rápido. Cambios veloces.",
+      "keywords": ["movimiento", "viaje", "velocidad", "cambio rápido", "transición"],
+      "uprightMeaning": "Momento de movimiento rápido y cambios veloces. Viaje físico o metafórico. Transición acelerada.",
+      "reversedMeaning": "Movimiento sin dirección. Velocidad por velocidad. Falta de rumbo claro.",
+      "arcana": "minor",
+      "number": 8
+    },
+    {
+      "id": "osho-fire-9",
+      "name": "9 de Fuego (Agotamiento)",
+      "description": "Energía consumida. Necesidad urgente de descanso.",
+      "keywords": ["agotamiento", "cansancio", "burn-out", "límites", "reposo necesario"],
+      "uprightMeaning": "Agotamiento por exceso de actividad. Señal clara de necesidad de descanso profundo. Honrar límites.",
+      "reversedMeaning": "Ignorar señales de cansancio. Empujar hasta colapso total.",
+      "arcana": "minor",
+      "number": 9
+    },
+    {
+      "id": "osho-fire-10",
+      "name": "10 de Fuego (Represión)",
+      "description": "Energía vital reprimida que busca liberación.",
+      "keywords": ["represión", "energía bloqueada", "contención", "explosión inminente", "liberación necesaria"],
+      "uprightMeaning": "Reconocimiento de energía vital reprimida. Necesidad de liberar lo contenido saludablemente.",
+      "reversedMeaning": "Represión que conduce a explosión. Contención insostenible.",
+      "arcana": "minor",
+      "number": 10
+    },
+    {
+      "id": "osho-fire-page",
+      "name": "Paje de Fuego (Juego)",
+      "description": "Niño juega con fuego de la creatividad sin miedo.",
+      "keywords": ["juego", "diversión", "experimentación", "ligereza", "gozo"],
+      "uprightMeaning": "Momento de jugar y experimentar sin expectativas. Diversión pura. Acercamiento ligero a la vida.",
+      "reversedMeaning": "Seriedad excesiva. Incapacidad de jugar. Rigidez.",
+      "arcana": "minor",
+      "number": 11
+    },
+    {
+      "id": "osho-fire-knight",
+      "name": "Caballero de Fuego (Intensidad)",
+      "description": "Guerrero de fuego avanza con intensidad absoluta.",
+      "keywords": ["intensidad", "pasión", "determinación", "fuerza", "compromiso total"],
+      "uprightMeaning": "Momento de intensidad máxima. Pasión ardiente. Determinación total en tu dirección.",
+      "reversedMeaning": "Intensidad descontrolada. Pasión que quema. Falta de moderación.",
+      "arcana": "minor",
+      "number": 12
+    },
+    {
+      "id": "osho-fire-queen",
+      "name": "Reina de Fuego (Compartir)",
+      "description": "Reina generosa comparte su fuego con alegría.",
+      "keywords": ["compartir", "generosidad", "dar", "calidez", "apertura"],
+      "uprightMeaning": "Generosidad natural. Compartir tu fuego sin expectativas. Calidez que contagia.",
+      "reversedMeaning": "Dar esperando recibir. Generosidad condicional. Retener por miedo.",
+      "arcana": "minor",
+      "number": 13
+    },
+    {
+      "id": "osho-fire-king",
+      "name": "Rey de Fuego (El Creador)",
+      "description": "Maestro del fuego creativo. Creador consciente.",
+      "keywords": ["creación", "maestría", "manifestación", "liderazgo creativo", "visión"],
+      "uprightMeaning": "Maestría en manifestar creatividad. Liderazgo creativo consciente. Visión hecha realidad.",
+      "reversedMeaning": "Creatividad bloqueada por control excesivo. Perfeccionismo paralizante.",
+      "arcana": "minor",
+      "number": 14
+    },
+    {
+      "id": "osho-water-ace",
+      "name": "As de Agua (Ir con la Corriente)",
+      "description": "Fluir con la vida sin resistencia.",
+      "keywords": ["fluir", "corriente", "rendición", "aceptación", "fluidez"],
+      "uprightMeaning": "Momento de fluir con la vida. Rendición saludable. Aceptación del flujo natural.",
+      "reversedMeaning": "Resistencia al flujo. Lucha contra corriente natural.",
+      "arcana": "minor",
+      "number": 1
+    },
+    {
+      "id": "osho-water-2",
+      "name": "2 de Agua (Amistad)",
+      "description": "Conexión genuina entre dos seres.",
+      "keywords": ["amistad", "conexión", "camaradería", "apoyo mutuo", "compañía"],
+      "uprightMeaning": "Amistad genuina y conexión auténtica. Apoyo mutuo. Compañía del corazón.",
+      "reversedMeaning": "Amistad superficial. Conexión falsa. Relaciones por conveniencia.",
+      "arcana": "minor",
+      "number": 2
+    },
+    {
+      "id": "osho-water-3",
+      "name": "3 de Agua (Celebración)",
+      "description": "Celebrar la vida con otros. Gozo compartido.",
+      "keywords": ["celebración", "gozo", "fiesta", "comunidad", "alegría compartida"],
+      "uprightMeaning": "Momento de celebración y gozo compartido. Comunidad que celebra junta. Alegría contagiosa.",
+      "reversedMeaning": "Celebración vacía. Falsa alegría. Fiesta sin corazón.",
+      "arcana": "minor",
+      "number": 3
+    },
+    {
+      "id": "osho-water-4",
+      "name": "4 de Agua (Voltear Hacia Adentro)",
+      "description": "Mirar hacia tu mundo interior.",
+      "keywords": ["introspección", "mundo interior", "reflexión", "soledad elegida", "auto-exploración"],
+      "uprightMeaning": "Tiempo de voltearte hacia adentro. Introspección profunda. Explorar tu mundo interior.",
+      "reversedMeaning": "Evitar mirar hacia adentro. Escape en lo externo. Miedo a la introspección.",
+      "arcana": "minor",
+      "number": 4
+    },
+    {
+      "id": "osho-water-5",
+      "name": "5 de Agua (Aferrarse al Pasado)",
+      "description": "Atrapado en memorias que impiden estar presente.",
+      "keywords": ["apego pasado", "nostalgia", "memorias", "no soltar", "quedarse atrás"],
+      "uprightMeaning": "Reconocimiento de apego al pasado. Necesidad de soltar lo que fue para estar presente.",
+      "reversedMeaning": "Vivir completamente en el pasado. Incapacidad de soltar memorias.",
+      "arcana": "minor",
+      "number": 5
+    },
+    {
+      "id": "osho-water-6",
+      "name": "6 de Agua (El Sueño)",
+      "description": "Soñar despierto. Imaginación activa.",
+      "keywords": ["sueños", "imaginación", "visión", "fantasía", "posibilidades"],
+      "uprightMeaning": "Tiempo de soñar y visualizar. Imaginación creativa. Explorar posibilidades.",
+      "reversedMeaning": "Perderse en fantasías. Soñar sin actuar. Escape irreal.",
+      "arcana": "minor",
+      "number": 6
+    },
+    {
+      "id": "osho-water-7",
+      "name": "7 de Agua (Proyecciones)",
+      "description": "Ver en otros lo que niegas en ti mismo.",
+      "keywords": ["proyección", "espejo", "sombras", "negación", "reflejo"],
+      "uprightMeaning": "Reconocer proyecciones en otros. Ver que critican en ti lo que niegan en sí mismos. Espejo consciente.",
+      "reversedMeaning": "Negación de proyecciones propias. Culpar a otros por lo tuyo.",
+      "arcana": "minor",
+      "number": 7
+    },
+    {
+      "id": "osho-water-8",
+      "name": "8 de Agua (Soltar)",
+      "description": "Dejar ir lo que ya no sirve.",
+      "keywords": ["soltar", "liberación", "dejar ir", "rendición", "alivio"],
+      "uprightMeaning": "Momento de soltar lo que ya no necesitas. Liberación sanadora. Alivio de dejar ir.",
+      "reversedMeaning": "Resistencia a soltar. Aferramiento doloroso. Negativa a liberar.",
+      "arcana": "minor",
+      "number": 8
+    },
+    {
+      "id": "osho-water-9",
+      "name": "9 de Agua (Pereza)",
+      "description": "Estancamiento por falta de motivación.",
+      "keywords": ["pereza", "estancamiento", "falta energía", "inercia", "pasividad"],
+      "uprightMeaning": "Reconocimiento de pereza que impide crecimiento. Necesidad de encontrar motivación genuina.",
+      "reversedMeaning": "Justificación de estancamiento. Excusas constantes. Victimización.",
+      "arcana": "minor",
+      "number": 9
+    },
+    {
+      "id": "osho-water-10",
+      "name": "10 de Agua (Armonía)",
+      "description": "Equilibrio perfecto de emociones. Paz interior.",
+      "keywords": ["armonía", "equilibrio emocional", "paz", "satisfacción", "plenitud"],
+      "uprightMeaning": "Armonía emocional alcanzada. Equilibrio interno. Paz profunda y satisfacción.",
+      "reversedMeaning": "Desequilibrio emocional. Conflicto interno. Falta de paz.",
+      "arcana": "minor",
+      "number": 10
+    },
+    {
+      "id": "osho-water-page",
+      "name": "Paje de Agua (Comprensión)",
+      "description": "Comenzar a comprender las profundidades emocionales.",
+      "keywords": ["comprensión", "aprendizaje emocional", "sensibilidad", "empatía inicial"],
+      "uprightMeaning": "Despertar de comprensión emocional. Aprender sobre tus sentimientos. Empatía emergente.",
+      "reversedMeaning": "Confusión emocional. Falta de comprensión de sentimientos.",
+      "arcana": "minor",
+      "number": 11
+    },
+    {
+      "id": "osho-water-knight",
+      "name": "Caballero de Agua (Confianza)",
+      "description": "Navegar las aguas de la vida con confianza.",
+      "keywords": ["confianza", "fe", "fluir", "seguridad interior", "certeza"],
+      "uprightMeaning": "Confianza profunda en el flujo de la vida. Fe en el proceso. Seguridad interior.",
+      "reversedMeaning": "Desconfianza. Miedo al flujo. Inseguridad emocional.",
+      "arcana": "minor",
+      "number": 12
+    },
+    {
+      "id": "osho-water-queen",
+      "name": "Reina de Agua (Receptividad)",
+      "description": "Receptiva como el océano que recibe todos los ríos.",
+      "keywords": ["receptividad", "apertura", "aceptación", "acogida", "permitir"],
+      "uprightMeaning": "Receptividad total. Apertura para recibir. Aceptación profunda. Permitir que llegue lo que debe llegar.",
+      "reversedMeaning": "Cerrazón emocional. Negativa a recibir. Resistencia a ser nutrido.",
+      "arcana": "minor",
+      "number": 13
+    },
+    {
+      "id": "osho-water-king",
+      "name": "Rey de Agua (Sanación)",
+      "description": "Sanador de aguas emocionales. Compasión profunda.",
+      "keywords": ["sanación", "compasión", "amor incondicional", "nutrición", "cuidado"],
+      "uprightMeaning": "Capacidad de sanar emocionalmente. Compasión profunda. Amor incondicional que nutre.",
+      "reversedMeaning": "Sanador herido. Compasión agotada. Dar sin cuidarte.",
+      "arcana": "minor",
+      "number": 14
+    },
+    {
+      "id": "osho-clouds-ace",
+      "name": "As de Nubes (Claridad Mental)",
+      "description": "Corte limpio de claridad mental.",
+      "keywords": ["claridad", "discernimiento", "verdad", "precisión mental", "corte limpio"],
+      "uprightMeaning": "Claridad mental absoluta. Discernimiento preciso. Capacidad de ver la verdad claramente.",
+      "reversedMeaning": "Confusión mental. Falta de claridad. Pensamiento nublado.",
+      "arcana": "minor",
+      "number": 1
+    },
+    {
+      "id": "osho-clouds-2",
+      "name": "2 de Nubes (Esquizofrenia)",
+      "description": "Mente dividida entre opuestos.",
+      "keywords": ["división mental", "conflicto interno", "dualidad", "mente partida", "indecisión"],
+      "uprightMeaning": "Reconocimiento de mente dividida. Conflicto interno entre opuestos. Necesidad de integración.",
+      "reversedMeaning": "División severa. Incapacidad de reconciliar opuestos. Fragmentación.",
+      "arcana": "minor",
+      "number": 2
+    },
+    {
+      "id": "osho-clouds-3",
+      "name": "3 de Nubes (Aislamiento)",
+      "description": "Aislamiento mental auto-impuesto.",
+      "keywords": ["aislamiento", "separación", "soledad mental", "retiro", "frialdad"],
+      "uprightMeaning": "Reconocimiento de aislamiento auto-impuesto. Necesidad de conexión. Frialdad que necesita calidez.",
+      "reversedMeaning": "Aislamiento severo. Incapacidad de conectar. Torre de hielo mental.",
+      "arcana": "minor",
+      "number": 3
+    },
+    {
+      "id": "osho-clouds-4",
+      "name": "4 de Nubes (Postergación)",
+      "description": "Posponer lo inevitable por miedo.",
+      "keywords": ["postergación", "dilación", "evitación", "miedo actuar", "espera"],
+      "uprightMeaning": "Reconocer tendencia a postergar. Necesidad de enfrentar lo que evitas. Actuar a pesar del miedo.",
+      "reversedMeaning": "Procrastinación crónica. Parálisis por análisis. Evitación total.",
+      "arcana": "minor",
+      "number": 4
+    },
+    {
+      "id": "osho-clouds-5",
+      "name": "5 de Nubes (Comparación)",
+      "description": "Sufrimiento de compararte constantemente con otros.",
+      "keywords": ["comparación", "competencia", "envidia", "medir", "insuficiencia"],
+      "uprightMeaning": "Reconocer hábito de compararte. Sufrimiento que genera. Necesidad de aceptar tu singularidad.",
+      "reversedMeaning": "Comparación obsesiva. Envidia constante. Nunca sentirte suficiente.",
+      "arcana": "minor",
+      "number": 5
+    },
+    {
+      "id": "osho-clouds-6",
+      "name": "6 de Nubes (La Carga)",
+      "description": "Cargando peso mental innecesario.",
+      "keywords": ["carga", "peso mental", "responsabilidad excesiva", "agobio", "obligaciones"],
+      "uprightMeaning": "Reconocer cargas mentales innecesarias. Necesidad de soltar peso que no es tuyo. Liberar obligaciones falsas.",
+      "reversedMeaning": "Agobio total. Colapso por exceso de carga. Incapacidad de soltar.",
+      "arcana": "minor",
+      "number": 6
+    },
+    {
+      "id": "osho-clouds-7",
+      "name": "7 de Nubes (Política)",
+      "description": "Manipulación mental y juegos de poder.",
+      "keywords": ["política", "manipulación", "juegos de poder", "astucia", "estrategia"],
+      "uprightMeaning": "Reconocer juegos políticos mentales. Manipulaciones sutiles. Necesidad de honestidad directa.",
+      "reversedMeaning": "Manipulación consciente. Juegos de poder destructivos. Astucia dañina.",
+      "arcana": "minor",
+      "number": 7
+    },
+    {
+      "id": "osho-clouds-8",
+      "name": "8 de Nubes (Culpa)",
+      "description": "Prisionero de culpa auto-impuesta.",
+      "keywords": ["culpa", "auto-castigo", "remordimiento", "prisión mental", "vergüenza"],
+      "uprightMeaning": "Reconocer culpa que te aprisiona. Necesidad de perdón propio. Liberación de auto-castigo.",
+      "reversedMeaning": "Culpa paralizante. Auto-castigo crónico. Incapacidad de perdonarte.",
+      "arcana": "minor",
+      "number": 8
+    },
+    {
+      "id": "osho-clouds-9",
+      "name": "9 de Nubes (Tristeza)",
+      "description": "Dolor mental profundo que necesita ser sentido.",
+      "keywords": ["tristeza", "dolor", "lamento", "pena", "sufrimiento mental"],
+      "uprightMeaning": "Honrar tristeza profunda. Permitir sentir el dolor completamente. La tristeza sentida puede transformarse.",
+      "reversedMeaning": "Ahogarse en tristeza. Victimización. Negativa a dejar ir el dolor.",
+      "arcana": "minor",
+      "number": 9
+    },
+    {
+      "id": "osho-clouds-10",
+      "name": "10 de Nubes (Renacimiento)",
+      "description": "Muerte mental que permite renacimiento.",
+      "keywords": ["renacimiento mental", "nueva perspectiva", "limpieza", "empezar de nuevo", "renovación"],
+      "uprightMeaning": "Renacimiento mental después de muerte de viejas ideas. Nueva perspectiva. Empezar de cero con claridad.",
+      "reversedMeaning": "Resistencia al renacimiento. Aferrarse a muerte mental. Negativa a renovarte.",
+      "arcana": "minor",
+      "number": 10
+    },
+    {
+      "id": "osho-clouds-page",
+      "name": "Paje de Nubes (Mente)",
+      "description": "Curiosidad mental en desarrollo.",
+      "keywords": ["curiosidad", "aprendizaje", "exploración mental", "preguntas", "juventud mental"],
+      "uprightMeaning": "Curiosidad mental saludable. Deseo de aprender. Exploración intelectual. Hacer preguntas.",
+      "reversedMeaning": "Curiosidad superficial. Acumular información sin comprensión. Mente dispersa.",
+      "arcana": "minor",
+      "number": 11
+    },
+    {
+      "id": "osho-clouds-knight",
+      "name": "Caballero de Nubes (Lucha)",
+      "description": "Batalla mental contra ti mismo o el mundo.",
+      "keywords": ["lucha", "combate", "resistencia", "confrontación", "batalla"],
+      "uprightMeaning": "Reconocer luchas mentales innecesarias. Resistencia que crea sufrimiento. Necesidad de rendición inteligente.",
+      "reversedMeaning": "Guerra mental constante. Luchar contra todo. Resistencia destructiva.",
+      "arcana": "minor",
+      "number": 12
+    },
+    {
+      "id": "osho-clouds-queen",
+      "name": "Reina de Nubes (Moralidad)",
+      "description": "Juicios morales rígidos que aprisionan.",
+      "keywords": ["moralidad", "juicios", "debería", "normas", "rigidez mental"],
+      "uprightMeaning": "Reconocer moralidad rígida que limita. Juicios que aprisionan. Necesidad de flexibilidad y compasión.",
+      "reversedMeaning": "Juicios severos. Moralismo destructivo. Rigidez mental total.",
+      "arcana": "minor",
+      "number": 13
+    },
+    {
+      "id": "osho-clouds-king",
+      "name": "Rey de Nubes (Control)",
+      "description": "Control mental excesivo sobre ti y otros.",
+      "keywords": ["control", "dominio", "rigidez", "manipulación", "poder mental"],
+      "uprightMeaning": "Reconocer necesidad de control que estrangula vida. Rigidez mental. Necesidad de soltar y confiar.",
+      "reversedMeaning": "Control obsesivo. Manipulación total. Dominación mental destructiva.",
+      "arcana": "minor",
+      "number": 14
+    },
+    {
+      "id": "osho-rainbow-ace",
+      "name": "As de Arcoíris (Madurez)",
+      "description": "Madurez física y espiritual integradas.",
+      "keywords": ["madurez", "plenitud", "realización", "sabiduría corporal", "integración"],
+      "uprightMeaning": "Madurez que integra cuerpo y espíritu. Plenitud del ser completo. Sabiduría encarnada.",
+      "reversedMeaning": "Inmadurez física o emocional. Falta de integración. Desconexión corporal.",
+      "arcana": "minor",
+      "number": 1
+    },
+    {
+      "id": "osho-rainbow-2",
+      "name": "2 de Arcoíris (Momento a Momento)",
+      "description": "Vivir plenamente cada momento presente.",
+      "keywords": ["presente", "aquí y ahora", "momento", "atención", "presencia"],
+      "uprightMeaning": "Vivir plenamente momento a momento. Presencia total. Atención en lo que sucede ahora.",
+      "reversedMeaning": "Perderse en pasado o futuro. Ausencia del presente. Vivir en tu cabeza.",
+      "arcana": "minor",
+      "number": 2
+    },
+    {
+      "id": "osho-rainbow-3",
+      "name": "3 de Arcoíris (Guía)",
+      "description": "Guía sabia que ayuda en el camino.",
+      "keywords": ["guía", "maestro", "dirección", "enseñanza", "sabiduría compartida"],
+      "uprightMeaning": "Recibir o dar guía sabia. Maestro que aparece cuando estás listo. Dirección clara en el camino.",
+      "reversedMeaning": "Falso maestro. Guía que extravía. Dependencia de guru externo.",
+      "arcana": "minor",
+      "number": 3
+    },
+    {
+      "id": "osho-rainbow-4",
+      "name": "4 de Arcoíris (El Avaro)",
+      "description": "Avaricia que acumula pero nunca disfruta.",
+      "keywords": ["avaricia", "acumulación", "miedo escasez", "tacañería", "retener"],
+      "uprightMeaning": "Reconocer avaricia y miedo a escasez. Necesidad de generosidad y confianza en abundancia.",
+      "reversedMeaning": "Avaricia severa. Acumulación obsesiva. Incapacidad de compartir o disfrutar.",
+      "arcana": "minor",
+      "number": 4
+    },
+    {
+      "id": "osho-rainbow-5",
+      "name": "5 de Arcoíris (El Extraño)",
+      "description": "Sentirse extraño o ajeno en el mundo.",
+      "keywords": ["extrañeza", "no pertenencia", "diferente", "alienación", "singularidad"],
+      "uprightMeaning": "Reconocer sentimiento de ser diferente. Aceptar tu singularidad única. No necesitas encajar.",
+      "reversedMeaning": "Alienación dolorosa. Aislamiento por sentirse diferente. Rechazo de singularidad.",
+      "arcana": "minor",
+      "number": 5
+    },
+    {
+      "id": "osho-rainbow-6",
+      "name": "6 de Arcoíris (Compromiso)",
+      "description": "Compromisos que pueden limitar o expandir.",
+      "keywords": ["compromiso", "acuerdo", "pacto", "balance", "intercambio"],
+      "uprightMeaning": "Examinar compromisos cuidadosamente. Compromisos conscientes que expanden. Balance en intercambios.",
+      "reversedMeaning": "Compromisos que limitan crecimiento. Acuerdos que traicionan tu verdad.",
+      "arcana": "minor",
+      "number": 6
+    },
+    {
+      "id": "osho-rainbow-7",
+      "name": "7 de Arcoíris (Paciencia)",
+      "description": "Paciencia profunda con el proceso de la vida.",
+      "keywords": ["paciencia", "timing divino", "espera activa", "confianza proceso", "no apuro"],
+      "uprightMeaning": "Cultivar paciencia profunda. Confiar en timing perfecto. Espera activa sin ansiedad.",
+      "reversedMeaning": "Impaciencia destructiva. Forzar timing. Incapacidad de esperar.",
+      "arcana": "minor",
+      "number": 7
+    },
+    {
+      "id": "osho-rainbow-8",
+      "name": "8 de Arcoíris (Ordinariez)",
+      "description": "Belleza y paz de lo ordinario.",
+      "keywords": ["ordinariez", "simplicidad", "cotidiano", "paz común", "extraordinario en lo ordinario"],
+      "uprightMeaning": "Encontrar extraordinario en lo ordinario. Paz en simplicidad cotidiana. Belleza de lo común.",
+      "reversedMeaning": "Desprecio por lo ordinario. Búsqueda constante de extraordinario. Incapacidad de valorar simple.",
+      "arcana": "minor",
+      "number": 8
+    },
+    {
+      "id": "osho-rainbow-9",
+      "name": "9 de Arcoíris (Maduración)",
+      "description": "Proceso de maduración como fruta en árbol.",
+      "keywords": ["maduración", "proceso natural", "desarrollo", "tiempo necesario", "plenitud gradual"],
+      "uprightMeaning": "Confiar en proceso natural de maduración. Desarrollo que toma su tiempo. Plenitud que llega cuando está lista.",
+      "reversedMeaning": "Forzar maduración prematura. Impaciencia con proceso natural. Fruta verde forzada.",
+      "arcana": "minor",
+      "number": 9
+    },
+    {
+      "id": "osho-rainbow-10",
+      "name": "10 de Arcoíris (Todos Somos Uno)",
+      "description": "Unidad con toda la humanidad y existencia.",
+      "keywords": ["unidad", "humanidad", "todos uno", "conexión global", "familia universal"],
+      "uprightMeaning": "Experiencia profunda de unidad con todos. Sentir humanidad completa como familia. Somos uno.",
+      "reversedMeaning": "Sentimiento de separación de humanidad. Nosotros vs ellos. Tribalismo.",
+      "arcana": "minor",
+      "number": 10
+    },
+    {
+      "id": "osho-rainbow-page",
+      "name": "Paje de Arcoíris (Aventura)",
+      "description": "Comenzar aventura física en el mundo.",
+      "keywords": ["aventura", "exploración", "curiosidad física", "nuevo comienzo", "descubrimiento"],
+      "uprightMeaning": "Iniciar aventura física o material. Explorar mundo con curiosidad. Descubrimiento tangible.",
+      "reversedMeaning": "Miedo a aventurarse. Quedarse en zona segura. Evitar exploración.",
+      "arcana": "minor",
+      "number": 11
+    },
+    {
+      "id": "osho-rainbow-knight",
+      "name": "Caballero de Arcoíris (Ralentizar)",
+      "description": "Necesidad de reducir velocidad y desacelerar.",
+      "keywords": ["ralentizar", "desacelerar", "pausar", "calma", "ir despacio"],
+      "uprightMeaning": "Necesidad clara de ralentizar ritmo. Desacelerar para apreciar vida. Pausa consciente.",
+      "reversedMeaning": "Velocidad destructiva. Incapacidad de ralentizar. Adicción a velocidad.",
+      "arcana": "minor",
+      "number": 12
+    },
+    {
+      "id": "osho-rainbow-queen",
+      "name": "Reina de Arcoíris (Abundancia)",
+      "description": "Abundancia natural que fluye sin esfuerzo.",
+      "keywords": ["abundancia", "prosperidad", "flujo", "generosidad existencia", "riqueza natural"],
+      "uprightMeaning": "Reconocer abundancia natural de existencia. Prosperidad que fluye. Confiar en provisión del universo.",
+      "reversedMeaning": "Mentalidad de escasez. Bloqueo de abundancia. Incapacidad de recibir prosperidad.",
+      "arcana": "minor",
+      "number": 13
+    },
+    {
+      "id": "osho-rainbow-king",
+      "name": "Rey de Arcoíris (Arraigo)",
+      "description": "Arraigo profundo en tierra y cuerpo.",
+      "keywords": ["arraigo", "tierra", "enraizamiento", "estabilidad", "presencia física"],
+      "uprightMeaning": "Arraigo profundo en cuerpo y tierra. Estabilidad física. Presencia plena en lo material.",
+      "reversedMeaning": "Desarraigo. Vivir solo en cabeza. Falta de conexión con cuerpo y tierra.",
+      "arcana": "minor",
+      "number": 14
+    }
+  ]
+}
