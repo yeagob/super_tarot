@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TarotDeck, TarotCard } from '../types';
 import { DraggableCard } from './DraggableCard';
+import { CardPicker } from './CardPicker';
 import { api } from '../services/api';
 
 interface DeckDisplayProps {
@@ -26,6 +27,7 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
   const [drawnCards, setDrawnCards] = useState<DrawnCardWithId[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);
   const [nextId, setNextId] = useState(0);
+  const [showCardPicker, setShowCardPicker] = useState(false);
 
   // Calcular cartas restantes de este mazo específico
   const remainingCardsCount = deck.cards.length - (drawnCardIds[deck.id]?.length || 0);
@@ -84,6 +86,21 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
     }
   };
 
+  const handleSelectSpecificCard = (card: TarotCard) => {
+    // Marcar carta como sacada de este mazo
+    onMarkCardAsDrawn(deck.id, card.id);
+
+    // Agregar a las cartas disponibles
+    const newCard: DrawnCardWithId = {
+      card,
+      uniqueId: `${deck.id}-${card.id}-${nextId}`,
+      deckId: deck.id
+    };
+
+    setNextId(prev => prev + 1);
+    setDrawnCards(prev => [newCard, ...prev].slice(0, 10));
+  };
+
   return (
     <div className="deck-display">
       <div className="mb-3 sm:mb-4">
@@ -94,13 +111,22 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
           </span>
         </div>
         <p className="text-xs sm:text-sm text-tarot-silver/70 mb-3 line-clamp-2">{deck.description}</p>
-        <button
-          onClick={handleDrawCard}
-          disabled={isDrawing || remainingCardsCount <= 0}
-          className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-tarot-accent to-tarot-purple hover:from-tarot-purple hover:to-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-mystic hover:shadow-mystic-lg text-sm sm:text-base"
-        >
-          {isDrawing ? '🌀 Barajando...' : remainingCardsCount <= 0 ? '❌ Sin Cartas' : '🎴 Sacar una Carta'}
-        </button>
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            onClick={handleDrawCard}
+            disabled={isDrawing || remainingCardsCount <= 0}
+            className="px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-tarot-accent to-tarot-purple hover:from-tarot-purple hover:to-tarot-accent text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-mystic hover:shadow-mystic-lg text-sm sm:text-base"
+          >
+            {isDrawing ? '🌀 Barajando...' : remainingCardsCount <= 0 ? '❌ Sin Cartas' : '🎴 Aleatoria'}
+          </button>
+          <button
+            onClick={() => setShowCardPicker(true)}
+            disabled={remainingCardsCount <= 0}
+            className="px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-tarot-gold/80 to-tarot-gold hover:from-tarot-gold hover:to-yellow-500 text-tarot-dark font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-mystic hover:shadow-mystic-lg text-sm sm:text-base"
+          >
+            🔍 Elegir
+          </button>
+        </div>
       </div>
 
       {drawnCards.length > 0 && (
@@ -120,10 +146,20 @@ export const DeckDisplay: React.FC<DeckDisplayProps> = ({
 
       <div className="mt-4 p-3 bg-purple-900/30 rounded-lg border border-purple-400/30">
         <p className="text-xs text-gray-300">
-          💡 <strong>Tip:</strong> Saca cartas y arrástralas al tapete para crear tu tirada.
-          Puedes sacar tantas cartas como necesites.
+          💡 <strong>Tip:</strong> Saca cartas al azar o elige específicamente. Arrástralas al tapete para crear tu tirada.
         </p>
       </div>
+
+      {/* Card Picker Modal */}
+      {showCardPicker && (
+        <CardPicker
+          cards={deck.cards}
+          deckName={deck.name}
+          onSelectCard={handleSelectSpecificCard}
+          onClose={() => setShowCardPicker(false)}
+          excludedCardIds={drawnCardIds[deck.id] || []}
+        />
+      )}
     </div>
   );
 };
